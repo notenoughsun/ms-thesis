@@ -1,0 +1,29 @@
+// ====
+// A work plan that outlines the sequencing, flow, and timeline of the thesis project.
+// ====
+
+// . customer interviews
+// . market research
+// . product design
+// . business model formulation
+// . market and competitior analysis
+// . product prototyping
+// . technology enchancements
+// . experiments on product performance
+// . final mobile application
+// . marketing strategy development
+
+[options="header", .width="100%", .cols="4,2,2"]
+|====
+|stage       |time estimation| timeline
+|customer interviews       |completed|--------
+|market research       |completed|--------
+|product design    |completed|--------
+|business model formulation    |completed|--------
+|market and competitior analysis    |completed|--------   
+|product prototyping       |2 months| 20.11.2020
+|technology enchancements      |2 months|20.12.2020
+|experiments on product performance |1 months|20.01.2021   
+|marketing strategy development     |to be defined|20.04.2021
+|final mobile application      |3 months|20.05.2021
+|====

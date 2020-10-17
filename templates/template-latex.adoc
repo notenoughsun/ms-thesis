@@ -1,0 +1,234 @@
+=== aaa
+
+<<chapter-titles,going to chapter titles>>.
+
+\$ a^2 + b^2 = c^2 \$ +
+ +
+ +
+
+The formula \$ a^2 + b^2 = c^2 \$ relates the sides
+and hypotenuse of a right triangle.  The formula
+\[
+\int_0^1 x^n dx = \frac{1}{n+1}
+\]
+is something we all learn in Calculus
+
+[env.question]
+--
+What is the speed of light?
+--
+
+[click.answer]
+--
+300,000 km/sec
+--
+
+[env.theorem]
+--
+There exist infinitely many prime numbers.
+--
+
+[stem]
+++++
+  e^{2\pi \sqrt{-1}} = 1.
+++++
+
+
+[overline]#overline text#
+= настолько это понятие является важным
+
+__unconstrained emphasized text__
+**unconstrained strong text**
+++unconstrained monospaced text++
+unconstrained text
+##unconstrained unquoted text##
+
+<<< - pagebreak
+
+-> <- => &#x278a; &#182; ¶
+
+
+[float]
+The second day
+~~~~~~~~~~~~~~
+
+Floating titles do not appear in a document’s table of contents
+
+
+[[chapter-titles]]
+Chapter titles can be ...
+
+BlockId elements can be applied to Title, Paragraph, List, DelimitedBlock, Table and BlockMacro elements. The BlockId element sets the {id} attribute for substitution in the subsequent block’s markup template. If a second positional argument is supplied it sets the {reftext} attribute
+
+[verse, William Blake, from Auguries of Innocence]
+To see a world in a grain of sand,
+And a heaven in a wild flower,
+Hold infinity in the palm of your hand,
+And eternity in an hour.
+
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+
+[TIP]
+This is an example TIP.
+
+[NOTE]
+This is an example note.
+
+[IMPORTANT]
+This is an example IMPORTANT.
+
+[WARNING]
+This is an example WARNING.
+
+[CAUTION]
+This is an example CAUTION.
+
+// ccccc
+
+//////////////////////////////////////////
+CommentBlock contents are not processed by
+asciidoc(1).
+//////////////////////////////////////////
+
+[source,c]
+--------------------------------------
+#include <stdio.h>
+
+int main() {
+   printf("Hello World!\n");
+   exit(0);
+}
+--------------------------------------
+
+...................................
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+...................................
+
+.An Example Sidebar
+************************************************
+Any AsciiDoc SectionBody element (apart from
+SidebarBlocks) can be placed inside a sidebar.
+
+[float]
+The second day
+~~~~~~~~~~~~~~
+
+************************************************
+
+
+[subs="quotes"]
+++++++++++++++++++++++++++++++++++++++
+<table border="1"><tr>
+  <td>*Cell 1*</td>
+  <td>*Cell 2*</td>
+</tr></table>
+++++++++++++++++++++++++++++++++++++++
+
+[latexmath]
+++++++++++++++++++++++++++++++++++++++
+a^2 + b^2 = c^2;
+\\
+a^2 + b^2 = c^2;
+++++++++++++++++++++++++++++++++++++++
+
+latexmath:[\sum_{n=1}^\infty \frac{1}{2^n}]
+
+asciimath:[x/x={(1,if x!=0),(text{undefined},if x=0):}]
+
+
+
+
+
+.Решение чего-то там чем-то там
+=====================================================================
+Qui in magna commodo, est labitur dolorum an. Est ne magna primis
+adolescens.
+=====================================================================
+
+[caption="Example 1: "]
+.An example with a custom caption
+======================================================
+Qui in magna commodo, est labitur dolorum an. Est ne magna primis
+adolescens.
+======================================================
+
+
+
+[abstract]
+--
+In this paper we will ...
+--
+
+[start=7]
+. List item 7.
+. List item 8.
+
+In::
+Lorem::
+  Fusce euismod commodo velit.
+
+  Fusce euismod commodo velit.
+
+Ipsum:: Vivamus fringilla mi eu lacus.
+  * Vivamus fringilla mi eu lacus.
+  * Donec eget arcu bibendum nunc consequat lobortis.
+Dolor::
+  Donec eget arcu bibendum nunc consequat lobortis.
+  Suspendisse;;
+    A massa id sem aliquam auctor.
+  Morbi;;
+    Pretium nulla vel lorem.
+  In;;
+    Dictum mauris in urna.
+    Vivamus::: Fringilla mi eu lacus.
+    Donec:::   Eget arcu bibendum nunc consequat lobortis.
+
+[horizontal]
+*Lorem*:: Fusce euismod commodo velit.  Qui in magna commodo, est
+labitur dolorum an. Est ne magna primis adolescens.
+
+  Fusce euismod commodo velit.
+
+*Ipsum*:: Vivamus fringilla mi eu lacus.
+- Vivamus fringilla mi eu lacus.
+- Donec eget arcu bibendum nunc consequat lobortis.
+
+*Dolor*::
+  - Vivamus fringilla mi eu lacus.
+  - Donec eget arcu bibendum nunc consequat lobortis.
+
+[click.comment]
+--
+It is sometimes useful to "hide" a comment
+in a click block so as not to unduly
+disturb the flow of the prose. Click
+blocks are also useful for problem sets,
+since one can make hints, solutions, etc.
+clickable.
+
+[env.equationalign]
+--
+A & = 4\pi r^2 \\
+V & = \frac{4}{3} \pi r^3
+--
+
+
+^asdfghj^
+.Theorem {counter:theorem}
+--
+For all $a$, $b$, $c$, the relation $a(b+c) = ab + ac$ holds.
+--
+
+:imagesdir-old: {imagesdir}
+
+image::xxxx1.jpg["Tiger image",564,425, title="Company Logo"]
+
+:imagesdir: {imagesdir-old}
+
+.Main circuit board
+[caption="Рисунок : "]
+image::xxxx1.jpg["Tiger image",564,425]

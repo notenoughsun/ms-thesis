@@ -1,0 +1,56 @@
+// ====
+// A statement of potential impacts on innovation, 
+// research, and education and their relationship 
+// to the problem being proposed.
+// ====
+The roadmap on the scope of indoor positioning systems is almost finished. With this results, we have a landscape of existing technologies and products and we may desing a specific product.
+
+For now we have a first draft of a business model. 
+
+Innovation reseacrh:: a solution that provides a service to guide users inside of the building. This solution is primarily aimed at social events and commercials, such as exhibitions and expo centers. Also, some of the possible applications are stationary public indoor places, such as museums and Skoltech new campus.
+
+Product and technology development is a key part to complete this project in any variation.
+
+// Project goals and your personal goals in the projects. Describe your // role in the project
+// Roles: 
+// Technological research, Customer discovery. Financial valuation. // Team Lead.
+
+//Goals:
+//    publish open parts of a technological research
+//    update the project and apply to grant program or other R&D/startup support program
+//    identify strategy and complete the project
+
+
+// file:///tmp/mozilla_tim0/Demo%20day.svg
+
+// file:///home/tim/Downloads/index.png
+
+// image::1-10-2020-19-58-41-PM.png[] 
+
+// image::1-10-2020-22-07-57-PM.png[] 
+
+// image::1-10-2020-19-58-58-PM.png[] 
+
+
+// To develop this business model, we had a customer discovery process.
+
+//Describe any significant problems you faced and solutions found. If a project took a different course and your tasks/goals changed (from initially planned), describe why
+
+//The project aim was to develop a product. 
+//Because of lack of resources and uncertainty, 
+//the project was fully checked on the earlier stage 
+//of market and technology research. 
+//The most significant problem for now is the lack of experience in publications and public information procession (participating in competitions)
+//Summarize the outcomes of the project for you(skills/competences developed, describe what you learned about working in a team)
+// Experience of leading a team is a positive experience and studying of personal responsibility, time management and action planning.
+// Doing one-person research, provides a complementary experience of strategy development.
+// Identify the format of the report to the project supervisor(presentation, detailed report, etc.)
+// presentation, report, technology research
+
+
+//Early research report form https://docs.google.com/document/d/1axVeolVCA1oTayIuVnztVHoUydlZufuVvpwdZoGaI7k/edit
+
+- Roadmap presentation https://docs.google.com/presentation/d/17Y4y7kEfnQPwoDM8SHt8FAUGgpr_LoDErFYHAzCHLqE/edit#slide=id.g8801f1f3c0_0_43
+- Roadmap paper https://www.overleaf.com/read/fdjmmbbtwnkn
+- Service for indoor navigation on forums and exhibitions​, customer discovery:
+https://docs.google.com/presentation/d/1OGzwogQPFiY9SddoreiYfuIoOX-pSv75EbnpgBfXfGk/edit?usp=sharing

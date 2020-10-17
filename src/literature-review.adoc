@@ -1,0 +1,54 @@
+// ====
+// A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+// ====
+
+Indoor navigation solutions is a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services which support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics and many others.
+
+Why do we need indoor navigation and positioning? This is because of convenience of global Geo-services, and because of GPS reception problems inside buildings.
+
+One of understandable example of such kind of products is a Google Maps, which are scaled to work inside the buildings.
+
+The situation is much more complicated, the market of indoor positioning is resegmented - different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail - from fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics. Indoor positioning systems is a growing industry with hundreds applications.
+
+Different applications have different technologies behind it. Over 15-20 different working technologies is known, about 3-5 of them are widely used now (WiFi, Bluetooth Low Energy, Image Based).
+
+// \cite{Infsoft_wp}
+
+.technology comparison
+[options="header", .width="100%", .cols="2, 1,1,1,1,1"]
+|====
+| IPS Technology                | Type           | Accuracy, m | Scalability | Complexity | Cost          
+| Geomagnetic                   | fingerprinting | 2           | Low         | Low        | Very Low      
+| Photo                         | camera         | 1-10        | Low         | High       | High          
+| Barcodes                      | camera         | 1-10        | Medium      | Low        | Low           
+| Video, AR                     | camera         | 1-10        | Low         | High       | High          
+| Bluetooth Low Energy (BLE)    | Radio          | 1-3         | High        | Medium     | Medium        
+| RFID, Active                  | Radio          | 1-10        | Medium      | Medium     | Medium        
+| RFID, Passive                 | Radio          | 1-10        | Medium      | Medium     | Medium        
+| Wi-Fi                         | Radio          | 5-10        | High        | Medium     | Low           
+| Ultra Wide Band (UWB)         | Radio          | 0.15-0.5    | Low         | Medium     | Medium to Low 
+| Zigbee                        | Radio          | 3-5         | Low         | Low        | Low           
+| FM                            |                | 2-4         | Low         | Low        | Low           
+| Lighting-Based – Infrared LED | Lighting       | 0.15-3      | Low         | Low        | Low           
+| Lighting-Based – Visible LED  | Lighting       | 0.3-3       | Low         | Low        | Low           
+| Audible                       | sonic          | 0.5         | Low         | Low        | Low           
+| Ultrasound                    | sonic          | 0.05-0.25   | Low         | Medium     | Low to Medium 
+| Inertial                      | supplementary  |             | Low         | Low        |               
+| Pressure                      | supplementary  |             |             |            |               
+| GPS                           | supplementary  | 6-10        | Low         | High       |               
+|====
+
+We will provide explicit review of all papers.
+
+As for now, we want to repeate any reasonable fingerprinting technique.
+
+* RinQ Fingerprinting: Recurrence-Informed Quantile Networks for Magnetic Resonance Fingerprinting
+https://link.springer.com/chapter/10.1007/978-3-030-32248-9_11
+* Scene-LSTM: A Model for Human Trajectory Prediction
+https://arxiv.org/pdf/1808.04018.pdf
+* Magnetic Resonance Fingerprinting using Recurrent Neural Networks
+https://paperswithcode.com/paper/magnetic-resonance-fingerprinting-using
+* Multicompartment Magnetic Resonance Fingerprinting
+https://arxiv.org/pdf/1802.10492.pdf
+* Magnetic resonance fingerprinting
+https://mriquestions.com/uploads/3/4/5/7/34572113/mr_fingerprinting_nature11971.pdf

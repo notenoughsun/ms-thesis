@@ -1,0 +1,67 @@
+@inproceedings{Mautz2012IndoorPT,
+  title={Indoor Positioning Technologies},
+  author={Rainer Mautz},
+  year={2012}
+}
+@article{Sakpere2017ASS,
+  title={A State-of-the-Art Survey of Indoor Positioning and Navigation Systems and Technologies},
+  author={Wilson Sakpere and Michael Adeyeye Oshin and N. Mlitwa},
+  journal={South African Computer Journal},
+  year={2017},
+  volume={29},
+  pages={145-197}
+}
+
+
+@article{article,
+author = {Li, Binghao and Gallagher, Thomas and Rizos, Chris and Dempster, Andrew},
+year = {2013},
+month = {11},
+pages = {},
+title = {Using Geomagnetic Field for Indoor Positioning},
+volume = {7},
+journal = {Journal of Applied Geodesy},
+doi = {10.1515/jag-2013-0016}
+}
+
+@article{article,
+author = {Ashraf, Imran and Hur, Soojung and Park, Sangjoon and Park, Yongwan},
+year = {2019},
+month = {12},
+pages = {133},
+title = {DeepLocate: Smartphone Based Indoor Localization with a Deep Neural Network Ensemble Classifier},
+volume = {20},
+journal = {Sensors},
+doi = {10.3390/s20010133}
+}
+
+@article{article,
+author = {Kjærgaard, Mikkel},
+year = {2010},
+month = {04},
+pages = {},
+title = {Indoor Positioning with Radio Location Fingerprinting}
+}
+
+
+
+“Gartner Identifies the Top 10 Strategic Technology Trends for 2017”, “Gartner Identifies Top 10 Mobile Technologies and Capabilities.”
+
+“The top 8 mobile technology trends for 2017”, smartinsights.com.
+
+“The Rise of Indoor Positioning”, IndoorAtlas/VansonBourne, 21 Sep. 2016, p. 6
+
+The term RTLS was created (circa 1998) at the ID EXPO trade show by Tim Harrington (WhereNet), Jay Werb, (PinPoint), and Bert Moore (Automatic Identification Manufacturers, Inc.), Source: Wikipedia “Real-time locating system”, retrieved 12 Jul 2017.
+
+
+
+
+https://www.securityindustry.org/wp-content/uploads/2017/11/Indoor-Positioning-Systems.pdf It provides information about relative accuracy, mobile device battery usage and other system performance factors to help support early IPS planning and preliminary product evaluation.
+
+https://www.semanticscholar.org/paper/Indoor-Positioning-Technologies-Mautz/209067635fbc36fef18c8cd65607b6ac5ba815ff
+
+“Gartner Identifies the Top 10 Strategic Technology Trends for 2017”, “Gartner Identifies Top 10 Mobile Technologies and Capabilities.”
+
+“The top 8 mobile technology trends for 2017”, smartinsights.com.
+
+“The Rise of Indoor Positioning”, IndoorAtlas/VansonBourne, 21 Sep. 2016, p. 6

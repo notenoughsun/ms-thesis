@@ -1,0 +1,53 @@
+Scope
+	
+show the evolution of IPS technology, visualize IPS usage and work principles (different technologies, connections, FOMs, applications)
+	
+
+Tech strategy vision
+
+create strategy for an optimal* technology choice decision, repeat existing roadmaps progress, use gathered data for technology choice. Most products are services, the vision should be service focused (e.g. connection of existing technologies)
+	
+
+Timeline
+	
+analyze existing roadmaps and publications for data.
+Future prediction on the technological side can’t be done precisely, working on this.
+
+	
+
+Roadmap model in OPM
+	
+current researches doesn’t provide models for product-technology choice, possible to cover this point This part connected with positioning are most important for the IPS roadmap
+	
+
+Figures of Merit
+	
+current figures of merit used in different publications may not be used for financial valuation
+	
+understand simple & proven FOMs with open data, build an OPM above them
+	
+
+Positioning
+
+positioning can be developed either for the specific technology or for the whole IPS. the focus will depend on the available data. The positioning is supposed to be used as a proof for the roadmap strategy choice and for visualization of technology landscape. The least feasible landscape is needed.
+	
+
+Intellectual Property, Publications
+	
+Citation policy, Plagiarism policy
+Use most available data from existing researches, not from Google
+Cipher.ai
+
+Technical Feasibility using System Model
+
+Possible application is to use in Financial Valuation models.
+	
+
+Financial Valuation
+	
+The idea is to use this roadmap to build a tool for Financial valuation of usage different technologies in IPS.
+
+Important part. Future goal is what has been shown on
+	
+Risks and Opportunities	
+	this part is a part of a project of indoor navigation, customer's survey are done to understand the market needs and drivers. Mb it can't be applied for the roadmap. Usual verification of roadmap has to be done during the work. Instead of Delphi, better compare to other publications if possible.
