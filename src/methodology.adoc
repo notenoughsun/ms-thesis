@@ -2,7 +2,7 @@
 // A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
 // ====
 
-// First we define current state of the art, we build the modelfor existing technologies, analyze products on the market, listkey players and IP owners, create Pareto frontier. This part isintended  to  make  a  visible  and  understandable  landscape  ofthis technology segment.
+// First we define the current state of the art, we build the modelfor existing technologies, analyze products on the market, listkey players and IP owners, create Pareto frontier. This part isintended  to  make  a  visible  and  understandable  landscape  ofthis technology segment.
 // // To develop the right product, we first have to identify its figures of merit. 
 // // When the figures of merits stated, we have to choose the right technology. First we develop the framework for technology choise. 
 
@@ -24,18 +24,18 @@
 // image:/home/tim/Downloads/inndoor%20navigation/img/image2020-5-29_23-2-21.png[] 
 
 .Preparation landscape research
-First we define current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.
+First, we define the current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.
 
-// A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+// A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
 
 .Procedures list
-* collection of magnetic fingerprints dataset with smartphone sensors: Gyroscope, compass, IMU.
-* development of a model for localization using this dataset
-* experiments using model, estimation of accuracy
-* implementation of possible techniques, benchmarking
-* fine-tuning of perspective technique
-* comparison to other products on the market, interpretation of results
+* Collection of magnetic fingerprints dataset with smartphone sensors: Gyroscope, compass, IMU.
+* Development of a model for localization using this dataset
+* Experiments using model, estimation of accuracy
+* Implementation of possible techniques, benchmarking
+* Fine-tuning of perspective technique
+* Comparison to other products on the market, interpretation of results
 
 // Illustrate how the method you have chosen best allows you to fulfill the purpose
 
-// The method we have chosen is reasonable, because we bound 
+// The method we have chosen is reasonable 

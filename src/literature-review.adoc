@@ -2,15 +2,15 @@
 // A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
 // ====
 
-Indoor navigation solutions is a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services which support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics and many others.
+Indoor navigation solutions are a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services that support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics, and many others.
 
-Why do we need indoor navigation and positioning? This is because of convenience of global Geo-services, and because of GPS reception problems inside buildings.
+Why do we need indoor navigation and positioning? This is because of the convenience of global Geo-services, and because of GPS reception problems inside buildings.
 
-One of understandable example of such kind of products is a Google Maps, which are scaled to work inside the buildings.
+An understandable example of such kind of products is Google Maps, which are scaled to work inside the buildings.
 
-The situation is much more complicated, the market of indoor positioning is resegmented - different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail - from fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics. Indoor positioning systems is a growing industry with hundreds applications.
+The situation is much more complicated. The market for indoor positioning applications is multisegmented. Different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail. From fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics. Indoor positioning systems is a growing industry with hundreds of applications.
 
-Different applications have different technologies behind it. Over 15-20 different working technologies is known, about 3-5 of them are widely used now (WiFi, Bluetooth Low Energy, Image Based).
+Different applications have different technologies behind it. Over 15-20 different working technologies are known. Only 3 of them are widely used now (WiFi, Bluetooth Low Energy, Image-Based).
 
 // \cite{Infsoft_wp}
 
@@ -38,9 +38,9 @@ Different applications have different technologies behind it. Over 15-20 differe
 | GPS                           | supplementary  | 6-10        | Low         | High       |               
 |====
 
-We will provide explicit review of all papers.
+We will provide an explicit review of all papers.
 
-As for now, we want to repeate any reasonable fingerprinting technique.
+As for now, we want to repeat any reasonable fingerprinting technique.
 
 * RinQ Fingerprinting: Recurrence-Informed Quantile Networks for Magnetic Resonance Fingerprinting
 https://link.springer.com/chapter/10.1007/978-3-030-32248-9_11

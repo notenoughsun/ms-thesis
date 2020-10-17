@@ -2,34 +2,34 @@
 // A description of the purpose and definitions of the thesis project and outlines of a set of specific aims by which your work is intended to accomplish the objectives. State the hypotheses to be tested or technology to be developed.
 // ====
 
-// description of the purpose
+// Description of the purpose
 
 // definitions of the thesis project
 
 // outlines of a set of specific aims by which your work is intended to accomplish the objectives
 
 The project statement is:: "Development of software system for specific chosen user case."
-We aim to develop system that is not just any, but a system with specific properties.
+We aim to develop a system that is not just any, but a system with specific properties.
 
 We aim to create an indoor navigation system.
-For that we need to have a set of algorithms for localization, mapping and other practical tasks.
+For that, we need to have a set of algorithms for localization, mapping, and other practical tasks.
 
-Before we write the code of a project, we do research of what technology we have to develop.
+Before we write the code of a project, we do research on what technology we have to develop.
 
-We valuate technologies on several important criterias: cost, complexity, accuracy, time of development.
-With this, we test hypoteses of what technology is more suitable to build the navigation system.
+We evaluate technologies on several important criteria: cost, complexity, accuracy, time of development.
+With this, we test hypotheses of what technology is more suitable to build the navigation system.
 
 Based on previous research, we have chosen magnetic field technology for this project.
 
-The main hypotese is:: Current systems on the market (WiFi, BLE) are not suitable for standalone application in common usecase.
+The main hypothesis is:: Current systems on the market (WiFi, BLE) are not suitable for standalone applications in common use-case.
 
-The second hypotese:: Competitive technology of magnetic field navigation is perspective. This technology may be implemented and fine-tuned for several common usecases.
+The second hypothesis:: Competitive technology of magnetic field navigation is perspective. This technology may be implemented and fine-tuned for several common use-cases.
 
 We define the scope of a project::
-Specific focus on technology and common applications. Fine tuning of magnetic technology according to hypoteses 1 and 2.
+Specific focus on technology and common applications. Fine-tuning of magnetic technology according to hypotheses 1 and 2.
 
 
-// Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
+// Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for a specific user-case.
 
 // .Specific objectives:
 

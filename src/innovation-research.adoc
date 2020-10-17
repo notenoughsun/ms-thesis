@@ -3,11 +3,11 @@
 // research, and education and their relationship 
 // to the problem being proposed.
 // ====
-The roadmap on the scope of indoor positioning systems is almost finished. With this results, we have a landscape of existing technologies and products and we may desing a specific product.
+The roadmap on the scope of indoor positioning systems is almost finished. With these results, we have a landscape of existing technologies and products and we may design a specific product.
 
-For now we have a first draft of a business model. 
+For now, we have the first draft of a business model. 
 
-Innovation reseacrh:: a solution that provides a service to guide users inside of the building. This solution is primarily aimed at social events and commercials, such as exhibitions and expo centers. Also, some of the possible applications are stationary public indoor places, such as museums and Skoltech new campus.
+Innovation research:: a solution that provides a service to guide users inside of the building. This solution is primarily aimed at social events and commercials, such as exhibitions and expo centers. Also, some of the possible applications are stationary public indoor places, such as museums and Skoltech new campus.
 
 Product and technology development is a key part to complete this project in any variation.
 
@@ -16,9 +16,9 @@ Product and technology development is a key part to complete this project in any
 // Technological research, Customer discovery. Financial valuation. // Team Lead.
 
 //Goals:
-//    publish open parts of a technological research
+//    publish open parts of technological research
 //    update the project and apply to grant program or other R&D/startup support program
-//    identify strategy and complete the project
+//    identify a strategy and complete the project
 
 
 // file:///tmp/mozilla_tim0/Demo%20day.svg
@@ -41,9 +41,9 @@ Product and technology development is a key part to complete this project in any
 //the project was fully checked on the earlier stage 
 //of market and technology research. 
 //The most significant problem for now is the lack of experience in publications and public information procession (participating in competitions)
-//Summarize the outcomes of the project for you(skills/competences developed, describe what you learned about working in a team)
-// Experience of leading a team is a positive experience and studying of personal responsibility, time management and action planning.
-// Doing one-person research, provides a complementary experience of strategy development.
+//Summarize the outcomes of the project for you(skills/competencies developed, describe what you learned about working in a team)
+// Experience of leading a team is a positive experience and studying of personal responsibility, time management, and action planning.
+// Doing one-person research provides a complementary experience of strategy development.
 // Identify the format of the report to the project supervisor(presentation, detailed report, etc.)
 // presentation, report, technology research
 

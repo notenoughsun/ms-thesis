@@ -2,15 +2,15 @@
 // A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
 // ====
 
-.There are several ecnhancements of techonogy we want to test:
+.There are several enhancements of technology we want to test:
 * Relocalization technique (air imaging approach) >> improve mapping
-* Kalman filters for dead reckoning (extended Kalman filter) >> improve stability
+* Kalman filters for the dead reckoning (extended Kalman filter) >> improve stability
 * Bayesian methods of user coordinate prediction >> improve localization
 * Smartphone-based magnetic fingerprinting (usual approach) >> infrastructure-free navigation system
 
-We use data of Microsoft competition as a starting reference (D.  Lymberopoulos,  J.  Liu,  X.  Yang,  R.  Choudhury,V.  Handziski,  S.  Sen,  F.  Lemic,  J.  Buesch,  Z.  Jiang,H. Zou, H. Jiang, C. Zhang, A. Ashok, C. Xu, P. Lazik,N.  Rajagopal,  A.  Rowe,  A.  Ghose,  N.  Ahmed,  andP.  Hevesi,  “A  realistic  evaluation  and  comparison  ofindoor  location  technologies:  Experiences  and  lessonslearned,” 04 2015.). 
+We use data of Microsoft competition as a starting reference (D.  Lymberopoulos,  J.  Liu,  X.  Yang,  R.  Choudhury, V.  Handziski,  S.  Sen,  F.  Lemic,  J. Buesch,  Z. Jiang, H. Zou, H. Jiang, C. Zhang, A. Ashok, C. Xu, P. Lazik, N.  Rajagopal,  A.  Rowe,  A.  Ghose,  N.  Ahmed,  and P.  Hevesi,  “A realistic evaluation and comparison of indoor location technologies: Experiences and lessons learned,” 04 2015.). 
 
-In table(not presented), we have time of development and resulting accuracy for the different technology choice of different teams participated.
+In the table (not presented), we have a time of development and resulting accuracy for the different technology choices of different teams participated.
 // \ref{tab:my-competition}
 We may use these dependencies to understand, what time is needed to achieve each level of accuracy for different combinations of technologies.
 
@@ -18,7 +18,7 @@ We may use these dependencies to understand, what time is needed to achieve each
 We choose the best performance in technologies 
 // \ref{tab:best-tech} 
 by multiplication of all of parameters.
-Performance = 1 / (development time * accuracy). The selected technologies are presented in table below.
+Performance = 1 / (development time * accuracy). The selected technologies are presented in the table below.
 
 
 .Preferable technology choice

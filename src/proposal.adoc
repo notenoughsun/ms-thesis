@@ -3,10 +3,10 @@
 
 // ====
 // * A working topic that is succinct but indicative of the nature of the thesis project.
-// * A background and problem statement that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic. 
+// * A background and problem statement that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
 // * A description of the purpose and definitions of the thesis project and outlines of a set of specific aims by which your work is intended to accomplish the objectives. State the hypotheses to be tested or technology to be developed.
 // * A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
-// * A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+// * A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
 // * A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
 // * A work plan that outlines the sequencing, flow, and timeline of the thesis project.
 // * A statement of potential impacts on innovation, research, and education and their relationship to the problem being proposed.
@@ -14,31 +14,31 @@
 // ====
 
 
-== Working topic 
-Enchancements of smartphone-based magnetic fingerprinting and dead reckoning localization technique for infrustructure free localization indoors.
+== Working topic
+Indoor local positioning system for smartphones with infrastructure-free integration.
 
 === Background and problem statement
-// that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic. 
+// that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
 
 The problem:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
 
-// indoor localization system with no additional hardware - infrustructure free 
+// indoor localization system with no additional hardware - infrastructure-free
 
 Indoor navigation is a market with no real working solution. Various companies are trying to provide localization services indoors, but they can't reach GPS level properties. The main problems in this area are the price and scalability of the whole system.
-For example, in several locations this system are working and installed - airports, railway stations, hospitals. However for smaller applications there is also a need of this technologies, but the price and the complexity of the whole system is too high for worldwide implementation.
+For example, these systems working and installed in several locations - airports, railway stations, hospitals. However for smaller applications, there is also a need for these technologies, but the price of the whole system and the complexity is too high for worldwide implementation.
 
-Several companies and researches are now developing the infrastructure free approaches. This means that the system works without any additional hardware installed "on-stage". 
-Usually, there is a transmitter and receiver needed for communication and localization of people. On human side there is always a smartphone or any tracking device, sometimes only a passive mark such as RFID or NFC. On the facility side there may be different complex architectures of equipment. Usually WiFi transmitters (office facilities), RFID antennas (in marketplaces) and other special devices. The alternative of having no additional equipment on facilities side is the topic of this research.
+Several companies and researchers are now developing the infrastructure free approaches. This means that the system works without any additional hardware installed "on-stage".
+Usually, there is a transmitter and receiver needed for communication and localization of people. On the human side, there is always a smartphone or any tracking device, sometimes only a passive mark such as RFID or NFC. On the facility side, there may be different complex architectures of equipment. Usually WiFi transmitters (office facilities), RFID antennas (in marketplaces), and other special devices. The alternative of having no additional equipment on the facilities side is the topic of this research.
 
-The infrastructure-free approach however is not stable, the final accuracy changes from many factors. 
+The infrastructure-free approach however is not stable, the final accuracy changes from many factors.
 //The so-called level of readiness of technology is lower than competing technologies.
 
-//Enchancements of smartphone-based magnetic fingerprinting and  localization technique for infrustructure free localization indoors.
+//Enhancements of smartphone-based magnetic fingerprinting and localization technique for infrastructure-free localization indoors.
 
 .The reasons for the choice of the thesis project topic:
-* it is possible to create and deliver working system in less than one year
-* all technologies on the market have similar level of accuracy >> we focus on improving system to be universal and stable
-* we have researched the market for this technology and product, we see the oppurtunity to create startup and deliver services based on this technology after this product is done
+* it is possible to create and deliver a working system in less than one year
+* all technologies on the market have a similar level of accuracy >> we focus on improving a system to be universal and stable
+* we have researched the market for this technology and product, we see the opportunity to create a startup and deliver services based on this technology after this product is done
 
 === Objectives
 include::objectives.adoc[]
@@ -49,9 +49,9 @@ include::objectives.adoc[]
 include::literature-review.adoc[]
 
 
-=== Metodology /  theoretical framework
-//* A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
-include::metodology.adoc[]
+=== Methodology /  theoretical framework
+//* A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+include::methodology.adoc[]
 
 === Techniques
 //* A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
@@ -62,7 +62,7 @@ include::tech.adoc[]
 include::project-plan.adoc[]
 
 === Innovation impact
-//* A statement of potential impacts on innovation, research, and education and their relationship to the problem being proposed.
+//* A statement of potential impacts on innovation, research, and education and their relationship to the problem is proposed.
 include::innovation-research.adoc[]
 
 === References
