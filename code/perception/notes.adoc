@@ -1,0 +1,10 @@
+= Perception in Robotics conspect
+
+correlated variables
+
+if x, y uncorrelated,
+
+E{x, y} = E{x} E{y}
+
+
+stem: E{x, y} = E{x} E{y}

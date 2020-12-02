@@ -1,0 +1,26 @@
+// . S. Walden, “The “indoor generation” and the health risks of spending more time inside,” 05 2018.
+// . R. Mautz, “Indoor positioning technologies,” 2012.
+// . W. Sakpere, M. A. Oshin, and N. Mlitwa, “A state-of-the-art survey of indoor positioning and navigation systems and technologies,”South African Computer Journal,vol. 29, pp. 145–197, 2017.
+. M. Kjærgaard, “Indoor positioning with radio location fingerprinting,” 04 2010.
+https://arxiv.org/pdf/1004.4759.pdf 
+. R. F. Brena, J. P. Garc ́ıa-V ́azquez, C. E. Galv ́an-Tejada,D. Mu ̃noz-Rodriguez, C. Vargas-Rosales, and J. Fang-meyer, “Evolution of indoor positioning technologies: A survey,”Journal of Sensors, Mar 2017.
+. Infsoft, “Indoor positioning and services white paper,”2019.
+. R. Bernard, “Indoor positioning systems,”Security Industry Association, 2017.
+. IndoorAtlas / Vanson Bourne, “A 2016 global research report on the indoor positioning market,” p. 6, 2016.
+. B. Li, T. Gallagher, C. Rizos, and A. Dempster, “Using geomagnetic field for indoor positioning,”Journal of Applied Geodesy, vol. 7, 11 2013.
+. L. Hou, Y. Li, Y. Zhuang, B. Zhou, G. Tsai, Y. Luo, and N. El-Sheimy, “Orientation-aided stochastic magnetic matching for indoor localization,”IEEE Sensors Journal,vol. 20, no. 2, pp. 1003–1010, 2020.
+https://www.semanticscholar.org/paper/WiFi-Aided-Magnetic-Matching-for-Indoor-Navigation-Li-Zhuang/ff8e0b25ac3246a2a4f9efaa330276e07779bbeb 
+// . I. Alliance, “ILA system architecture release 1.0,”openmobilealliance.
+// . Indoor navigation market review by iBecom, June 4 2015
+// . Geofencing market guide, Justin Croxton, Sept 26 2019 
+. Thaljaoui, A., Val, T., Nasri, N., & Brulin, D. (2015). BLE localization using RSSI measurements and iRingLA. 2015 IEEE International Conference on Industrial Technology (ICIT). doi:10.1109/icit.2015.7125418
+. Lymberopoulos, Dimitrios & Liu et Al (2015). A Realistic Evaluation and Comparison of Indoor Location Technologies: Experiences and Lessons Learned. 10.1145/2737095.2737726.
+
+. Müller, P., Raitoharju, M., Ali-Löytty, S. et al. A survey of parametric fingerprint-positioning methods. Gyroscopy Navig. 7, 107–127 (2016). https://doi.org.proxylib.skoltech.ru:2050/10.1134/S2075108716020061
+// https://www.scribbr.com/category/dissertation/ 
+. Bayesian Indoor Location Algorithm Based on RSSI
+PENG Yu-xu,YANG Yan-hong(School of Computer & Communication Engineering,Changsha University of Science & Technology,Changsha 410114,China)  
+http://en.cnki.com.cn/Article_en/CJFDTotal-JSJC201210075.htm
+
+
+Grand, E. and S. Thrun. “3-Axis magnetic field mapping and fusion for indoor localization.” 2012 IEEE International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI) (2012): 358-364. https://www.semanticscholar.org/paper/3-Axis-magnetic-field-mapping-and-fusion-for-indoor-Grand-Thrun/da91e43d72afe677718f769ddd2b3ae86d7bc3fb

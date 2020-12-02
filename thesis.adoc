@@ -1,0 +1,56 @@
+= Thesis proposal
+
+:toc:
+
+// == Working topic
+Indoor local positioning system for smartphones with infrastructure-free integration.
+
+{toc}
+
+
+== Notes
+include::draft.adoc[tag='chapter-working-notes']
+
+== Background and problem statement
+// that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
+//
+// The scope:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
+
+
+
+
+=== Objectives
+
+include::draft.adoc[tag='objectives']
+
+
+=== Literature review
+//* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+
+// include::draft.adoc[tag='objectives']
+
+
+// include::literature/literature-review.adoc[]
+
+
+=== Methodology /  theoretical framework
+// //* A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+// // include::src/methodology.adoc[]
+
+// === Techniques
+// //* A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
+// // include::src/tech.adoc[]
+
+// === Timeline
+// //* A work plan that outlines the sequencing, flow, and timeline of the thesis project.
+// // include::src/project-plan.adoc[]
+
+// === Innovation impact
+// //* A statement of potential impacts on innovation, research, and education and their relationship to the problem is proposed.
+// include::src/innovation-research.adoc[]
+
+=== References
+//* A list of references.
+
+include::draft.adoc[tag='references']
+

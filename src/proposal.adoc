@@ -1,4 +1,36 @@
 = Thesis proposal
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size:
+:thumbnail: width='60'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:40size: pdfwidth='40%'
+:thumbnail: pdfwidth='20mm'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+endif::[]
+
+
+:toc:
+
+== Working topic
+Indoor local positioning system for smartphones with infrastructure-free integration.
+
+{toc}
+
 //Please upload your thesis proposal here covering the following points:
 
 // ====
@@ -13,32 +45,44 @@
 // * A list of references.
 // ====
 
-
-== Working topic
-Indoor local positioning system for smartphones with infrastructure-free integration.
-
 === Background and problem statement
 // that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
+//
+// The scope:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
 
-The problem:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
+.Keywords used in patent search
+image::images/proposal-227f5.png[Keywords, 480,320, {40size}]
 
 // indoor localization system with no additional hardware - infrastructure-free
 
-Indoor navigation is a market with no real working solution. Various companies are trying to provide localization services indoors, but they can't reach GPS level properties. The main problems in this area are the price and scalability of the whole system.
-For example, these systems working and installed in several locations - airports, railway stations, hospitals. However for smaller applications, there is also a need for these technologies, but the price of the whole system and the complexity is too high for worldwide implementation.
+We all use positioning services: maps, navigation apps for cars. Positioning services require positioning technology to work with. The most well-known is a GPS, which can't work inside buildings. For indoor positioning services there exist some products, but there are huge drawbacks. The main problems are the price and complexity of the whole system.
+
+* Two most popular technologies - WiFi and BLE - requires an additional hardware and cost too much for usual application.
+* Other technologies (WiFI and magnetic field fingerprinting, image reconstruction and visible light) seems perspective, but complex in development, integration or / and usage.
 
 Several companies and researchers are now developing the infrastructure free approaches. This means that the system works without any additional hardware installed "on-stage".
-Usually, there is a transmitter and receiver needed for communication and localization of people. On the human side, there is always a smartphone or any tracking device, sometimes only a passive mark such as RFID or NFC. On the facility side, there may be different complex architectures of equipment. Usually WiFi transmitters (office facilities), RFID antennas (in marketplaces), and other special devices. The alternative of having no additional equipment on the facilities side is the topic of this research.
+We define our system as infrastructure free, we use fingerprint database.
 
-The infrastructure-free approach however is not stable, the final accuracy changes from many factors.
+The problem:: There is no classical SLAM algorithm for fingerprints database collection.
+Our proposal:: Framework for collecting database of fingerprints
+
+State of the art approaches for fingerprints collection use neural networks, Bayesian and Kalman filtering, human step prediction and other complex techniques.
+
+// Usually, there is a transmitter and receiver needed for communication and localization of people. On the human side, there is always a smartphone or any tracking device, sometimes only a passive mark such as RFID or NFC. On the facility side, there may be different complex architectures of equipment. Usually WiFi transmitters (office facilities), RFID antennas (in marketplaces), and other special devices. The alternative of having no additional equipment on the facilities side is the topic of this research.
+
+// The infrastructure-free approach however is not stable, the final accuracy changes from many factors.
 //The so-called level of readiness of technology is lower than competing technologies.
 
 //Enhancements of smartphone-based magnetic fingerprinting and localization technique for infrastructure-free localization indoors.
 
+
+
 .The reasons for the choice of the thesis project topic:
 * it is possible to create and deliver a working system in less than one year
-* all technologies on the market have a similar level of accuracy >> we focus on improving a system to be universal and stable
-* we have researched the market for this technology and product, we see the opportunity to create a startup and deliver services based on this technology after this product is done
+* all technologies on the market have a similar level of accuracy >> we focus on improving a system to be more universal and stable
+// * we have researched the market for this technology and product
+* we see the opportunity to create a startup and deliver services based on this technology
+// after this product is done
 
 === Objectives
 include::objectives.adoc[]
@@ -68,3 +112,12 @@ include::innovation-research.adoc[]
 === References
 //* A list of references.
 include::references.adoc[]
+
+
+
+
+factor graphs lecture 12
+
+noisy information wifi __>>> most accurate
+
+define sensors, inout output

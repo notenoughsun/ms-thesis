@@ -13,17 +13,24 @@
 // . final mobile application
 // . marketing strategy development
 
-[options="header", .width="100%", .cols="4,2,2"]
-|====
-|stage       |time estimation| timeline
-|customer interviews       |completed|--------
-|market research       |completed|--------
-|product design    |completed|--------
-|business model formulation    |completed|--------
-|market and competitior analysis    |completed|--------   
-|product prototyping       |2 months| 20.11.2020
-|technology enchancements      |2 months|20.12.2020
-|experiments on product performance |1 months|20.01.2021   
-|marketing strategy development     |to be defined|20.04.2021
-|final mobile application      |3 months|20.05.2021
-|====
+// [options="header", .width="100%", .cols="4,2,2"]
+// |====
+// |stage       |time estimation| timeline
+// |customer interviews       |completed|--------
+// |market research       |completed|--------
+// |product design    |completed|--------
+// |business model formulation    |completed|--------
+// |market and competitior analysis    |completed|--------
+// |product prototyping       |2 months| 20.11.2020
+// |technology enchancements      |2 months|20.12.2020
+// |experiments on product performance |1 months|20.01.2021
+// |marketing strategy development     |to be defined|20.04.2021
+// |final mobile application      |3 months|20.05.2021
+// |====
+
+// image::images/project-plan-9af87.png[]
+
+.Timeline
+image::images/project-plan-54e60.png[pdfwidth='60%']
+
+https://drive.google.com/file/d/1L3_5NVN5ZbLkKXeJPNRlqRSwNVnguhnO/view?usp=sharing

@@ -441,108 +441,120 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Thesis proposal</h1>
 </div>
 <div id="content">
-<div class="sect1 data-line-17">
+<div class="sect1 data-line-29">
 <h2 id="_working_topic">Working topic</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-18">
-<p>Enchancements of smartphone-based magnetic fingerprinting and dead reckoning localization technique for infrustructure free localization indoors.</p>
+<div class="paragraph data-line-30">
+<p>Indoor local positioning system for smartphones with infrastructure-free integration.</p>
 </div>
-<div class="sect2 data-line-20">
+<div class="paragraph data-line-32">
+<p></p>
+</div>
+<div class="sect2 data-line-48">
 <h3 id="_background_and_problem_statement">Background and problem statement</h3>
-<div class="dlist data-line-23">
+<div class="imageblock data-line-54">
+<div class="content">
+<img src="images/proposal-227f5.png" alt="Keywords" width="480" height="320">
+</div>
+<div class="title">Figure 1. Keywords used in patent search</div>
+</div>
+<div class="paragraph data-line-58">
+<p>We all use positioning services: maps, navigation apps for cars. Positioning services require positioning technology to work with. The most well-known is a GPS, which can&#8217;t work inside buildings. For indoor positioning services there exist some products, but there are huge drawbacks. The main problems are the price and complexity of the whole system.</p>
+</div>
+<div class="ulist data-line-60">
+<ul>
+<li class="data-line-60">
+<p>Two most popular technologies - WiFi and BLE - requires an additional hardware and cost too much for usual application.</p>
+</li>
+<li class="data-line-61">
+<p>Other technologies (WiFI and magnetic field fingerprinting, image reconstruction and visible light) seems perspective, but complex in development, integration or / and usage.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-63">
+<p>Several companies and researchers are now developing the infrastructure free approaches. This means that the system works without any additional hardware installed "on-stage".
+We define our system as infrastructure free, we use fingerprint database.</p>
+</div>
+<div class="dlist data-line-66">
 <dl>
 <dt class="hdlist1">The problem</dt>
 <dd>
-<p>Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.</p>
+<p>There is no classical SLAM algorithm for fingerprints database collection.</p>
+</dd>
+<dt class="hdlist1">Our proposal</dt>
+<dd>
+<p>Framework for collecting database of fingerprints</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-27">
-<p>Indoor navigation is a market with no real working solution. Various companies are trying to provide localization services indoors, but they can&#8217;t reach GPS level properties. The main problems in this area are the price and scalability of the whole system.
-For example, in several locations this system are working and installed - airports, railway stations, hospitals. However for smaller applications there is also a need of this technologies, but the price and the complexity of the whole system is too high for worldwide implementation.</p>
+<div class="paragraph data-line-69">
+<p>State of the art approaches for fingerprints collection use neural networks, Bayesian and Kalman filtering, human step prediction and other complex techniques.</p>
 </div>
-<div class="paragraph data-line-30">
-<p>Several companies and researches are now developing the infrastructure free approaches. This means that the system works without any additional hardware installed "on-stage".
-Usually, there is a transmitter and receiver needed for communication and localization of people. On human side there is always a smartphone or any tracking device, sometimes only a passive mark such as RFID or NFC. On the facility side there may be different complex architectures of equipment. Usually WiFi transmitters (office facilities), RFID antennas (in marketplaces) and other special devices. The alternative of having no additional equipment on facilities side is the topic of this research.</p>
-</div>
-<div class="paragraph data-line-33">
-<p>The infrastructure-free approach however is not stable, the final accuracy changes from many factors.</p>
-</div>
-<div class="ulist data-line-39">
+<div class="ulist data-line-81">
 <div class="title">The reasons for the choice of the thesis project topic:</div>
 <ul>
-<li class="data-line-39">
-<p>it is possible to create and deliver working system in less than one year</p>
+<li class="data-line-81">
+<p>it is possible to create and deliver a working system in less than one year</p>
 </li>
-<li class="data-line-40">
-<p>all technologies on the market have similar level of accuracy &gt;&gt; we focus on improving system to be universal and stable</p>
+<li class="data-line-82">
+<p>all technologies on the market have a similar level of accuracy &gt;&gt; we focus on improving a system to be more universal and stable</p>
 </li>
-<li class="data-line-41">
-<p>we have researched the market for this technology and product, we see the oppurtunity to create startup and deliver services based on this technology after this product is done</p>
+<li class="data-line-84">
+<p>we see the opportunity to create a startup and deliver services based on this technology</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2 data-line-0">
 <h3 id="_objectives">Objectives</h3>
-<div class="dlist data-line-11">
-<dl>
-<dt class="hdlist1">The project statement is</dt>
-<dd>
-<p>"Development of software system for specific chosen user case."
-We aim to develop system that is not just any, but a system with specific properties.</p>
-</dd>
-</dl>
+<div class="paragraph data-line-25">
+<p>We want to create a framework for collecting database of fingerprints (magnetic, WiFi, BLE and others).</p>
 </div>
-<div class="paragraph data-line-14">
-<p>We aim to create an indoor navigation system.
-For that we need to have a set of algorithms for localization, mapping and other practical tasks.</p>
+<div class="paragraph data-line-27">
+<p>Because the approach is SLAM, it may be considered from both sides: as a mapping tool and as a localization product. We have to satisfy criteria for both of them.</p>
 </div>
-<div class="paragraph data-line-17">
-<p>Before we write the code of a project, we do research of what technology we have to develop.</p>
+<div class="ulist data-line-30">
+<div class="title">Criteria for the system proposed:</div>
+<ul>
+<li class="data-line-30">
+<p>can be implemented locally</p>
+</li>
+<li class="data-line-31">
+<p>no special hardware for operation</p>
+</li>
+<li class="data-line-32">
+<p>positioning accuracy enough for operation (1-2m depending on requirements)</p>
+</li>
+<li class="data-line-33">
+<p>cost, complexity, accuracy, time of development</p>
+</li>
+</ul>
 </div>
-<div class="paragraph data-line-19">
-<p>We valuate technologies on several important criterias: cost, complexity, accuracy, time of development.
-With this, we test hypoteses of what technology is more suitable to build the navigation system.</p>
-</div>
-<div class="paragraph data-line-22">
-<p>Based on previous research, we have chosen magnetic field technology for this project.</p>
-</div>
-<div class="dlist data-line-24">
-<dl>
-<dt class="hdlist1">The main hypotese is</dt>
-<dd>
-<p>Current systems on the market (WiFi, BLE) are not suitable for standalone application in common usecase.</p>
-</dd>
-<dt class="hdlist1">The second hypotese</dt>
-<dd>
-<p>Competitive technology of magnetic field navigation is perspective. This technology may be implemented and fine-tuned for several common usecases.</p>
-</dd>
-<dt class="hdlist1">We define the scope of a project</dt>
-<dd>
-<p>Specific focus on technology and common applications. Fine tuning of magnetic technology according to hypoteses 1 and 2.</p>
-</dd>
-</dl>
+<div class="olist arabic data-line-41">
+<div class="title">Hypotheses:</div>
+<ol class="arabic">
+<li class="data-line-41">
+<p>Current systems on the market (WiFi, BLE) are not suitable for standalone applications in common use-case.</p>
+</li>
+<li class="data-line-42">
+<p>Competitive technology of magnetic field navigation may be implemented and fine-tuned for several common use-cases.</p>
+</li>
+</ol>
 </div>
 </div>
-<div class="sect2 data-line-47">
+<div class="sect2 data-line-91">
 <h3 id="_literature_review">Literature review</h3>
 <div class="paragraph data-line-5">
-<p>Indoor navigation solutions is a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services which support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics and many others.</p>
+<p>Indoor navigation solutions are a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services that support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics, and many others.</p>
 </div>
-<div class="paragraph data-line-7">
-<p>Why do we need indoor navigation and positioning? This is because of convenience of global Geo-services, and because of GPS reception problems inside buildings.</p>
+<div class="paragraph data-line-12">
+<p>Indoor positioning systems is a growing industry with hundreds of applications.
+Different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail. From fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics.</p>
 </div>
-<div class="paragraph data-line-9">
-<p>One of understandable example of such kind of products is a Google Maps, which are scaled to work inside the buildings.</p>
+<div class="paragraph data-line-16">
+<p>Different applications have different technologies behind it. Over 15-20 different working technologies are known. Only 3 of them are widely used now (WiFi, Bluetooth Low Energy, Image-Based).</p>
 </div>
-<div class="paragraph data-line-11">
-<p>The situation is much more complicated, the market of indoor positioning is resegmented - different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail - from fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics. Indoor positioning systems is a growing industry with hundreds applications.</p>
-</div>
-<div class="paragraph data-line-13">
-<p>Different applications have different technologies behind it. Over 15-20 different working technologies is known, about 3-5 of them are widely used now (WiFi, Bluetooth Low Energy, Image Based).</p>
-</div>
-<table class="tableblock frame-all grid-all stretch data-line-19">
+<table class="tableblock frame-all grid-all stretch data-line-22">
 <caption class="title">Table 1. technology comparison</caption>
 <colgroup>
 <col style="width: 16.6666%;">
@@ -709,77 +721,108 @@ With this, we test hypoteses of what technology is more suitable to build the na
 </tr>
 </tbody>
 </table>
-<div class="paragraph data-line-41">
-<p>We will provide explicit review of all papers.</p>
-</div>
-<div class="paragraph data-line-43">
-<p>As for now, we want to repeate any reasonable fingerprinting technique.</p>
-</div>
-<div class="ulist data-line-45">
+<div class="ulist data-line-49">
+<div class="title">Relevant publications:</div>
 <ul>
-<li class="data-line-45">
+<li class="data-line-49">
 <p>RinQ Fingerprinting: Recurrence-Informed Quantile Networks for Magnetic Resonance Fingerprinting
 <a href="https://link.springer.com/chapter/10.1007/978-3-030-32248-9_11" class="bare">https://link.springer.com/chapter/10.1007/978-3-030-32248-9_11</a></p>
 </li>
-<li class="data-line-47">
+<li class="data-line-51">
 <p>Scene-LSTM: A Model for Human Trajectory Prediction
 <a href="https://arxiv.org/pdf/1808.04018.pdf" class="bare">https://arxiv.org/pdf/1808.04018.pdf</a></p>
 </li>
-<li class="data-line-49">
+<li class="data-line-53">
 <p>Magnetic Resonance Fingerprinting using Recurrent Neural Networks
 <a href="https://paperswithcode.com/paper/magnetic-resonance-fingerprinting-using" class="bare">https://paperswithcode.com/paper/magnetic-resonance-fingerprinting-using</a></p>
 </li>
-<li class="data-line-51">
+<li class="data-line-55">
 <p>Multicompartment Magnetic Resonance Fingerprinting
 <a href="https://arxiv.org/pdf/1802.10492.pdf" class="bare">https://arxiv.org/pdf/1802.10492.pdf</a></p>
 </li>
-<li class="data-line-53">
+<li class="data-line-57">
 <p>Magnetic resonance fingerprinting
 <a href="https://mriquestions.com/uploads/3/4/5/7/34572113/mr_fingerprinting_nature11971.pdf" class="bare">https://mriquestions.com/uploads/3/4/5/7/34572113/mr_fingerprinting_nature11971.pdf</a></p>
 </li>
 </ul>
 </div>
+<div class="paragraph data-line-61">
+<p><a href="https://link.springer.com.proxylib.skoltech.ru:2050/chapter/10.1007/11556114_31" class="bare">https://link.springer.com.proxylib.skoltech.ru:2050/chapter/10.1007/11556114_31</a>
+to establish the nature of the relationship between information space
+and precise space</p>
 </div>
-<div class="sect2 data-line-52">
-<h3 id="_metodology_theoretical_framework">Metodology /  theoretical framework</h3>
+<div class="paragraph data-line-66">
+<p>graph-based representation of the geographic environment - This step can be
+thought of as building a graph-based equivalent of a Voronoi diagram.
+If schema matching is performed manually, it is a time consuming process and
+therefore it should be automated as much as possible. For this purpose, [7] have
+built up a library of different match algorithms (called “matchers”). For example,
+they use
+Hybrid matchers: Matching operations which are using a fixed combination of
+matchers to improve the match result, e.g. a combination of n-gram and edit dis-
+tance or a combination of name and data type matching, etc.</p>
+</div>
+<div class="paragraph data-line-78">
+<p><span class="image"><img src="0-11-2020-22-24-58-PM.png" alt="0 11 2020 22 24 58 PM"></span></p>
+</div>
+<div class="paragraph data-line-80">
+<p>Internal Cardinal Direction (ICD) relations can be considered as the
+refinement to the contains/within topological relation. It is widely used to de-
+scribe the position of an object in a region. In this paper, three ICD models with
+varying degrees of details are presented&#8201;&#8212;&#8201;ICD-5, ICD-9 and ICD-13.</p>
+</div>
+<div class="paragraph data-line-85">
+<p><span class="image"><img src="0-11-2020-23-02-51-PM.png" alt="0 11 2020 23 02 51 PM"></span></p>
+</div>
+<div class="paragraph data-line-87">
+<p>internal cardinal direction (ICD) relations which
+can be applied to refine the spatial survey knowledge when two objects have con-
+tains/within topological relations.</p>
+</div>
+</div>
+<div class="sect2 data-line-96">
+<h3 id="_methodology_theoretical_framework">Methodology /  theoretical framework</h3>
 <div class="paragraph data-line-27">
 <div class="title">Preparation landscape research</div>
-<p>First we define current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.</p>
+<p>First, we define the current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.</p>
 </div>
 <div class="ulist data-line-32">
 <div class="title">Procedures list</div>
 <ul>
 <li class="data-line-32">
-<p>collection of magnetic fingerprints dataset with smartphone sensors: Gyroscope, compass, IMU.</p>
+<p>Collection of magnetic fingerprints database with smartphone sensors: Gyroscope, compass, IMU.</p>
 </li>
 <li class="data-line-33">
-<p>development of a model for localization using this dataset</p>
+<p>Implementation of localization model</p>
 </li>
 <li class="data-line-34">
-<p>experiments using model, estimation of accuracy</p>
+<p>Experiments using model, estimation of accuracy</p>
 </li>
 <li class="data-line-35">
-<p>implementation of possible techniques, benchmarking</p>
+<p>Implementation of possible techniques, benchmarking</p>
 </li>
 <li class="data-line-36">
-<p>fine-tuning of perspective technique</p>
+<p>SLAM model development, re-localization technique, map-merging</p>
 </li>
 <li class="data-line-37">
-<p>comparison to other products on the market, interpretation of results</p>
+<p>Fine-tuning of SLAM model</p>
+</li>
+<li class="data-line-38">
+<p>Comparison to other products, interpretation of results</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2 data-line-56">
+<div class="sect2 data-line-100">
 <h3 id="_techniques">Techniques</h3>
 <div class="ulist data-line-6">
-<div class="title">There are several ecnhancements of techonogy we want to test:</div>
+<div class="title">There are several enhancements of technology we want to implement:</div>
 <ul>
 <li class="data-line-6">
 <p>Relocalization technique (air imaging approach) &gt;&gt; improve mapping</p>
 </li>
 <li class="data-line-7">
-<p>Kalman filters for dead reckoning (extended Kalman filter) &gt;&gt; improve stability</p>
+<p>Kalman filters for the dead reckoning (extended Kalman filter) &gt;&gt; improve stability</p>
 </li>
 <li class="data-line-8">
 <p>Bayesian methods of user coordinate prediction &gt;&gt; improve localization</p>
@@ -790,158 +833,32 @@ With this, we test hypoteses of what technology is more suitable to build the na
 </ul>
 </div>
 <div class="paragraph data-line-11">
-<p>We use data of Microsoft competition as a starting reference (D.  Lymberopoulos,  J.  Liu,  X.  Yang,  R.  Choudhury,V.  Handziski,  S.  Sen,  F.  Lemic,  J.  Buesch,  Z.  Jiang,H. Zou, H. Jiang, C. Zhang, A. Ashok, C. Xu, P. Lazik,N.  Rajagopal,  A.  Rowe,  A.  Ghose,  N.  Ahmed,  andP.  Hevesi,  “A  realistic  evaluation  and  comparison  ofindoor  location  technologies:  Experiences  and  lessonslearned,” 04 2015.).</p>
-</div>
-<div class="paragraph data-line-13">
-<p>In table(not presented), we have time of development and resulting accuracy for the different technology choice of different teams participated.
-We may use these dependencies to understand, what time is needed to achieve each level of accuracy for different combinations of technologies.</p>
-</div>
-<div class="paragraph data-line-18">
-<p>We choose the best performance in technologies
-by multiplication of all of parameters.
-Performance = 1 / (development time * accuracy). The selected technologies are presented in table below.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch data-line-26">
-<caption class="title">Table 2. Preferable technology choice</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Technical Approach</th>
-<th class="tableblock halign-left valign-top">dev.time</th>
-<th class="tableblock halign-left valign-top">RMS error</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SDR Time-of-Flight</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.87</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4GHz Time-of-Flight</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.58</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WiFi+IMU Fingerprinting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.81</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WiFi+Modulated LEDs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.04</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WiFi Fingerprinting + Neural Network</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.22</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WiFi+IMU Fingerprinting + Neural Network</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">36</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.96</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4GHz Phase Offset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">60</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.72</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bayesian Filter + WiFi Fingerprinting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">96</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.56</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph data-line-58">
-<p>From the project scope we defined, we may implement WiFi+IMU Fingerprinting, Bayesian Filters, Neural Network filter, magnetic field fingerprinting.</p>
+<p>We use data of Microsoft competition as a starting reference (D.  Lymberopoulos,  J.  Liu,  X.  Yang,  R.  Choudhury, V.  Handziski,  S.  Sen,  F.  Lemic,  J. Buesch,  Z. Jiang, H. Zou, H. Jiang, C. Zhang, A. Ashok, C. Xu, P. Lazik, N.  Rajagopal,  A.  Rowe,  A.  Ghose,  N.  Ahmed,  and P.  Hevesi,  “A realistic evaluation and comparison of indoor location technologies: Experiences and lessons learned,” 04 2015.).</p>
 </div>
 </div>
-<div class="sect2 data-line-60">
+<div class="sect2 data-line-104">
 <h3 id="_timeline">Timeline</h3>
-<table class="tableblock frame-all grid-all stretch data-line-17">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">stage</th>
-<th class="tableblock halign-left valign-top">time estimation</th>
-<th class="tableblock halign-left valign-top">timeline</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customer interviews</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--------</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">market research</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--------</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product design</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--------</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">business model formulation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--------</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">market and competitior analysis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--------</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">product prototyping</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 months</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.11.2020</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">technology enchancements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 months</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.12.2020</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">experiments on product performance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 months</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.01.2021</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">marketing strategy development</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to be defined</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.04.2021</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">final mobile application</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3 months</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.05.2021</p></td>
-</tr>
-</tbody>
-</table>
+<div class="imageblock data-line-34">
+<div class="content">
+<img src="images/project-plan-54e60.png" alt="project plan 54e60">
 </div>
-<div class="sect2 data-line-64">
+<div class="title">Figure 2. Timeline</div>
+</div>
+<div class="paragraph data-line-106">
+<p><a href="https://drive.google.com/file/d/1L3_5NVN5ZbLkKXeJPNRlqRSwNVnguhnO/view?usp=sharing" class="bare">https://drive.google.com/file/d/1L3_5NVN5ZbLkKXeJPNRlqRSwNVnguhnO/view?usp=sharing</a></p>
+</div>
+</div>
+<div class="sect2 data-line-108">
 <h3 id="_innovation_impact">Innovation impact</h3>
 <div class="paragraph data-line-6">
-<p>The roadmap on the scope of indoor positioning systems is almost finished. With this results, we have a landscape of existing technologies and products and we may desing a specific product.</p>
+<p>The roadmap on the scope of indoor positioning systems is almost finished. With these results, we have a landscape of existing technologies and products and we may design a specific product.</p>
 </div>
 <div class="paragraph data-line-8">
-<p>For now we have a first draft of a business model.</p>
+<p>For now, we have the first draft of a business model.</p>
 </div>
 <div class="dlist data-line-10">
 <dl>
-<dt class="hdlist1">Innovation reseacrh</dt>
+<dt class="hdlist1">Innovation research</dt>
 <dd>
 <p>a solution that provides a service to guide users inside of the building. This solution is primarily aimed at social events and commercials, such as exhibitions and expo centers. Also, some of the possible applications are stationary public indoor places, such as museums and Skoltech new campus.</p>
 </dd>
@@ -965,7 +882,7 @@ Performance = 1 / (development time * accuracy). The selected technologies are p
 </ul>
 </div>
 </div>
-<div class="sect2 data-line-68">
+<div class="sect2 data-line-112">
 <h3 id="_references">References</h3>
 <div class="olist arabic data-line-1">
 <ol class="arabic">
@@ -1022,7 +939,7 @@ Performance = 1 / (development time * accuracy). The selected technologies are p
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-16 13:22:31 +0300
+Last updated 2020-11-09 11:00:17 +0300
 </div>
 </div>
 </body>

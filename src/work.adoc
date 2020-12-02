@@ -1,0 +1,144 @@
+
+:toc:
+
+:show-comments:
+
+ifdef::show-comments[]
+endif::[]
+
+
+// === Title page
+// === Acknowledgements
+=== Abstract
+
+
+The problem:: 
+// There is no classical SLAM algorithm for fingerprints database collection.
+Our proposal:: 
+// Framework for collecting database of fingerprints
+
+State of the art approaches for fingerprints collection use neural networks, Bayesian and Kalman filtering, human step prediction and other complex techniques.
+
+
+
+ifdef::show-comments[]
+====
+The abstract is a short summary of your dissertation, usually about 150–300 words long. You should write it at the very end, when you’ve completed the rest of the dissertation. In the abstract, make sure to:
+
+* State the main topic and aims of your research
+* Describe the methods you used
+* Summarize the main results
+* State your conclusions
+
+Although the abstract is very short, it’s the first part (and sometimes the only part) of your dissertation that people will read, so it’s important that you get it right. If you’re struggling to write a strong abstract, read our guide on how to write an abstract. https://www.scribbr.com/dissertation/abstract/
+====
+endif::[]
+
+
+=== Table of contents
+{toc}
+
+// === List of figures and tables
+
+
+// === List of abbreviations
+
+
+// === Glossary
+
+
+=== Introduction
+
+
+ifdef::show-comments[]
+====
+In the introduction, you set up your dissertation’s topic, purpose, and relevance, and tell the reader what to expect in the rest of the dissertation. The introduction should:
+
+- Establish your research topic, giving necessary background information to contextualize your work
+- Narrow down the focus and define the scope of the research
+- Discuss the state of existing research on the topic, showing your work’s relevance to a broader problem or debate
+- Clearly state your research questions and objectives
+- Give an overview of your dissertation’s structure
+
+Everything in the introduction should be clear, engaging, and relevant to your research. By the end, the reader should understand the what, why and how of your research. If you need more help, read our guide on how to write a dissertation introduction.
+====
+endif::[]
+
+
+=== Objectives
+include::objectives.adoc[]
+
+
+
+
+=== Literature review / Theoretical framework
+
+//* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+include::literature-review.adoc[]
+
+
+ifdef::show-comments[]
+====
+- Collecting sources (e.g. books and journal articles) and selecting the most relevant ones
+- Critically evaluating and analyzing each source
+- Drawing connections between them (e.g. themes, patterns, conflicts, gaps) to make an overall point
+
+develop a coherent structure and argument that leads to a clear basis or justification for your own research. For example, it might aim to show how your research:
+
+- Addresses a gap in the literature
+- Takes a new theoretical or methodological approach to the topic
+- Proposes a solution to an unresolved problem
+- Advances a theoretical debate
+- Builds on and strengthens existing knowledge with new data
+
+The literature review often becomes the basis for a theoretical framework, in which you define and analyze the key theories, concepts and models that frame your research. In this section you can answer descriptive research questions about the relationship between concepts or variables.
+
+TODO:: define and analyze the key theories, concepts and models that frame your research
+====
+endif::[]
+
+
+
+=== Methodology /  theoretical framework
+
+
+ifdef::show-comments[]
+====
+* A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+
+* A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
+====
+endif::[]
+
+include::methodology.adoc[]
+
+// === Techniques
+include::tech.adoc[]
+
+
+=== Results
+
+
+=== Discussion
+
+
+=== Conclusion
+
+
+=== Reference list
+
+// === References
+//* A list of references.
+include::references.adoc[]
+
+
+// === Appendices
+
+
+// === Editing and proofreading
+
+
+// === Checklist
+
+
+// === Free lecture slides

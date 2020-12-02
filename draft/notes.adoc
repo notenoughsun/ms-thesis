@@ -131,3 +131,100 @@ Feature selection is a necessary step which consists of selecting a subset of re
 
 === Test
 
+T. Wiegand / B. Girod: EE398A Image and Video Compression
+Motion estimation no. 1
+
+image:1-11-2020-13-33-26-PM.png[] 
+image:1-11-2020-13-34-00-PM.png[] 
+
+
+image:1-11-2020-13-34-37-PM.png[] 
+
+Continuous Time Bayesian Networks
+
+Mobile Positioning Using
+Wireless Networks
+
+
+Digital map information: y t = h MAP (p t , p i ) + e t . A digital
+map contains, for instance, RSS measurements relative the
+reference points either predicted or provided via dedicated
+measurement scans in the service area.
+
+image:1-11-2020-13-37-25-PM.png[] 
+
+
+image:1-11-2020-13-37-59-PM.png[] 
+
+image:1-11-2020-13-38-30-PM.png[] 
+
+A short road path to implement a positioning system is as
+follows
+
+. Collect the available measurements in Table 2.
+. Compute the static CRB using (3) or using (4a) in the Gaussian case.
+. Compare this to the FCC requirements in Table 1.
+. If these are not satisfied, continue with step 5. Otherwise, evaluate algorithms based on one of the criteria in Table 3 using one of the algorithms in Table 4. If these algorithms do not yield a satisfactory result, continue with step 5.
+. Select a motion model in Table 7.
+. Compare the CRB to the FCC requirements in Table 8.
+. If these are satisfied, try to find an algorithm in Table 9
+that gives satisfactory result. If this fails, try to change the
+system configuration to obtain better measurements, or
+equip the MS with more sensors.
+
+image:1-11-2020-13-40-47-PM.png[] 
+
+
+A Survey of Parametric FingerprintPositioning Methods 1
+
+
+image:1-11-2020-13-43-19-PM.png[] 
+
+image:1-11-2020-13-43-59-PM.png[] 
+
+image:1-11-2020-13-46-27-PM.png[] 
+
+From Maloc Xie, Hongwei & Gu, Tao & Tao, Xianping & Ye, Haibo & Lu, Jian. (2015). A Reliability-Augmented Particle Filter for Magnetic Fingerprinting Based Indoor Localization on Smartphone. IEEE Transactions on Mobile Computing. 15. 1-1. 10.1109/TMC.2015.2480064. 
+
+image:1-11-2020-13-48-44-PM.png[] 
+
+.magnetic field compensation algorithm
+image:1-11-2020-13-50-05-PM.png[] 
+
+image:1-11-2020-13-50-56-PM.png[] 
+
+
+
+
+Pathapati Subbu, K. S. (2011). Indoor localization using magnetic fields (Order No. 3529276). Available from ProQuest Dissertations & Theses Global: The Sciences and Engineering Collection. (1046660250). Retrieved from https://search.proquest.com.proxylib.skoltech.ru:2050/docview/1046660250?accountid=196286 
+
+Fundamental paper, read, apply
+
+
+
+Burgard W. (2005) Probabilistic Techniques for Mobile Robot Navigation. In: Cohn A.G., Mark D.M. (eds) Spatial Information Theory. COSIT 2005. Lecture Notes in Computer Science, vol 3693. Springer, Berlin, Heidelberg. https://doi.org.proxylib.skoltech.ru:2050/10.1007/11556114_31
+
+image:1-11-2020-14-36-36-PM.png[] 
+
+=== 3-Axis Magnetic Field Mapping and Fusion for Indoor Localization
+
+https://www.semanticscholar.org/paper/3-Axis-magnetic-field-mapping-and-fusion-for-indoor-Grand-Thrun/da91e43d72afe677718f769ddd2b3ae86d7bc3fb
+
+image:1-11-2020-14-55-07-PM.png[] 
+
+image:1-11-2020-14-55-44-PM.png[] 
+
+
+relocalization with magnetic field
+
+loop closure
+
+large graph, adding connection
+
+
+
+relocalization
+
+inertial positioning
+
+

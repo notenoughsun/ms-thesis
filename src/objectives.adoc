@@ -7,26 +7,44 @@
 // definitions of the thesis project
 
 // outlines of a set of specific aims by which your work is intended to accomplish the objectives
+//
+// Сделайте его боле компактным, сейчас опять кажется, что вы хотите решить очень много разных задач.
+// Важно сделать более четкое statement, что данная работа посвящена разработкам алгоритмов для решения такой-то важной задачи.
+// И важно четко сформулировать, что нам даст разработка софта, и как это продвинет данную область вперед.
+// Лучше написать меньше, но более четко.
 
-The project statement is:: "Development of software system for specific chosen user case."
-We aim to develop a system that is not just any, but a system with specific properties.
+// Indoor local positioning system for smartphones with infrastructure-free integration.
 
-We aim to create an indoor navigation system.
-For that, we need to have a set of algorithms for localization, mapping, and other practical tasks.
+// The project statement is::
+// "Development of software system for specific chosen user case."
+// We aim to develop a system that is not just any, but a system with specific properties.
 
-Before we write the code of a project, we do research on what technology we have to develop.
+// We aim to create an indoor navigation system.
+// For that, we need to have a set of algorithms for localization, mapping, and other practical tasks.
 
-We evaluate technologies on several important criteria: cost, complexity, accuracy, time of development.
-With this, we test hypotheses of what technology is more suitable to build the navigation system.
+We want to create a framework for collecting database of fingerprints (magnetic, WiFi, BLE and others).
 
-Based on previous research, we have chosen magnetic field technology for this project.
+Because the approach is SLAM, it may be considered from both sides: as a mapping tool and as a localization product. We have to satisfy criteria for both of them.
 
-The main hypothesis is:: Current systems on the market (WiFi, BLE) are not suitable for standalone applications in common use-case.
+.Criteria for the system proposed:
+* can be implemented locally
+* no special hardware for operation
+* positioning accuracy enough for operation (1-2m depending on requirements)
+* cost, complexity, accuracy, time of development
 
-The second hypothesis:: Competitive technology of magnetic field navigation is perspective. This technology may be implemented and fine-tuned for several common use-cases.
+// We evaluate technologies on several important criteria: cost, complexity, accuracy, time of development.
+// With this, we test hypotheses of what technology is more suitable to build the navigation system.
 
-We define the scope of a project::
-Specific focus on technology and common applications. Fine-tuning of magnetic technology according to hypotheses 1 and 2.
+// Based on previous research, we have chosen magnetic field technology for this project.
+
+.Hypotheses:
+. Current systems on the market (WiFi, BLE) are not suitable for standalone applications in common use-case.
+. Competitive technology of magnetic field navigation may be implemented and fine-tuned for several common use-cases.
+
+
+
+// We define the scope of a project::
+// Specific focus on technology and common applications. Fine-tuning of magnetic technology according to hypotheses 1 and 2.
 
 
 // Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for a specific user-case.
@@ -35,5 +53,3 @@ Specific focus on technology and common applications. Fine-tuning of magnetic te
 
 
 // .Specific AIMs for the project
-
-

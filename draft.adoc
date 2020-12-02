@@ -1,0 +1,273 @@
+= Thesis draft all content
+
+:stem: latexmath
+:toc:
+
+== Notes
+
+// tag::chapter-working-notes[]
+
+
+// ====
+// A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+// ====
+
+// First we define the current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended  to  make  a  visible  and  understandable  landscape  of this technology segment.
+// // To develop the right product, we first have to identify its figures of merit.
+// // When the figures of merits stated, we have to choose the right technology. First we develop the framework for technology choice.
+
+// // We do a theoretical research, from which we decide on a technology and methods. This we call a roadmap, because it gives us some prior assumptions of next series of steps to be done.
+
+// .The road map:
+// * show the evolution of IPS technology
+// ** repeat the research of indoor positioning systems review (example, one of the most useful for now) or other IPS publications
+// ** visualize IPS usage and work principles (different technologies, connections, FOMs, applications)
+// * create financial and technical models for different IPS technologies
+// * calculate the possible effect of merging different technologies for different applications
+// ** calculate in FOMs / prices (novelty)
+// * connect different technologies into single model (where possible)
+// * create system / strategy for optimal* technology choice decision
+// ** map / compare existing products and trends over defined figures of merit
+
+
+
+// // image:/home/tim/Downloads/inndoor%20navigation/img/image2020-5-29_23-2-21.png[]
+
+// .Preparation landscape research
+// First, we define the current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.
+
+// // A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+
+// .Procedures list
+// * Collection of magnetic fingerprints database with smartphone sensors: Gyroscope, compass, IMU.
+// * Implementation of localization model
+// * Experiments using model, estimation of accuracy
+// * Implementation of possible techniques, benchmarking
+// * SLAM model development, re-localization technique, map-merging
+// * Fine-tuning of SLAM model
+// * Comparison to other products, interpretation of results
+
+// // Illustrate how the method you have chosen best allows you to fulfill the purpose
+
+// // The method we have chosen is reasonable
+
+
+Problem: SLAM algorithm with no odometry available.
+
+We have a Markov process. After processing to the point with high confidence we may recalculate all previous positions - close loop.
+
+Close loop examples??????
+
+Reestimate previous coordinates - regression task.
+
+
+
+
+
+\section{measurements model}
+
+acceleration data from imu \\
+magnetic field orientation vector \\
+RSSI
+
+Consider the process is Markovian.
+
+\section{Transition model definition}
+
+Copied all from \cite{articleXia}:
+
+With  the  development  of  microelectromechanical  systems(MEMS),  a  few  MEMS-based  sensors  have  been  built  and
+incorporated  into  smartphones:  accelerometers,  gyroscopes,magnetometers,  etc.  These  sensors  can  be  used  to  provide information  on  the  user’s  actions.  Pedestrian  dead  reckon-ing  (PDR)  [10]  is  a  relative  navigation  technique  that  uses these sensors.
+
+we propose a PDR-based  indoor positioningmethod  that  integrates  RSSI  with  indoor  environment  mapconstraints by using particle filters.
+
+PDR-based indoor positioning can be expressed by the following equations
+
+// asciimath:[]
+
+latexmath:[
+\begin{equation}
+    X_k = \
+    \begin{bmatrix} 
+        x_{t-1} \\
+        y_{t-1} 
+    \end{bmatrix} = \
+    \begin{bmatrix} 
+        x_{t-1} &+ l_k \sin(\theta_t) \\
+        y_{t-1} &+ l_k \cos(\theta_t) 
+    \end{bmatrix} + \
+    \begin{bmatrix} 
+        \delta_{x} \\
+        \delta_{y} 
+    \end{bmatrix}
+\end{equation}
+]
+
+The orientation  updates is independent from $X_k$ updates, depends on accelerometer and gyro, same model.
+
+Step   Detection:Android   mobile   phones   have   two kinds  of  sensors  to  monitor  steps:  step  counters  and  step detectors [25]. 
+
+Peak detection is used in this paper for step detection
+
+nonlinear step length estimation model based on statistics proposed by Weinberg [27]
+latexmath:[
+\begin{equation}
+    step_{size} = k \sqrt^4{a_{z max} - a_{z min}}
+\end{equation}
+]
+The Android system computes orientation angles by using the  device’s  geomagnetic  sensors  in  combination  with  its accelerometers   [25].   Using   these   two   hardware   sensors,the  system  provides  data  for  the  following  three  orientation angles
+
+The  device is NOT  assumed to  be pointing in the heading direction. Need to apply additional space transformation.
+
+\subsection{RSSI methode}
+
+Usual path-loss model:
+
+\begin{equation}
+    PL(d) = PL(d0) + 10 \alpha \log{d / d_0} + \omega = 
+    PL(d0) + 10 \alpha \log{d / d_0} + N(0, \sigma^2_{\omega})
+\end{equation}
+
+where $d$ represents the Euclidean distance between the anchor node  and  the  receiver,d0represents  a  specified  distance,PL(d)and PL(d0)represent the RSSI at $d$ and $d_0$, respectively(in  dBm),  andαrepresents the  path  loss  exponent, which  is closely related to the ambient environment;ωis a zero-mean Gaussian distribution variable with variance $\sigma^2_{\omega}$.
+
+The inverse function: 
+\begin{equation}
+    d_i = d_0 \cdot 10 \frac{PL(d_i) - PL(d_0)}{10\alpha}
+\end{equation}
+
+Landmark model:
+
+\begin{align}
+    f_i(x, y) &= d_i - \sqrt{(x - x_i)^2 + (y - y_i)^2} \\
+    min(x, y) &= min \sum_{i=1}^{m}[f_i(x, y)]^2, m \ge 3.
+\end{align}
+
+In paper author transform this to linear system, 
+
+\begin{align}
+    AZ & = b \\
+    A &= \begin{bmatrix} 
+        1 - 2 x_1 - 2 y_1 \\
+        ... \\
+        1 - 2 x_m - 2 y_m
+    \end{bmatrix} \\
+    Z &= \begin{bmatrix} 
+        x^2 + y^2 \\
+        x \\
+        y
+    \end{bmatrix} \\
+    b &= \begin{bmatrix} 
+        d_1^2 - x_1^2 - y_2^2\\
+        ...\\
+        ...
+    \end{bmatrix}
+\end{align}
+
+We have to check it
+
+Good alternative was proposed in \cite{} to bound region by min and max RSSI according to its variance - linear system.
+
+\subsection{Processing}
+
+Update step, prediction, correction
+State Estimation
+
+
+Resample:In  this  step,  importance  resampling  [20]  isused to obtain a new particle set
+
+some papers prove importance resampling can't be applied for this task because pf noise.
+% observation equation:
+
+\section{Crasy Idea}
+
+There is some similarity in video compressing process
+
+We strore gradients of changing signal measurements, we apply searching procedure to have a smooth measurements.
+
+We have a convex magnetic field and a trajectory, 
+the task is to find similar trajectrory with highest correlation to measurements.
+
+Regression, approximation, pattern matching, Convolutions.
+
+Gradients, blockmatching
+
+Different approaches in papers, play on a toy model.
+
+
+
+// end::chapter-working-notes[]
+
+== Working topic
+Indoor local positioning system for smartphones with infrastructure-free integration.
+
+{toc}
+
+=== Background and problem statement
+// that describes the subject matter in terms of its importance and potential for action. Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
+//
+// The scope:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
+
+// tag::example[]
+// end::example[]
+
+=== Objectives
+
+// tag::objectives[]
+include::src/objectives.adoc[]
+// end::objectives[]
+
+=== Literature review
+//* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+
+// tag::example[]
+include::literature/literature-review.adoc[]
+// end::example[]
+
+=== Methodology /  theoretical framework
+//* A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+include::src/methodology.adoc[]
+
+// === Techniques
+// //* A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
+// include::src/tech.adoc[]
+
+// === Timeline
+// //* A work plan that outlines the sequencing, flow, and timeline of the thesis project.
+// include::src/project-plan.adoc[]
+
+// === Innovation impact
+// //* A statement of potential impacts on innovation, research, and education and their relationship to the problem is proposed.
+// include::src/innovation-research.adoc[]
+
+=== References
+//* A list of references.
+
+// tag::references[]
+
+// . S. Walden, “The “indoor generation” and the health risks of spending more time inside,” 05 2018.
+// . R. Mautz, “Indoor positioning technologies,” 2012.
+// . W. Sakpere, M. A. Oshin, and N. Mlitwa, “A state-of-the-art survey of indoor positioning and navigation systems and technologies,”South African Computer Journal,vol. 29, pp. 145–197, 2017.
+.  [[book_Indoor_positioning]]M. Kjærgaard, “Indoor positioning with radio location fingerprinting,” 04 2010.
+https://arxiv.org/pdf/1004.4759.pdf 
+. [[brena]]R. F. Brena, J. P. Garc ́ıa-V ́azquez, C. E. Galv ́an-Tejada,D. Mu ̃noz-Rodriguez, C. Vargas-Rosales, and J. Fang-meyer, “Evolution of indoor positioning technologies: A survey,”Journal of Sensors, Mar 2017.
+. [[Infsoft]]Infsoft, “Indoor positioning and services white paper,”2019.
+. [[Bernard]]R. Bernard, “Indoor positioning systems,”Security Industry Association, 2017.
+. [[IndoorAtlas]]IndoorAtlas / Vanson Bourne, “A 2016 global research report on the indoor positioning market,” p. 6, 2016.
+. [[Gallagher]]B. Li, T. Gallagher, C. Rizos, and A. Dempster, “Using geomagnetic field for indoor positioning,”Journal of Applied Geodesy, vol. 7, 11 2013.
+. [[Orientation-aided]]L. Hou, Y. Li, Y. Zhuang, B. Zhou, G. Tsai, Y. Luo, and N. El-Sheimy, “Orientation-aided stochastic magnetic matching for indoor localization,”IEEE Sensors Journal,vol. 20, no. 2, pp. 1003–1010, 2020.
+https://www.semanticscholar.org/paper/WiFi-Aided-Magnetic-Matching-for-Indoor-Navigation-Li-Zhuang/ff8e0b25ac3246a2a4f9efaa330276e07779bbeb 
+. [[Alliance]]I. Alliance, “ILA system architecture release 1.0,”openmobilealliance.
+// . Indoor navigation market review by iBecom, June 4 2015
+// . Geofencing market guide, Justin Croxton, Sept 26 2019 
+. [[BLE_loc]]Thaljaoui, A., Val, T., Nasri, N., & Brulin, D. (2015). BLE localization using RSSI measurements and iRingLA. 2015 IEEE International Conference on Industrial Technology (ICIT). doi:10.1109/icit.2015.7125418
+. [[Lymberopoulos]]Lymberopoulos, Dimitrios & Liu et Al (2015). A Realistic Evaluation and Comparison of Indoor Location Technologies: Experiences and Lessons Learned. 10.1145/2737095.2737726.
+. [[survey]]Müller, P., Raitoharju, M., Ali-Löytty, S. et al. A survey of parametric fingerprint-positioning methods. Gyroscopy Navig. 7, 107–127 (2016). https://doi.org.proxylib.skoltech.ru:2050/10.1134/S2075108716020061
+// https://www.scribbr.com/category/dissertation/ 
+. [[Bayesian_loc]]Bayesian Indoor Location Algorithm Based on RSSI
+PENG Yu-xu,YANG Yan-hong(School of Computer & Communication Engineering,Changsha University of Science & Technology,Changsha 410114,China)  
+http://en.cnki.com.cn/Article_en/CJFDTotal-JSJC201210075.htm
+. [[thrun]]Grand, E. and S. Thrun. “3-Axis magnetic field mapping and fusion for indoor localization.” 2012 IEEE International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI) (2012): 358-364. https://www.semanticscholar.org/paper/3-Axis-magnetic-field-mapping-and-fusion-for-indoor-Grand-Thrun/da91e43d72afe677718f769ddd2b3ae86d7bc3fb
+
+// end::references[]
+
+

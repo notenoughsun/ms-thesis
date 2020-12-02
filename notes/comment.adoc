@@ -1,0 +1,51 @@
+Make  the  title  dynamic  and  informative,
+
+Structure the abstract following the IMRaD 
+
+(Introduction, Methods, Results and Discussion) 
+principle for your  future  original  paper  where  background  would  be-come Introduction and conclusions would enter Discussion
+
+state the hypothesis, rationale for the study, sample size and conclusions. Highlight the novelty of your work by carefully chosen straightforward wording. 
+
+nk AB –  ab solutely, STR –  str aightforward, ACT –  ac-t ual data presentation and interpretation
+
+e  Introduction  (or  Background  and  Purpose), Methods, Results and Conclusions. This closely follows the  IMRaD  (Introduction,  Methods,  Results  and  Discussion)
+
+
+
+
+
+Indoor local positioning system for smartphones with infrastructure-free integration
+
+Imbiriba, Tales & Wu, Peng & LaMountain, Gerald & Erdogmus, Deniz & Closas, Pau. (2020). Recursive Gaussian Processes and Fingerprinting for Indoor Navigation. 933-940. 10.1109/PLANS46316.2020.9110187. 
+
+
+determine if the area from the Wi-Fi fingerprint positioning
+method matches the location estimated from PDR method
+Bao, Qi-wei & Papachristou, Ch & Wolff, Frank. (2019). An Indoor Navigation and Localization System. 533-540. 10.1109/NAECON46414.2019.9058080. 
+
+
+
+== Name
+
+
+Indoor Relative Positioning Method and Experiment Based on Inertial Measurement Information/Human motion model/UWB Combined System 
+
+An Accurate 3D InDoor Navigation Framework for Mobile Devices
+
+Method for smartphone Navigation
+
+//  These systems have been introduced for many reasons, such as: increasing accessibility to users with reduced mobility, optimizing logistics, or reducing the environmental impact of facilities. 
+
+// an indoor navigation and localization system with three key techniques: 
+// 1) dynamic feature extraction, 
+// 2) incremental model update, and 
+// 3) fine-grained trajectory generation, is proposed to implement robust indoor localization with friendly interaction design especially for visual impairment groups. 
+// Compared with other indoor localization systems, the proposed CoFINLo can overcome the obstacles caused by the diverse sensing devices, complex indoor environments, and fluctuated wireless signal. 
+// The proposed system is verified in an indoor office environment and implemented in a large-scale and comprehensive train station. The average 1.39m localization error suggests that CoFINLo can open a new opportunity to implement robust and user-friendly indoor navigation and localization in large and complex indoor environments, which can be a solid foundation for other location-based services.
+
+ Data Processing Methods for Mobile Indoor Navigation 
+
+//  The paper addresses the questions of characteristics analysis of such mobile sensors as accelerometer, magnetometer and gyroscope from the point of view of their application in indoor navigation field. Signals of BLE beacons and their processing methods are investigated as well. The sensor fusion task is briefly discussed and several practical examples are given.
+
+Indoor Localization on Smartphones Using Built-In Sensors and Map Constraints

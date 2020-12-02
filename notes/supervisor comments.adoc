@@ -15,3 +15,17 @@
  
 4.      Проверьте, пожалуйста, английский. Можно использовать gramarly.
  
+Indoor local positioning system for smartphones with infrastructure-free integration.
+
+Indoor human positioning and local auxiliary map construction method and experiment based on built-in sensors on smartphones
+
+Indoor human positioning and 
+
+Local auxiliary map construction method for smartphone indoor navigation.
+
+Локальная вспомогательная карта построения и позиционирования метода для внутренней навигации смартфона.
+
+Local auxiliary map construction and positioning method for smartphone indoor navigation.
+Построение локальной вспомогательной карты и метод позиционирование с помощью 
+
+Метод построения локальной вспомогательной карты и позиционирования для навигации внутри помещений с помощью смартфона.
