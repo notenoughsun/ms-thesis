@@ -1,0 +1,34 @@
+=== Conditions:
+map is known, no real slam.​
+
+Database is a:
+
+- matrice containing measurements
+- approximation of surface
+
+We propose to construct a specific auxiliary map which is easy to sample from.
+
+* magnetic field is continious
+* rssi data (knn clustering, trilateration) may be considered as continious after transformation.
+
+We may represent the building space as the mesh of poligins, the nodes are placed with only restriction to accurately represent rssi data.
+The usual rssi model - signal loss model, reflections, multipath, ....
+Possible to replace with either fingerprint databases + knn, or preprocess knn in some way.
+
+Assume we have rssi auxiliary map created.
+
+There are ways to represent magnetic field in location. We consider this as some approximation, easy to sample from.
+
+We travel over the building and collect measurements. We process absolute value.
+To avoid recalibration on some scope we operate with **first derivative** of measured magnetic field.
+*(We have to store absolute values for specific device and timeframe only)*
+
+Absolute measurements » gradients
+
+Mapping, we have a time series of gradients.
+The process with noise ( imu measurements)
+We may construct Markov chain from this measurements (Gaussian noise, known target distribution, each measurement step is a transition to new point with some probability)
+
+. Measurements are noisy, we don't process measurements itself. If we use filters, we obtain smoothed data. Using running window or other methods (correlation metrix, ... distance) we can compare signal to prorosal trajectory.
+. We sample similar trajectories with known variance. From trajectories we have another predictive measurements. We want to get the best fit between measurements and trajectory. If the magnetic data is changed we have to detect it from wifi RSSI relocalization if possible. We store all localisation chain until we have not confirmed user location (wifi or ble close signal). To process this we have to work in Markov chain framework (reversibility requirement, we construct a transition kernel).
+. To sample accurately, we have to filter signal before. Running mean is ok because we deal with signal variance on higher level, possibly needed try other duscussed methods.

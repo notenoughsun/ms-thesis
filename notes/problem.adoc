@@ -1,0 +1,67 @@
+:sectnums:
+
+= Construct probabilistic framework for smartphone localisation in zero infrastructure conditions
+
+
+
+[abstract]
+== Documentation Abstract
+
+
+
+
+
+
+Problem: no effecient algorithm for smartphone localisation in conditions with:
+
+* no/low number hardware (beacons) available
+* available measurements are noisy
+* map/measurements are changing over time
+
+Algorithm effeciency:
+
+- accuracy
+- computational difficulty (we may compare relative only by the factor of space size)
+
+Sota accuracy: 1m for magnetic fingerprinting, 1-5 m for wifi RSSI, 0.1 m for tdoa and other special techniques - requirement is multiple beacons in field of view
+Limits: real needed limit approximately 0.3m to 1m.
+Higher accuracy requires special hardware and environment conditions, not important in research.
+
+Cannot be achieved by ordinary Rssi
+
+zero infrastructure localisation can be done with smartphone's imu, magnetometer and wifi RSSI. We want to utilize magnetic field fingerprinting data for improving accuracy in locations with no ability to use wi-fi RSSI data. current methods show accuracy 1m and 15 degrees.
+We want to reach same accuracy and define a scalable framework for indoor localisation and mapping.
+
+
+include::algorithm.adoc[]
+
+
+=== Progress by now
+
+. Some part of data generation
+. Random trajectories generation using Bezier curves + Gaussian noise
+
+What to do
+. What is a particle filter
+. How to construct the pdf to sample from?
+- we find similar signal. We know orientation and don't know distance (speed). We may want to find similar points in multiple directions (2dim»1 dim case)
+. Support vector machine is connected with particle filter?
+. We construct a continuous approximation for k neighborhood clustering, what solutions are known?
+. How-to apply hmc and MCMC for reversible localisation.
+- HMC allows to explore high dimensional space. We may represent our task as continious/probability density function approximation and traverce over this space
+- We have to set exploration speed low. Possibly the usual hmc is not applicable for implementation. Check what are conditions for Markov chain in this model
+
+
+// rssi
+// fingerprinting
+// collect database of measurements
+
+// measurement -> coordinate
+// offline map updates, relocalization
+// methods in use
+// ideas to implementdeas
+// Bayesian framework
+// Markov chain model, possibly HMC
+// approximation method to perform Monte Carlo approximation
+// literature review
+// wifi rssi
