@@ -1,0 +1,109 @@
+
+
+
+//Please upload your thesis proposal here covering the following points:
+//====
+//* A working topic that is succinct but indicative of the nature of the thesis project.
+//* A background and problem statement that describes the subject matter in terms of its importance and potential for action. //Describe the connection between research and innovation. Clarify the reasons for the choice of the thesis project topic.
+//* A description of the purpose and definitions of the thesis project and outlines of a set of specific aims by which your work //is intended to accomplish the objectives. State the hypotheses to be tested or technology to be developed.
+//* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+//* A statement of the methodology for the thesis project that defines specific design of the procedures, data collection, //analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the //thesis project.
+//* A description of techniques to be used for the development of the thesis product, including specific software tools, //programming languages, or other appropriate techniques.
+//* A work plan that outlines the sequencing, flow, and timeline of the thesis project.
+//* A statement of potential impacts on innovation, research, and education and their relationship to the problem being proposed.
+//* A list of references.
+//====
+
+
+:topic:  Indoor SLAM based on crowdsourced data with multiple smartphone sensors
+
+=  Indoor SLAM based on crowdsourced data with multiple smartphone sensors
+Thesis proposal
+
+Student MSC-2, Space and Engineering systems, Timur Chikichev
+
+:toc:
+
+:topic2: Indoor localization  on smartphones using built-in sensors and map constraints
+
+{toc}
+
+== Background and problem statement
+
+The topic of the project is related to the problem of indoor navigation.
+The context of the problem states that no GPS data are available at hand, which
+makes the use of usual navigation services impossible.
+
+Most existing systems of indoor navigation require special mapping stage.
+Novel indoor navigation systems utilize the data recorded from users. This is what is called
+the crowdsource approach.
+
+For realtime indoor navigation, in conditions where is no initial data is available,
+we have to pass stages of localization and mapping, which can be done simultaneously in SLAM approach.
+We aim to combine both SLAM and crowdsource approach for the best performance of positioning system.
+
+// Опишите связь между исследованиями и инновациями. Уточните причины выбора темы дипломного проекта.
+The innovation of this research is in ability to provide same navigation services with less information and in more natural way, which means also the reduced cost of the system overall.
+
+=== Objectives
+
+// Описание цели и определения дипломного проекта и краткое изложение ряда конкретных целей, с помощью которых ваша работа предназначена для достижения целей. Сформулируйте гипотезы, которые нужно проверить, или технологию, которую необходимо разработать.
+include::draft.adoc[tag='objectives']
+
+
+---
+
+
+=== Literature review
+//* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
+// Предварительный обзор литературы / поиск информации, которая предоставляет контекст и сопутствующую литературу для дипломного проекта.
+
+// include::literature/literature-review.adoc[]
+
+include::draft.adoc[tag='literature-review']
+
+
+---
+
+=== Methodology /  theoretical framework
+// //* A statement of the methodology for the thesis project that defines the specific design of the procedures, data collection, analysis, and (or) interpretation. Illustrate how the method you have chosen best allows you to fulfill the purpose of the thesis project.
+// Изложение методологии дипломного проекта, определяющее конкретный дизайн процедур, сбора, анализа и (или) интерпретации данных. Покажите, как наилучшим образом выбранный вами метод позволяет достичь цели дипломного проекта.
+// // // include::src/methodology.adoc[]
+
+include::draft.adoc[tag='methodology']
+
+---
+
+// Описание методов, которые будут использоваться для разработки дипломного продукта, включая специальные программные инструменты, языки программирования или другие подходящие методы.
+
+=== Techniques
+
+include::draft.adoc[tag='techniques']
+
+
+// //* A description of techniques to be used for the development of the thesis product, including specific software tools, programming languages, or other appropriate techniques.
+// // include::src/tech.adoc[]
+
+=== Timeline
+
+.Project timeline
+|====
+|thesis proposal | 10-12-2020
+|formal derivation of algorithm | 25-12-2020
+|algorithm performance evaluation on existing dataset | 12-01-2021
+|prototyping the mobile app for dataset collection| 18-01-2021
+|dataset collection & data processing | 25-01-2021
+|performance evaluation on collected data| 01-02-2021
+|results formulation|
+|====
+// //* A work plan that outlines the sequencing, flow, and timeline of the thesis project.
+// // include::src/project-plan.adoc[]
+
+// === Innovation impact
+// //* A statement of potential impacts on innovation, research, and education and their relationship to the problem is proposed.
+// include::src/innovation-research.adoc[]
+
+=== References
+//* A list of references.
+
+include::draft.adoc[tag='references']

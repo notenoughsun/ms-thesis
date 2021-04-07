@@ -49,8 +49,132 @@ include::draft.adoc[tag='objectives']
 // //* A statement of potential impacts on innovation, research, and education and their relationship to the problem is proposed.
 // include::src/innovation-research.adoc[]
 
+
+Graph matching
+
+
+// After representing the data on graphs, we define a graph matching problem, not only
+// to generate the pathway map of the users via crowdsourced data, but also to automatically
+// match the obtained pathway map to the floor plan with notable accuracy. To that aim, we
+// have developed two graph matching techniques. For the first approach, we have defined
+// a graph similarity measure and an efficient way to calculate it, along with an efficient
+// matching algorithm we call K-best fits, which is a fast heuristic 1 . The second approach
+// is a probabilistic method, based on hidden Markov models (HMM) 2 . The K-best fits
+// algorithm uses the similarity of nodes based on their global topological location in the
+// graph, while the HMM-based approach uses the local properties of nodes and edges for
+// comparison
+
+//
+// As a further step, in order to relax the assumption about the availability of Wi-Fi
+// signals, we also investigate the possibility of localization using the distortions of magnetic
+// field waves, caused by the metal infrastructure of the buildings.
+
+
+Our case: formulate situation with no wifi available data in local area
+
+(A specific case of this problem)
+The graph matching problem is the “maximum weighted bipartite
+matching”,
+// The graph matching (or edge independent set) problem is the problem of finding a
+// subset of graph edges, such that none of the edges share vertices. This problem is
+// more interesting on bipartite graphs, where the matching is similar to assigning the
+// vertices of one part of the graph to another, with no vertex appearing twice in the
+// assignment.
+
+which is defined as a matching on a bipartite graph with maximum sum
+of the weights of selected edges.
+
+This problem is also known as the “assignment problem”.
+We utilize factor Graphs for such assignment of new data.
+
+// There are well-known algorithms for this problem such as the Hungarian
+// algorithm (originally called by this name in [42]). Another method to solve this
+// problem is to run the Bellman-Ford shortest path algorithm on an augmented
+// graph.
+
+
+
+Matching problem proposed:
+
+
+We now describe the problem formulation by modeling two graphs:
+// the ground truth graph which is built offline, based on the building map,
+the ground truth graph (location based information - building map)
+and the data graph,
+// which is built in an unsupervised fashion,
+constructed during the online training phase of system from the crowdsourced data of users walking in the
+environment.
+
+We do not obtain a radio map which is needed for RSS-based localization.
+Instead, we collect a data-set of magnetic field fingerprints, tagged with their relative physical coordinates to previous position. This relative coordinates (graph type trajectory with approximate information on edges lengths).
+
+// As mentioned previously, a radio map is needed for RSS-based localization, which
+// consists of a data-set of RSS fingerprints, tagged with their physical coordinates (labeled
+// points). In our approach, instead of manually building such data-set, we first define a
+// graph, called the ground truth graph G T , that only contains the physical coordinates of
+// specific points. Such graph can be easily built using a graphical interface and a given floor
+// plan. These points have physical location labels, but no RSS fingerprints. Therefore, we
+// define a second graph that is built from crowdsourced data. The second graph, called
+
+From the data of two graphs: location map and fingerprints collection, we perform matching procedure, using multiple available methods.
+
+The first procedure to apply is accept-reject method: all points in restricted location are blocked (person can't go through walls and etc.).
+Secondly, we perform loop closure and data association using common algorithms:
+
+* graph similarity algorithms (correlation, ...)
+* probabilistic approach (hidden Markov models)
+// graph similarity measure and an efficient way to calculate it, along with an efficient
+// matching algorithm we call K-best fits, which is a fast heuristic 1 . The second approach
+// is a probabilistic method, based on hidden Markov models (HMM)
+
+Similarity measures:
+
+What data we obtain in the data graph: heading, relative position, magnetic field direction.
+For multiple locations in same domain there can be lots of point with same of similar magnetic field direction.
+Instead, between any two points, there can be enough magnetic field disturbances, which will create enough information for distinguishing data, and mapping only location related data.
+
+* We can measure the similarity only between long enough tracklets / edges
+* The signal similarity measure cab be just a cross-covariance
+
+// image::images/tocopy-22c0a.png[]
+
+// see 2.6.1 Stable matching problem
+// Inertial navigation systems
+
+
+Measurement model
+
+We use the available sensors / modules of the usual smartphones: WiFi, compass and accelerometer measurements obtained from
+inertial-magnetic unit, gyroscope and human step count module.
+
+Inertial model
+
+Steps count, adaptive step / stride lenght estimation - step count modules are available in several smartphones.
+
+
+==== System architecture
+
+MCS:: MCS first partitions the trajectories into segments, and then clusters them into a cluster set C.
+For each cluster in C, with trajectory matching procedure, we construct the graph by connecting the crossing trajectories. We estimate the boundaries of the graph (trajectories closest to the walls), its width (adjust to corridor dimension) and location of each trajectory given the position of trajectory in graph and graph absolute position. We store the walls relative position to the processed graph in additional structure W.
+
+From generated graph data, we extract / resample the representative trajectory, or field approximation. The representative trajectory set is denoted by R. This trajectory set has no relation to trajectories and input data, but only to the magnetic field in the given location. The output of MCS is the constructed digital map characterized by X, R , and W.
+
+LNS:: LNS performs particle-filter-based localization and routing-like navigation easily without any human intervention. The particle filter (PF) for localization utilizes the physical
+constraint that one cannot walk through the walls in estimating the posterior probability distribution of the user’s location.
+
+
+
+// In the crowdsourced version of our work, the concentration is primarily on building
+// the data set via a graph model using graph matching techniques. Therefore, similar to
+// [78], we manually set the stride length of each user in our implementations. Although
+// setting the stride length to a constant value is not very accurate and the accuracy can
+// benefit from thorough estimation of the stride length, it is shown in Chapter 3 that our
+// matching algorithm is able to compensate for such inaccuracies, effectively.
+
+
+
+
 === References
 //* A list of references.
 
 include::draft.adoc[tag='references']
-

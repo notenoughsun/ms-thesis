@@ -1,15 +1,18 @@
-:sectnums:
-
 = Construct probabilistic framework for smartphone localisation in zero infrastructure conditions
+// :sectnums:
+
 
 
 
 [abstract]
+
+
+dbsseeb
+// [abstract!]
+
+
+// [lead]
 == Documentation Abstract
-
-
-
-
 
 
 Problem: no effecient algorithm for smartphone localisation in conditions with:
@@ -65,3 +68,56 @@ What to do
 // approximation method to perform Monte Carlo approximation
 // literature review
 // wifi rssi
+
+
+:stem: latexmath
+
+=== lecture 9 data association
+
+problem of data association,
+the distribution of correspondences of observations to states can't be calculated explicitly (?)
+we need some assumptions for data association, we do iterative updates of correspondences data.
+
+[.lead]
+calculating online
+
+- only the last position matters
+history of correspondences only depend on the last estimate
+
+previous correspondences were correct - assumption (conditional independence from previous correspondences)
+
+stem:[c_t = {c_t^1, c_t^2, ...}]
+
+
+batch optimization - evaluation of previous correspondences back in time
+
+
+    IF there is no landmarks, how to create landmarks from measurements??
+    clustering of data based on signal similarity, graph clustering, corridor == edge, splitting into parts
+
+    similarity of trajectories, similarity of measurements (cross-covariance)
+
+IMPORTANT: data association
+
+$p(z | c^i_t = new, y_t)$ threashold
+
+We need to estimate what data can be used to construct an auxilary localization point.
+From data, we extract by similarity long enough traclets & measurements.
+
+
+map processing
+* We extract straight lines from the data with running mean and some offset.
+* We classify and try to get similarities with the loop closure
+
+localization with given map:: particles filter.
+  from current location sample proposal points, create smooth trajectories based on points
+  compare similarity between meSUREMENTS
+
+map construction by given beacon data::
+  * in locations where beacon data is available - traditional slam (ekf, pf)
+  * when no data is available, use the markov graph map of building location
+
+
+building location map construction::
+  * markov graph map combine spatial data of building structure (doors, corridors..) and landmarks or existing data to location association
+  * graph of the building considered as given. we construct it from the building map as the non-directional graph in traditional format. we additionally assign weights to the graph edges, given the restriction of *markovian* feature of this graph

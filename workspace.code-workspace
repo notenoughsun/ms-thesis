@@ -2,6 +2,15 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../../../media/tim/m2/downloads/rudacop-public-2019-10-25"
+		},
+		{
+			"path": "../../Downloads/radio"
+		},
+		{
+			"path": "../../../../media/tim/m2/media/music"
 		}
 	],
 	"settings": {}
