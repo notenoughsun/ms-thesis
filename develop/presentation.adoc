@@ -1,0 +1,111 @@
+= Radio from scratch
+
+== My presentation
+
+[source, clojure]
+----
+(def lazy-fib
+  (concat
+   [0 1]
+   ((fn rfib [a b]
+        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+----
+
+[background-video="https://my.video/file.mp4",background-video-loop=true,background-video-muted=true]
+== Nice background!
+
+// [%notitle,background-iframe="https://www.youtube.com/embed/LaApqL4QjH8?rel=0&start=3&enablejsapi=1&autoplay=1&loop=1&controls=0&modestbranding=1"]
+// == My radio
+
+[%notitle,background-iframe="https://radio.scorpios.su/public/enfield"]
+== My radio
+
+* Start a radio from scratch
+* Publish it online
+* invite friends to participate
+
+
+[%notitle]
+== The Great Goat
+
+image::https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg[canvas,size=contain]
+
+
+.Important
+* have a portfolio
+* visit card, sign, website
+* social networks, personal assiciation with your brend idea, messengers and channels
+* imidge supporting your idea
+
+== Support your dvancement
+
+SMM, SEO
+
+Имя и шапка пользователя, какие есть похожие аккаунты
+посмотреть курсы и книжки по смм и т.д. Смотреть интересные идеи у разных авторов
+Продвижение стоит денег и времени, отдельно заниматься и учиться.
+
+Сделать как вспомогательная часть к резюме
+engagement rate
+
+портфолио, красивые фотографии, постоянно обновлять сайт??
+
+
+== КАК постоянно обновлять сайт??
+
+автоматизация,
+интеграция с ботами и блогами, собирать свою аудиторию
+
+Продумать идею, подготовить контент у удобочитаемой форме
+Разработать выступления и 3-5 раз в году выступать в качестве участника, организаторы и т.д.
+
+Работать с презентациями, заниматься нетворкингом >> помогает привлекать подписчиков, инвесторов.
+
+
+== Создание проекта
+
+Оценка метрик, как выглядит сайт и т.д., следить за отзывами, вовлеченностью, собирать обратную связь.
+
+
+Как сделать красиво??
+
+Практика, чем и как заниматься??
+
+Найти себе наставника по брендингу ?? (не только ??)
+Кого спросить если затупливаешь
+
+Долгие инвестиции в личный бренд
+
+// Что делает ванек???
+
+Найти единомышленников, команду, мотивацию
+
+Когда необходимо реструктурировать, получить оценку??
+
+
+Договориться о интервью с известными/экспертами в нише. Организовать семинары/митапы???
+
+Попробовать в пет проект с друзьями знакомыми
+Запилить стартаааап
+
+
+SPAAAAAm
+
+Sbergraduate.ru
+
+читать маркетинговые книги
+как растут бренды
+
+манн иванов фербер
+
+работа с текстами максим ильяхов: как научиться писать.... как писать в инстаграме
+
+пиши сокращай
+
+тренироваться писать
+
+начать диплом???
+
+
+
+

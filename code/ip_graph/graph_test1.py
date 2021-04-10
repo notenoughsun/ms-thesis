@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 # rng = np.random.random_integers(12345)
 
-workpath = "/home/tim/git/ip_graph/out/"
+workpath = "/home/tim/git/ms-thesis/code/ip_graph/out"
 
 class Location():
     def __init__(self, n_routers = 6, sizex = 10, sizey = 10):
