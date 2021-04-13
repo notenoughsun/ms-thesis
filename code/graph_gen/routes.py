@@ -5,6 +5,8 @@ from matplotlib.ticker import MaxNLocator
 import numpy as np
 
 from networkx.drawing.nx_agraph import graphviz_layout
+from networkx.drawing.nx_pydot import write_dot, read_dot
+# nx.drawing.nx_pydot.write_dot
 import networkx as nx
 
 from maze import maze
@@ -17,9 +19,11 @@ from maze import maze
 # print(G.nodes.data)
 
 class Mgraph(maze):
-    def __init__(self):
-        super().__init__()
-        self.generate()
+    def __init__(self, G = None, Z = None):
+        super().__init__(G = G, Z = Z)
+
+        if not G:
+            self.generate()
 
         dd = dict(self.G.nodes.data())
         self.nodes = self.G.nodes()
@@ -36,7 +40,7 @@ class Mgraph(maze):
         # plt.pcolormesh(x, y, self.Z, alpha=0.4, shading='auto')
         plt.tight_layout()
 
-    def gen_routes(self, n = 40):
+    def gen_routes(self, routes = None):
         """
         generate trajectories between random points (a, b) using dijkstra algorithm
         """
@@ -45,11 +49,16 @@ class Mgraph(maze):
         pos = self.pos
 
         datasetgt = []
-        trajs = []
+        trajs = [[]]
 
         # df = pd.DataFrame(trajs, columns=['traj', 'poses'])
+        if not routes.any():
+            n = 40
+            routes = np.random.randint(len(nodes), size = (2, n))
+        else:
+            assert isinstance(routes, np.ndarray)
+            n = routes.shape[0]
 
-        routes = np.random.randint(len(nodes), size = (2, n))
         ids = np.take(nodes, routes.squeeze()).reshape(-1, 2)
         for idi in ids:
             traj = nx.dijkstra_path(G, idi[0], idi[1])
@@ -64,28 +73,24 @@ class Mgraph(maze):
 if __name__ == "__main__":
     mg = Mgraph()
     G = mg.G
+    write_dot(G, '/home/tim/git/thesis/code/graph_gen' + '/content/file.dot')
+
+    n = 15
+    selected = np.random.randint(0, len(mg.nodes), size = n)
+    routes = np.vstack((selected[:-1], selected[1:]))
+    datasetgt, trajs = mg.gen_routes(routes)
 
     fig = plt.figure(num = "field3", figsize=(3,3), dpi = 150)
-
     mg.plot_field(fig)
     nx.draw(G, pos = mg.pos, alpha = 0.6, node_size = 5, width = 2)
-    datasetgt = []
-    n = 40
-
-    nodes = mg.nodes
-    pos = mg.pos
-
-    # # generate trajectories between random points (a, b) using dijkstra algorithm
-    routes = np.random.randint(len(nodes), size = (2, n))
-
-    ids = np.take(nodes, routes.squeeze()).reshape(-1, 2)
-    for idi in ids:
-        traj = nx.dijkstra_path(G, idi[0], idi[1])
-        H = G.subgraph(traj)
-        nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)
-        
-        coords = np.array([pos[ti] for ti in traj])
-        datasetgt.append(coords)
-        
+    for ti in trajs:
+        H = G.subgraph(ti)
+        nx.draw_networkx_edges(H, pos = mg.pos, edge_color='g', width = 6, alpha=0.2)
     plt.show()
-    # nx.write_dot(G, '/content/file.dot')
+
+    # uploading is not working
+    
+    # G2 = nx.Graph(read_dot('/home/tim/git/thesis/code/graph_gen' + '/content/file.dot'))
+    # mg2 = Mgraph(G2, mg.Z)
+    # datasetgt2, trajs = mg2.gen_routes(routes)
+    # assert (datasetgt2 == datasetgt).all()

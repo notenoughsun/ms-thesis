@@ -10,18 +10,23 @@ import networkx as nx
 # https://habr.com/ru/post/537630/
 
 
-# G=nx.Graph()
-
 class maze(object):
 
-    def __init__(self):
+    def __init__(self, G = None, Z = None):
         self.boxsize = boxsize = 15
         
         self.x = np.arange(0, boxsize, 1)
         self.y = np.arange(0, boxsize, 1)
-        self.G = nx.Graph()
         self.Z = np.zeros((boxsize, boxsize))
-        self.im = None
+
+        if not G:
+            self.G = nx.Graph()
+        else:
+            assert isinstance(G, nx.Graph)
+            self.G = G
+            self.Z = Z
+
+        # self.im = None
 
     def generate(self):   
         Z = self.Z
@@ -87,28 +92,15 @@ class maze(object):
             connect_to_existing(cp)
 
             add_valid(cp, active_set) #active_set increased
-
         return G
 
     def plot(self, fig = None):
         if not fig:
             fig = plt.figure(num = "field2", figsize=(3,3), dpi = 150)
         self.im = plt.pcolormesh(self.x, self.y, self.Z, alpha=0.4, shading='auto')
-        # plt.show(block = True)
-
-    # def show_plot(self, fig = None):
-    #     if not fig:
-    #         fig = plt.figure(num = "field2", figsize=(3,3), dpi = 150)
-
-    #     if not self.im:
-    #         self.plot(fig)
-    #     # self.im = plt.pcolormesh(self.x, self.y, self.Z, alpha=0.4)
-    #     plt.imshow(self.im)
-    #     # plt.show(block = True)
 
 if __name__ == "__main__":
     m = maze()
     G = m.generate()
     m.plot()
-    # m.show_plot()
     plt.show()
