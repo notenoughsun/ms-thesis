@@ -1,0 +1,49 @@
+2) Many problems accept discretization. Not all of them.
+
+from l02 planning
+
+we apply the discretisation to our problem, and transform the global search task, to local graph search problem. The problem becomes much similar to HMC solutions and realisations.
+
+
+The objective is to find a feasible solution to slam and planning problems.
+Why does the term feasible is applied here? We have to first define, what is infeasible solution, and which system is inappropriate for usage.
+
+Considering the probabilistic approach, once we have some uncertaity in data, we need a way to reduce this uncertainty. So, the only requirement for the system, is that the covariance in localization problem can be decreased.
+
+In our implementation, we perform integration of IMU data. The uncertainty increases quadratically. 
+
+// our method
+After a series of integration steps, we have a new pose. The uncertainty can be decreased only after adding new information on human or location. The information we have are sensor measurements, building map, IMU data.
+For the extension of current aproach we may consider pose prediction methods, special approach of human step detection and different sesnor fusion models.
+Here we don't consider this refinements and focus on localization and mapping method only for a given sensor model. 
+
+// We want to estimate, how spatial magnetic field data can be utilized without signal of other sensors. We know that 
+The dead-reckoning is the localization or pose update when the sensor data are not available. In common indoor localization sistem , as in []
+traditional sensors are []
+we model the localization with loosy signal connection of WiFi and BLE, we estimate how the spatial data of magnetic field and IMU PDR can increase the localization accuracy. 
+// TODO: need an experimant here
+
+Given the proof that the spatial information of magnetic field has a significan effect for traditional PDR, we focus on this technology.
+
+We have examples of products that are based mostly on magnetics field
+// list products and papers
+
+There is no information of how the magnetic data can be collected in absence of precise location. We searched for a possible solutions to this task.
+
+First, the task is to find a precise location which is usually called ground truth for training the system, creating the map of the location, for estimatimation of the algorithm performance.
+
+
+
+
+
+
+
+
+
+ representing the idea of some  
+
+
+
+ it is guaranteed to be found
+
+solution, and
