@@ -1,3 +1,7 @@
+import json
+import os.path
+import inspect
+from networkx.readwrite.json_graph import jit_data, jit_graph
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.colors import BoundaryNorm
@@ -19,24 +23,25 @@ from maze import maze
 # print(G.nodes.data)
 
 class Mgraph(maze):
-    def __init__(self, G = None, Z = None):
-        super().__init__(G = G, Z = Z)
+    def __init__(self, boxsize, G=None, Z=None):
+        super().__init__(boxsize, G, Z)
 
-        if not G:
+        if G == None:
             self.generate()
 
-        dd = dict(self.G.nodes.data())
+        # dd = dict(self.G.nodes.data())
         self.nodes = self.G.nodes()
-        self.pos = {i : dd[i]['pos'] for i in list(dd.keys()) }
+        # self.pos = {i : dd[i]['pos'] for i in list(dd.keys()) }
+        self.pos = dict(self.G.nodes.data('pos'))
 
-    def plot_field(self, fig = None):
+    def plot_field(self, fig = None, alpha = 0.4):
         if not fig:
             fig = plt.figure(num = "field2", figsize=(3,3), dpi = 150)
         # self.im = plt.pcolormesh(self.x, self.y, self.Z, alpha=0.4, shading='auto')
         offx, offy = 0, 0
         x = np.arange(offx, self.boxsize + offy, 1)
         y = np.arange(offx, self.boxsize + offy, 1)
-        plt.pcolormesh(y, x, self.Z.T, alpha=0.4, shading='auto')
+        plt.pcolormesh(y, x, self.Z.T, alpha = 0.8, shading='auto')
         # plt.pcolormesh(x, y, self.Z, alpha=0.4, shading='auto')
         plt.tight_layout()
 
@@ -70,10 +75,29 @@ class Mgraph(maze):
             datasetgt.append(coords)
         return datasetgt, trajs
 
+
+
+
+
 if __name__ == "__main__":
     mg = Mgraph()
     G = mg.G
-    write_dot(G, '/home/tim/git/thesis/code/graph_gen' + '/content/file.dot')
+
+    data = jit_data(G)
+
+    filename = inspect.getframeinfo(inspect.currentframe()).filename
+    path = os.path.dirname(os.path.abspath(filename))
+    saveto = os.path.join(path, 'content/file.json')
+    with open(saveto, 'w') as file:
+        # file.write(data)
+        json.dump(data, file)
+    # write_dot(G, '/home/tim/git/thesis/code/graph_gen' + '/content/file.dot')
+
+    # with open(saveto, "r") as read_file:
+    #     data_read = json.load(read_file)
+
+    # assert hash(data_read) == hash(data)
+    # print("read write completed")
 
     n = 15
     selected = np.random.randint(0, len(mg.nodes), size = n)
@@ -86,6 +110,8 @@ if __name__ == "__main__":
     for ti in trajs:
         H = G.subgraph(ti)
         nx.draw_networkx_edges(H, pos = mg.pos, edge_color='g', width = 6, alpha=0.2)
+    
+    plt.savefig(os.path.join(path, 'content/routes.png'))
     plt.show()
 
     # uploading is not working

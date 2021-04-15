@@ -1,3 +1,5 @@
+import os.path
+import inspect
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.colors import BoundaryNorm
@@ -12,8 +14,8 @@ import networkx as nx
 
 class maze(object):
 
-    def __init__(self, G = None, Z = None):
-        self.boxsize = boxsize = 15
+    def __init__(self, boxsize, G=None, Z=None):
+        self.boxsize = boxsize
         
         self.x = np.arange(0, boxsize, 1)
         self.y = np.arange(0, boxsize, 1)
@@ -97,10 +99,17 @@ class maze(object):
     def plot(self, fig = None):
         if not fig:
             fig = plt.figure(num = "field2", figsize=(3,3), dpi = 150)
-        self.im = plt.pcolormesh(self.x, self.y, self.Z, alpha=0.4, shading='auto')
+        self.im = plt.pcolormesh(
+            self.x, self.y, self.Z, alpha=0.4, shading='auto')
+
+
+
+filename = inspect.getframeinfo(inspect.currentframe()).filename
+path = os.path.dirname(os.path.abspath(filename))
 
 if __name__ == "__main__":
     m = maze()
     G = m.generate()
     m.plot()
-    plt.show()
+    plt.savefig(os.path.join(path, "content/maze.png"))
+    plt.show(block = True)

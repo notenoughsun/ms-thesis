@@ -8,54 +8,44 @@ from scipy.interpolate import LinearNDInterpolator
 from scipy.interpolate import CloughTocher2DInterpolator
 import matplotlib.pyplot as plt
 
-# add random noise on walls edges
-W = nx.Graph()
 
-for i in range(boxsize - 1):
-  for j in range(boxsize - 1):
-    if Z[i][j] == 0:
-      W.add_node(xytoname([i, j]), pos = [i, j])
-      if i > 0 and Z[i - 1][j] == 0:
-        W.add_edge(xytoname([i, j]), xytoname([i - 1, j]), weight = 1.)
-      if j > 0 and Z[i][j - 1] == 0:
-        W.add_edge(xytoname([i, j]), xytoname([i, j - 1]), weight = 1.)
-
-posw = dict(W.nodes.data("pos"))
-# nx.draw(W, pos=posw, alpha=0.9, node_size=15, width=2)
+def generate_motion(t, dt):
+  pass
 
 
+def sense_landmarks(state, field_map, max_observations):
+  
+  pass
 
-x = np.linspace(-0.5, boxsize - 0.5, boxsize - 1)
-y = np.linspace(-0.5, boxsize - 0.5, boxsize - 1)
+def sense_magnetic(state, map):
+  pass
 
-xx, yy = np.meshgrid(x, y)
-z = np.random.randn(boxsize - 1, boxsize - 1)
+def sense_visual(state):
+  pass
 
-interp = interpolate.interp2d(xx, yy, z, kind='linear')
-zz = interp(x, y)
 
-fig, axs = plt.subplots(nrows=1, ncols=1, subplot_kw={'xticks': [], 'yticks': []})
-axs.set_aspect('equal')
-# fig, axs = plt.subplots(nrows=1, ncols=1, figsize=(6, 6), dpi = 150, subplot_kw={'xticks': [], 'yticks': []})
-axs.imshow(zz, interpolation='spline36', resample=True)
 
-plt.axis("equal")
+def generate_data(traj,
+                  # num_landmarks_per_side,
+                  # max_obs_per_time_step,
+                  alphas,
+                  beta,
+                  dt,
+                  # animate=False,
+                  plot_pause_s=0.01):
+  pass
+  """
+    Generates the human motion trajectory 
+     using path given by precalculated trajectory.
 
-x = np.arange(-0.5, boxsize - 0.5, 1)
-y = np.arange(-0.5, boxsize - 0.5, 1)
+    :param traj: All poses of human during moving 
+    (format: np.array([x, y, theta]))
 
-nx.draw(G, pos=pos, alpha=0.3, node_size=5, width=1, edge_color='w', node_color='w')
-
-for i in range(boxsize - 1):
-  for j in range(boxsize - 1):
-    if Z[i][j] == 0:
-      rect = patches.Rectangle(xy = (i - 0.5, j - 0.5), width = 1., height=1., color = 'w')
-      axs.add_patch(rect)
-
-# nx.draw(W, pos=posw, alpha=0.9, edge_color='k', width=8, node_size=40, node_color='k')
-
-for pts in ds[:10]:
-  for xf, yf in pts:
-    plt.plot(xf, yf, label = "savgol_filter", linewidth = 2) 
-
-plt.show()
+    # :param max_obs_per_time_step: The maximum number of observations to generate per time step of the sim.
+    :param alphas: The noise parameters of the control actions (format: np.array([a1, a2, a3, a4])).
+    :param beta: The noise parameter of observations (format: np.array([range (cm), bearing (deg)])).
+    :param dt: The time difference (in seconds) between two consecutive time steps.
+    # :param animate: If True, this function will animate the generated data in a plot.
+    :param plot_pause_s: The time (in seconds) to pause the plot animation between two consecutive frames.
+    :return: SimulationData object.
+    """

@@ -9,21 +9,14 @@ import os
 
 import numpy as np
 
-import geomdl
+# import networkx as nx
 
-import itertools
-import copy
-import networkx as nx
-
-from geomdl import exchange
-from geomdl import convert
-from geomdl import BSpline
-from geomdl.visualization import VisMPL
-from geomdl import utilities
-from geomdl import NURBS
-
-
-# rng = np.random.random_integers(12345)
+# from geomdl import exchange
+# from geomdl import convert
+# from geomdl import BSpline
+# from geomdl.visualization import VisMPL
+# from geomdl import utilities
+# from geomdl import NURBS
 
 cwd = os.getcwd()
 savedir = os.path.join(cwd, "code/ip_graph/out")
