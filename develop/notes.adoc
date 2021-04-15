@@ -10,17 +10,17 @@ Why does the term feasible is applied here? We have to first define, what is inf
 
 Considering the probabilistic approach, once we have some uncertaity in data, we need a way to reduce this uncertainty. So, the only requirement for the system, is that the covariance in localization problem can be decreased.
 
-In our implementation, we perform integration of IMU data. The uncertainty increases quadratically. 
+In our implementation, we perform integration of IMU data. The uncertainty increases quadratically.
 
 // our method
 After a series of integration steps, we have a new pose. The uncertainty can be decreased only after adding new information on human or location. The information we have are sensor measurements, building map, IMU data.
 For the extension of current aproach we may consider pose prediction methods, special approach of human step detection and different sesnor fusion models.
-Here we don't consider this refinements and focus on localization and mapping method only for a given sensor model. 
+Here we don't consider this refinements and focus on localization and mapping method only for a given sensor model.
 
-// We want to estimate, how spatial magnetic field data can be utilized without signal of other sensors. We know that 
+// We want to estimate, how spatial magnetic field data can be utilized without signal of other sensors. We know that
 The dead-reckoning is the localization or pose update when the sensor data are not available. In common indoor localization sistem , as in []
 traditional sensors are []
-we model the localization with loosy signal connection of WiFi and BLE, we estimate how the spatial data of magnetic field and IMU PDR can increase the localization accuracy. 
+we model the localization with loosy signal connection of WiFi and BLE, we estimate how the spatial data of magnetic field and IMU PDR can increase the localization accuracy.
 // TODO: need an experimant here
 
 Given the proof that the spatial information of magnetic field has a significan effect for traditional PDR, we focus on this technology.
@@ -40,10 +40,80 @@ First, the task is to find a precise location which is usually called ground tru
 
 
 
- representing the idea of some  
+ representing the idea of some
 
 
 
  it is guaranteed to be found
 
 solution, and
+
+
+
+
+=== update 15.04
+
+
+MATHEMATICAL NOTATION OF AVAILABLE MEASUREMENTS IN WIRELESS
+COMMUNICATION SYSTEMS TOGETHER WITH APPROXIMATIVE NOISE STANDARD
+DEVIATIONS σ e . [HERE y IS THE ACTUAL NUMERICAL VALUE, h DENOTES A GENERAL
+NONLINEAR MODEL, p t IS THE SOUGHT POSITION, p DENOTES THE POSITION OF
+BASE STATION/ANTENNA NUMBER i AND e DENOTES MEASUREMENT NOISE WITH A
+PROBABILITY DENSITY FUNCTION p E (·).]
+
+
+
+Fig. 2. Magnetic field as measured during the mapping along
+the lines parallel to . The y axis on the graphic corresponds
+to the number of the line and the x axis corresponds to the
+time of the measurement relative to the moments we started
+and finished following each line. Values are scaled and color-
+coded independently for each coordinate to better show spatial
+variations.
+
+
+==== from Unsupervised_Indoor_Localization
+
+The graph matching (or edge independent set) problem
+is the problem of finding a subset of graph edges,
+such that none of the edges share vertices.
+This problem is
+more interesting on bipartite graphs, where the matching is similar to assigning the
+vertices of one part of the graph to another, with no vertex appearing twice in the
+assignment. A specific case of this problem is the “maximum weighted bipartite
+matching”, which is defined as a matching on a bipartite graph with maximum sum
+of the weights of selected edges.
+
+This problem is also known as the “assignment
+problem”. There are well-known algorithms for this problem such as the Hungarian
+algorithm (originally called by this name in [42]). Another method to solve this
+problem is to run the Bellman-Ford shortest path algorithm on an augmented
+graph.
+
+problem: maximum weighted bipartite graph matching +
+approach: matching on a bipartite graph with maximum sum
+of the weights of selected edges
+
+
+We now describe the problem formulation by modeling two graphs: the ground truth
+graph which is built offline, based on the building map, and the data graph, which is built
+in an unsupervised fashion, based on the readings obtained from users walking in the
+environment.
+
+ground truth graph:: building map
+data graph:: readings obtained from users walking in the
+environment
+
+
+To find the loop closures and repetitive points, we use the
+information in the unlabeled RSS readings. The system is designed to recognize the
+overlapping parts of two walks in the building and merge them, based on the common
+RSS readings. This process has some similarity to the operation phase of localization
+systems with a data-set of labeled data, except that in this case, instead of finding
+the physical location of the user geologically, only matching unlabeled points (repetitive
+points) are found and merged. This process, can be considered as topological localization
+on the data graph, since no physical coordinate is obtained.
+
+
+topological localization
+on the data graph - not exactly here, but we define a matching procedure for accurate matching

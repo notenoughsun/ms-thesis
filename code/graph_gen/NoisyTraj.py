@@ -63,14 +63,14 @@ class NoisyTraj():
 
     def data_gen(self, repeat = 6):
         obs = []
+        # eps, dx = 0.15, 0.2
+        # wlen, order = 13, 2
         # straight near walls
-        dx = 0.25
-        offsets = [[-dx, -dx], [-dx, dx], [dx, -dx], [dx, dx]]
-        for i in range(4):
-            obs.append(self.transform_trajectory(0.34, offsets, 9, 3))
+        # offsets = [[-dx, -dx], [-dx, dx], [dx, -dx], [dx, dx]]
+        # for i in range(4):
+        #     obs.append(self.transform_trajectory(eps, offsets, 7, 2))
         # noisy random
-        eps = 1.5
-        dx = 0.2
+        eps, dx = 0.6, 0.15
         offsets = [[-dx, -dx], [-dx, 0], [-dx, dx], [0, -dx],
                     [0, 0], [0, dx], [dx, -dx], [dx, 0], [dx, dx]]
         for i in range(abs(repeat - 4)):
@@ -82,10 +82,9 @@ class NoisyTraj():
 if __name__ == "__main__":
     mg = Mgraph(11)
     g, pos = mg.G, mg.pos
-
-    n = 7
-    selected = np.random.randint(0, len(mg.nodes), size=n)
-    routes = np.vstack((selected[:-1], selected[1:]))
+    n = 2 * len(mg.nodes)
+    selected = np.random.randint(0, len(mg.nodes), size= n)
+    routes =  np.array_split(selected, n // 4)  
     datasetgt, trajs = mg.gen_routes(routes)
 
     fig = plt.figure(figsize=(3, 3), dpi=150)
@@ -98,14 +97,13 @@ if __name__ == "__main__":
         if nt.curve == None:
             continue
 
-        obs = nt.data_gen(repeat=7)
+        obs = nt.data_gen(repeat=1)
         noisy_dat.append(obs)
         for oi in obs:
             plt.plot(oi[0, :], oi[1, :], linewidth = 1)
 
     filename = inspect.getframeinfo(inspect.currentframe()).filename
     path = os.path.dirname(os.path.abspath(filename))
-    # saveto = os.path.join(path, 'content/file.json')
 
     plt.tight_layout()
     saveto = os.path.join(path, 'content/noisy_traj.png')

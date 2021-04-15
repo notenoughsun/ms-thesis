@@ -1,6 +1,8 @@
 import json
 import os.path
 import inspect
+import networkx as nx
+
 from networkx.readwrite.json_graph import jit_data, jit_graph
 import matplotlib
 import matplotlib.pyplot as plt
@@ -11,7 +13,6 @@ import numpy as np
 from networkx.drawing.nx_agraph import graphviz_layout
 from networkx.drawing.nx_pydot import write_dot, read_dot
 # nx.drawing.nx_pydot.write_dot
-import networkx as nx
 
 from maze import maze
 
@@ -23,6 +24,11 @@ from maze import maze
 # print(G.nodes.data)
 
 class Mgraph(maze):
+    '''
+    the map graph contains info about locations and can be plotted, 
+    we add the method for tracing routes for map coverage
+    next step:: implement the map
+    '''
     def __init__(self, boxsize, G=None, Z=None):
         super().__init__(boxsize, G, Z)
 
@@ -56,31 +62,32 @@ class Mgraph(maze):
         datasetgt = []
         trajs = [[]]
 
-        # df = pd.DataFrame(trajs, columns=['traj', 'poses'])
-        if not routes.any():
-            n = 40
-            routes = np.random.randint(len(nodes), size = (2, n))
-        else:
-            assert isinstance(routes, np.ndarray)
-            n = routes.shape[0]
+        for route in routes:
+            ids = np.take(nodes, route.squeeze())
 
-        ids = np.take(nodes, routes.squeeze()).reshape(-1, 2)
-        for idi in ids:
-            traj = nx.dijkstra_path(G, idi[0], idi[1])
+            traj = [ids[0]] #initial point
+            for i in range(len(ids) - 1):
+                traj += (nx.dijkstra_path(G, ids[i], ids[i+1])[1:]) #update for circular routes
+                
             trajs.append(traj)
-            # H = G.subgraph(traj)
-            # nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)
-            
+                # H = G.subgraph(traj)
+                # nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)                
             coords = np.array([pos[ti] for ti in traj])
             datasetgt.append(coords)
+
+        # ids = np.take(nodes, routes.squeeze()).reshape(-1, 2)
+        # for idi in ids:
+        #     traj = nx.dijkstra_path(G, idi[0], idi[1])
+        #     trajs.append(traj)
+        #     # H = G.subgraph(traj)
+        #     # nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)
+            
+        #     coords = np.array([pos[ti] for ti in traj])
+        #     datasetgt.append(coords)
         return datasetgt, trajs
 
-
-
-
-
 if __name__ == "__main__":
-    mg = Mgraph()
+    mg = Mgraph(9)
     G = mg.G
 
     data = jit_data(G)
@@ -99,9 +106,9 @@ if __name__ == "__main__":
     # assert hash(data_read) == hash(data)
     # print("read write completed")
 
-    n = 15
-    selected = np.random.randint(0, len(mg.nodes), size = n)
-    routes = np.vstack((selected[:-1], selected[1:]))
+    n = 2 * len(mg.nodes)
+    selected = np.random.randint(0, len(mg.nodes), size= n)
+    routes =  np.array_split(selected, n // 4)  
     datasetgt, trajs = mg.gen_routes(routes)
 
     fig = plt.figure(num = "field3", figsize=(3,3), dpi = 150)

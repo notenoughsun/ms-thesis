@@ -108,7 +108,7 @@ filename = inspect.getframeinfo(inspect.currentframe()).filename
 path = os.path.dirname(os.path.abspath(filename))
 
 if __name__ == "__main__":
-    m = maze()
+    m = maze(boxsize = 11)
     G = m.generate()
     m.plot()
     plt.savefig(os.path.join(path, "content/maze.png"))
