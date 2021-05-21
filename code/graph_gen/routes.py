@@ -50,6 +50,10 @@ class Mgraph(maze):
         plt.pcolormesh(y, x, self.Z.T, alpha = 0.8, shading='auto')
         # plt.pcolormesh(x, y, self.Z, alpha=0.4, shading='auto')
         plt.tight_layout()
+        plt.axis('off')
+
+    def draw_graph(self, alpha = 0.6, node_size = 5, width = 2):
+        nx.draw(self.G, pos = self.pos, alpha = alpha, node_size = node_size, width = width)
 
     def gen_routes(self, routes = None):
         """
@@ -59,7 +63,7 @@ class Mgraph(maze):
         nodes = self.nodes
         pos = self.pos
 
-        datasetgt = []
+        datasetgt = []  
         trajs = [[]]
 
         for route in routes:

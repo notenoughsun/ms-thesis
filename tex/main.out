@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Structure}{}% 1
+\BOOKMARK [1][-]{section.2}{Background and problem statement}{}% 2
+\BOOKMARK [1][-]{section.3}{Objectives}{}% 3
+\BOOKMARK [1][-]{section.4}{Introduction}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Related work}{section.4}% 5
+\BOOKMARK [1][-]{section.5}{Methodology / theoretical framework}{}% 6
+\BOOKMARK [2][-]{subsection.5.1}{System architecture}{section.5}% 7
+\BOOKMARK [1][-]{section.6}{measurements model}{}% 8
+\BOOKMARK [1][-]{section.7}{Transition model definition}{}% 9
+\BOOKMARK [2][-]{subsection.7.1}{RSSI methode}{section.7}% 10
+\BOOKMARK [2][-]{subsection.7.2}{Processing}{section.7}% 11
+\BOOKMARK [2][-]{subsection.7.3}{RSSI Graph SLAM}{section.7}% 12
+\BOOKMARK [1][-]{section.8}{factor graphs, distance function, graph matching}{}% 13
+\BOOKMARK [2][-]{subsection.8.1}{SAM for magnetic localization problem}{section.8}% 14
+\BOOKMARK [2][-]{subsection.8.2}{Clustering application for mapping}{section.8}% 15
+\BOOKMARK [1][-]{section.9}{Experiments}{}% 16
+\BOOKMARK [2][-]{subsection.9.1}{Pose estimation and IMU Modelling}{section.9}% 17
+\BOOKMARK [2][-]{subsection.9.2}{Data processing}{section.9}% 18
+\BOOKMARK [3][-]{subsubsection.9.2.1}{image approximation}{subsection.9.2}% 19
+\BOOKMARK [1][-]{section*.4}{References}{}% 20

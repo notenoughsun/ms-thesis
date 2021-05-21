@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{articleXia}
+Hao Xia, Jinbo Zuo, Shuo Liu, and Yanyou Qiao.
+\newblock Indoor localization on smartphones using built-in sensors and map
+  constraints.
+\newblock {\em IEEE Transactions on Instrumentation and Measurement}, PP:1--10,
+  08 2018.
+
+\bibitem{7809951}
+{Min Zhang}, {Ling Pei}, and {Xiaotie Deng}.
+\newblock Graphslam-based crowdsourcing framework for indoor wi-fi
+  fingerprinting.
+\newblock In {\em 2016 Fourth International Conference on Ubiquitous
+  Positioning, Indoor Navigation and Location Based Services (UPINLBS)}, pages
+  61--67, 2016.
+
+\bibitem{SLAM_using_Gaussian_process_latent_variable_models}
+Brian Ferris, Dieter Fox, and Neil Lawrence.
+\newblock Wifi-slam using gaussian process latent variable models.
+\newblock volume~7, pages 2480--2485, 01 2007.
+
+\bibitem{Grand20123AxisMF}
+E.~Grand and S.~Thrun.
+\newblock 3-axis magnetic field mapping and fusion for indoor localization.
+\newblock {\em 2012 IEEE International Conference on Multisensor Fusion and
+  Integration for Intelligent Systems (MFI)}, pages 358--364, 2012.
+
+\bibitem{6827640}
+X.~{Zhang}, Y.~{Jin}, H.~{Tan}, and W.~{Soh}.
+\newblock Cimloc: A crowdsourcing indoor digital map construction system for
+  localization.
+\newblock In {\em 2014 IEEE Ninth International Conference on Intelligent
+  Sensors, Sensor Networks and Information Processing (ISSNIP)}, pages 1--6,
+  2014.
+
+\end{thebibliography}

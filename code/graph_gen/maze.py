@@ -9,6 +9,8 @@ import numpy as np
 from networkx.drawing.nx_agraph import graphviz_layout
 import networkx as nx
 
+import math
+
 # https://habr.com/ru/post/537630/
 
 
@@ -102,6 +104,11 @@ class maze(object):
         self.im = plt.pcolormesh(
             self.x, self.y, self.Z, alpha=0.4, shading='auto')
 
+    # def check(self, x, y):
+    #     x_ = math.floor(x)
+    #     y_ = math.floor(y)
+    #     return self.Z[x_, y_]
+
 
 
 filename = inspect.getframeinfo(inspect.currentframe()).filename
@@ -111,5 +118,11 @@ if __name__ == "__main__":
     m = maze(boxsize = 11)
     G = m.generate()
     m.plot()
+    plt.axis('off')
+
     plt.savefig(os.path.join(path, "content/maze.png"))
-    plt.show(block = True)
+    # plt.show(block = True)
+    plt.show()
+
+    Z = m.Z
+    print(Z)

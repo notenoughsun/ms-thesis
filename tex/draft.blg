@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: draft.aux
+The style file: unsrt.bst
+Database file #1: bib.bib
+Warning--I didn't find a database entry for ""
+Warning--empty booktitle in SLAM_using_Gaussian_process_latent_variable_models
+You've used 5 entries,
+            1791 wiz_defined-function locations,
+            482 strings with 4709 characters,
+and the built_in function-call counts, 1592 in all, are:
+= -- 140
+> -- 58
+< -- 5
++ -- 21
+- -- 16
+* -- 95
+:= -- 222
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 85
+empty$ -- 156
+format.name$ -- 16
+if$ -- 388
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 5
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 62
+stack$ -- 0
+substring$ -- 108
+swap$ -- 40
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 14
+width$ -- 6
+write$ -- 57
+(There were 2 warnings)

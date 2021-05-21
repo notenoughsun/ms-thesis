@@ -2,6 +2,8 @@
 
 from l02 planning
 
+// .Optional title
+[example]
 we apply the discretisation to our problem, and transform the global search task, to local graph search problem. The problem becomes much similar to HMC solutions and realisations.
 
 
@@ -117,3 +119,71 @@ on the data graph, since no physical coordinate is obtained.
 
 topological localization
 on the data graph - not exactly here, but we define a matching procedure for accurate matching
+
+
+=== new ipd
+
+image::images/notes-9e18a.png[]
+
+image::images/notes-22c0a.png[]
+
+image::images/notes-ebbc3.png[]
+
+=== Fast Iterative Alignment of Pose Graphs with Poor Initial Estimates
+Duckett et al. described an early nonlinear SLAM im-
+plementation [6] that uses Gauss-Seidel relaxation. However,
+they assumed absolute knowledge of the robot’s orientation,
+essentially making the problem linear. Frese, Larsson, and
+Duckett addressed that limitation and attempted to improve
+convergence speed in [7] with the Multi-Level Relaxation
+(MLR) algorithm. Multi-resolution methods are typically ap-
+plied to problems more spatially uniform than that of SLAM,
+but they report good results. MLR, given time, can generally
+find the exact minimum of the graph.
+Other nonlinear approaches include GraphSLAM [8], and
+Graphical SLAM [9]. Konolige proposes a method [10] for
+accelerating convergence by reducing the graph to poses that
+have a loop constraint attached, solving for the other nodes
+separately. This can save considerable CPU time, but requires
+the graph to have low connectivity.
+
+
+Paskin’s Thin Junction Tree Filter [11] and Frese’s TreeMap
+[12] compute nonlinear map estimates, but their approaches
+require factorization of the joint probability density, which
+they achieve by ignoring small state correlations. These ap-
+proximations can result in noticeable map artifacts.
+A hybrid of linear and nonlinear solutions is Bosse’s Atlas
+[13], which uses linearized (EKF-based) submaps but stitches
+them together using nonlinear optimization.
+Nonlinear optimization algorithms have a rich history out-
+side the SLAM community. SLAM algorithms have typically
+limited themselves to Gauss-Seidel or Gradient Descent ap-
+proaches, but other approaches are commonly used in other
+fields. In particular, Stochastic Gradient D
+
+
+Typically, different edges will lead to steps in different
+directions. SGD thus tends to hop around from one local
+minimum to another. SGD is also less likely to be caught in a
+long valley, since there is probably at least one edge which has
+a significant gradient. This edge will cause the state estimate to
+teleport to another part of the cost function, where the gradient
+may be more helpful.
+The distance that SGD travels for each edge is slowly
+decreased over time in order prevent oscillation. This makes
+it increasingly difficult for the state estimate to transition
+from one local minimum to another, with the result that it
+becomes increasing likely that SGD will get stuck in the most
+popular minimum (which is likely the global minimum). The
+degree to which SGD modulates its step size is known as the
+learning rate, and is analogous to the cooling rate in simulated
+annealing methods.
+A great number of learning rate schedules have been
+explored in the literature ([17] is an interesting example); the
+simplest are simple functions of iteration number, while others
+incorporate convergence rate and other information. The sim-
+plest strategy is to set the learning rate α ∝ 1/n, where n is the
+current iteration of the algorithm. The proportionality constant
+is determined, in our case, by examining the “stiffnesses” of
+the poses, as will be described in section III-E.

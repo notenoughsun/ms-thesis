@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{dblfloatfix}
+\usepackage{epstopdf}
+\usepackage{diagbox}
+\usepackage{csquotes}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{url}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{textgreek}
+%\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{color,colortbl}
+\usepackage{calc}
+\usepackage{stackengine}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{graphicx}
+
+\usepackage{blindtext}
+\usepackage{enumitem}
+
+\usepackage{lipsum}
+
+
+\title{thesis draft navigation. \\
+Design of smartphone based SLAM algorithm for indoor crowdsource mapping.
+}
+\author{timur.chikichev }
+\date{November 2020}
+
+\begin{document}
+
+\maketitle
+Goal: The goal of our research is to build ***** GP signal strength maps without relying on location data. 
+
+
+\section{Introduction}
+
+% Problem: SLAM algorithm with no odometry available.
+
+% We have a Markov process. After processing to the point with high confidence we may recalculate all previous positions - close loop.
+
+% Close loop examples??????
+
+% Reestimate previous coordinates - regression task.
+
+Goal: The goal of our research is to build ***** GP signal strength maps without relying on location data. 
+
+Research problem statement:
+Design of smartphone based SLAM algorithm for indoor crowdsource mapping.
+
+
+
+
+
+\subsection{Latent Variable Models}
+
+
+part taken from \cite{SLAM_using_Gaussian_process_latent_variable_models}.
+
+So  far  we  have  assumed  that  the  locations X of  the  training data are observed.  
+The goal of our research is to build GP signal strength maps without relying on location data. 
+
+To build such maps, we treat the locationsXas hidden, or latent,variables.   The  resulting,  much  more  challenging  problem can be addressed by Gaussian process latent variable mod-els (GP-LVM), 
+
+
+\subsection{Related work}
+
+We review the filed of human indoor localization. We focus on crowdsource mapping, e.g. mapping with limited sensor model (limited to existing infrastructure in building space and to sensors in human smartphones).
+In this field there are many approaches so solve the sub-problems or parts of given problem. 
+
+We know paper GraphSLAM-based Crowd sourcing framework for indoor Wi-Fi fingerprinting\cite{7809951}. The approach of GraphSLAM is promising. We want to utilise more available spatial information.
+
+The most promising results in terms of cheap sensor spatial information are magnetic maps. For magnetic fingerprinting there are well developed approaches.
+
+One of well-known papers in magnetic fingerprinting is \cite{Grand20123AxisMF}. The authors present an approach for magnetic field mapping, in terms of not fingerprints, but a full grid mapping procedure. As a result of this mapping procedure we obtain a full filed image that is easy to work with.
+The problem with this approach that we have to collect full grid measurements, which is a time consuming procedure. We want to get magnetic field map without additional mapping procedure, this approach is called crowdsource mapping. We collect the data from a set of human travel trajectories. Then we merge them in single noised image (only analogy representation for better understanding), and apply optimisation procedure. We require the resulting image be smooth, so the optimisation constraints must be set to satisfy the image denoising procedure. This is just our idea and assumption that is have to be proved in further research.
+We see some similarities here with \cite{6827640}.
+
+However they are highly dependent(?? prove statement) on the data collection procedure. This algorithms also are not intended for standalone usage in terms of sensors fusion. E.g. requires either special mapping procedures or additional hardware devices - beacons.
+
+There are few papers on magnetic and inertial based navigation. However they were not implemented in SLAM frameworks such as \cite{7809951}. Some of frameworks are a part of commercial interest and are not open source.
+
+The interesting map construction algorithm were proposed in \cite{6827640}. 
+
+The full system consists of three subsystems, i.e. Dead Reckoning Subsystem (DRS), Map Construction Subsystem (MCS), and Localization and Navigation Subsystem (LNS). 
+
+Our intuition gives that Dead Reckoning Subsystem performs sensor fusion and smoothing. The localization and navigation subsystem utilises the existing map and the output of smmothed sensors measurements.
+
+The map construction process is an optimisation problem with some constraints.
+
+In \cite{6827640}, authors propose universal framework with no prior information of building map structure.
+But for real situation, the map of the building is known.
+We can define an indicator function similar to SLAM occupied cells mapping (????)
+With indicator function defined, we may fit the graph of trajectories to the building inner structure graph - topological map.
+
+The similar approach with map constraints correction and resampling was shown in \cite{articleXia}. The paper utilizes a   particle   filter that combines PDR and RSSI data.
+
+
+
+% \bibliographystyle{ieeetr}
+\bibliographystyle{unsrt}
+\bibliography{bib}
+
+
+\end{document}

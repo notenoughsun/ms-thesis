@@ -1,11 +1,42 @@
-= Thesis proposal
+
+:topic:  Indoor SLAM based on crowdsourced data with multiple smartphone sensors
+
+=  Indoor SLAM based on crowdsourced data with multiple smartphone sensors
+Thesis proposal
+
+Student MSC-2, Space and Engineering systems, Timur Chikichev
 
 :toc:
 
-// == Working topic
-Indoor local positioning system for smartphones with infrastructure-free integration.
+:topic2: Indoor localization  on smartphones using built-in sensors and map constraints
 
 {toc}
+
+
+== Structure
+
+----
+introduction
+
+motivation
+state of the art systems
+system design & architecture
+
+background, what is system, what features, how does it works
+data processing
+slam and graph minimization
+factor graphs, distance function, graph matching
+trajectory generation
+walking model
+
+map construction
+observations to map (approximation, regressinon), map to observations (as a sensor)
+(sensor model), propagation model, slam / sam
+
+conditioning on magnetic field data
+what graphs / figures can be plotted
+----
+
 
 
 == Notes
@@ -16,6 +47,7 @@ include::draft.adoc[tag='chapter-working-notes']
 //
 // The scope:: Development of software system for indoor location services applications, with system properties (price, accuracy, features) being optimized for specific chosen user case.
 
+include::draft.adoc[tag='chapter-working-notes']
 
 
 
@@ -27,8 +59,7 @@ include::draft.adoc[tag='objectives']
 === Literature review
 //* A preliminary literature review/information retrieval that provides context and related literature for the thesis project.
 
-// include::draft.adoc[tag='objectives']
-
+include::draft.adoc[tag='literature-review']
 
 // include::literature/literature-review.adoc[]
 

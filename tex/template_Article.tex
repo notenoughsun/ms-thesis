@@ -1,0 +1,388 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{dblfloatfix}
+\usepackage{epstopdf}
+\usepackage{diagbox}
+\usepackage{csquotes}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{url}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{textgreek}
+%\usepackage{bbding}
+%\usepackage{pifont}
+%\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{color,colortbl}
+\usepackage{calc}
+\usepackage{stackengine}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{graphicx}
+
+\usepackage{blindtext}
+\usepackage{enumitem}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\title{IMU Dead Reckoning and Uncertainty Propagation. Perception in Robotics final project}
+
+\author{\IEEEauthorblockN{Timur Chikichev}
+	\IEEEauthorblockA{\textit{Skoltech} \\
+		Moscow, Russia \\
+		Timur.Chikichev@skoltech.ru}
+	\and
+	\IEEEauthorblockN{Nikolay Goncharov}
+	\IEEEauthorblockA{\textit{Skoltech} \\
+		Moscow, Russia \\
+		Nikolay.Goncharov@skoltech.ru}
+	\and
+	\IEEEauthorblockN{Aleksei Panchenko}
+	\IEEEauthorblockA{\textit{Skoltech} \\
+		Moscow, Russia \\
+		Aleksei.Panchenko@skoltech.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+	This paper is the final report for the course Perception in Robotics, Skoltech. We operate with a special approach for a dead reckoning. We incorporate synthesised estimations of speed and heading direction with Lie algebra. For the uncertainty propagation the approach with Lie algebra used and an accurate 2-nd and 4-th order approximations are implemented. We evaluate the dead reckoning algorithm on several trajectories on both synthesised data and data from given dataset and from directly measured trajectories data. 
+	
+	The project was based on papers \cite{Barfoot, Brossard, Forster, Mangelson}.
+	
+\end{abstract}
+
+\begin{IEEEkeywords}
+	Monte Carlo, probabilistic framework, linear algebra, MROB, Cholesky decomposition.
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+\subsection{Motivation}
+
+The definition of dead reckoning is - the process of calculating current position of some moving object by using a previously determined position and incorporating estimations of translation and rotation over elapsed time. Translation and rotation are estimated using measurements of speed, heading direction, and course and integrating them over elapsed time.
+
+The translation and rotation can be implemented using several approaches. The traditional Euler angles or more advanced Lie algebra.    
+
+
+We work with Lie group methods, because of the proof of recent evaluations, that taking advantage of Lie group structure results in significantly
+more accurate pose uncertainty estimates \cite{Mangelson}.
+We don't provide comparison of given methods, we just used the method we need for our project.
+
+With IMU dead reckoning, where no additional external  data or measurements are available, we can't correct our position estimation by any means. With the time and pose update, the uncertainty will be continuously growing. To have some good estimation of pose we thus need the most accurate pose estimation method. 
+
+We evaluate more on this in following parts.
+
+\subsection{Objectives}
+\begin{enumerate}
+	\item IMU dead reckoning
+	\item Estimate uncertainty of the integrated trajectory from IMU
+\end{enumerate}
+
+\subsection{Methodology}
+
+\begin{enumerate}
+	\item  Probabilistic framework for pose compounding and uncertainty propagation.
+	\item Numerical linear algebra for multi-dimensional covariance visualization. 
+	\item Trajectory estimation is expected to be performed using IMU motion integration, bias estimation — using optimization of the integration error.
+\end{enumerate}
+
+
+\section{Theory}
+
+\subsection{Dead reckoning}
+
+Dead reckoning performed by integrating measurements using system of differential equations Fig. \ref{fig:dead}. For synthetic data noise parameters for confidence interval were know. But for the real world data, the covariances from measurement space were additionally mapped into the state space accurding to equations Fig. \ref{fig:dead} to be used during pose compounding (the same as composition) step.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{integration}
+	\caption{Equations for dead reckoning step.}
+	\label{fig:dead}
+\end{figure}
+
+% \begin{figure}
+%     \includegraphics[width=1.0\linewidth]{banana}
+%     \label{fig:banana}
+%     \caption{}
+% \end{figure}
+
+
+% The light blue lines and blue dots show 1000 individual sampled trajectories starting from (0, 0) and moving nominally to the right at constant translational speed but with some uncertainty on the rotational velocity.  The blue 1-sigma covariance ellipse is simply fitted to the blue samples to show what keeping xy-covariance relative to the start looks like. The red (second order) and green (fourth order) lines are the principal great circles of the 1-sigma covariance ellipsoid, given by Σ K , mapped to the xy plane.
+
+\subsection{Lie algebra and group}
+
+What is the Lie algebra?
+
+\begin{figure}
+	\includegraphics[width=0.6\linewidth]{log to exp space lie operation}
+	
+	\caption{The Lie algebra $\mathfrak{g}$ and Lie group $\mathcal{G}$. Mapping velocities in the Lie algebra in the Lie algebra to associated action in the Lie group. Picture added for reference for conversion and transformation between exponential and logarithmic maps used in paper. This figure is taken from \cite{Mangelson}.}
+	\label{fig:Lie-transform}
+\end{figure}
+
+We are interested in a vector transformation for state vector update.
+We highlight the approach implemented in our calculations. For full derivations, please refer to \cite{Barfoot, Mangelson}.
+
+The Special Euclidean group, or $SE(3)$, represents the space
+of homogeneous transformation matrices or the space of matrices that apply a rigid body rotation and translation to points in $\mathbb{R}^{3}$.
+
+For real space, the 3 dimension $SE(3)$ is defined as follows:
+
+\begin{equation}
+	SE(3) := \left\{ T = 
+	\begin{bmatrix}
+		\mathbf{R} & \mathbf{t}\\
+		\mathbf{0} & \mathbf{1}
+	\end{bmatrix} \in \mathcal{R}^{4 \times 4} | \mathbb{R} \in {so}(3), \mathbf{t} \in \mathcal{R}^3
+	\right\}.
+\end{equation}
+
+where SO(3) is the Special Orthogonal group is the space of
+valid rotation matrices.
+
+SE(3) and SO(3) are matrix Lie groups.
+
+% The set of all velocities
+% (both in terms of direction and speed) of those paths at the given
+% point form a vector space called the tangent space. The tangent
+% space centered at the identity is called the Lie algebra.
+
+The Lie algebra of $SE(3)$, or $\mathfrak{se}(3)$, is defined as
+follows:
+
+\begin{equation}
+	\mathfrak{se}(3) := \left\{ 
+	\begin{bmatrix}
+		\omega & \rho\\
+		0 & 0
+	\end{bmatrix} | \omega \in \mathfrak{so}(3), \mathbf{\rho} \in \mathcal{R}^3
+	\right\}.
+\end{equation}
+
+$\xi \in \mathcal{R}^6 = \begin{bmatrix}
+\mathbf{\rho}\\
+\mathbf{\phi} 
+\end{bmatrix}$ is the vector of velocities.
+
+The $\wedge$ operator is used for conversion between the Euclidean vector and matrix
+forms $\hat \xi \in \mathfrak{se}(3)$
+
+Additional operator transforming from tangent space $\mathfrak{g}$ in the
+group space $\mathcal{G}$.
+
+The exponential map, $exp : \mathfrak{g} \xrightarrow{} \mathcal{G}$ (which can
+be defined in closed form for $SE(3)$), enables us to perform this
+conversion.
+
+We can define random variables for SE(3) according to \cite{Mangelson} as:
+\begin{equation}
+	\mathbf{T}_l:= exp(\hat{\mathbf{\xi}_l}) {\mathbf{T}}
+\end{equation}
+
+
+\subsection{Pose compounding}\label{sec:pose_comp}
+
+We need to define a transition function. Given the pose and transition, we calculate the final pose using the pose compounding procedure.
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{Pose compounding}
+	
+	\caption{Summary of the pose composition \cite{Mangelson}}
+	\label{fig:Pose-comp}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{Pose compounding 2}
+	\caption{Combining a chain of two poses into a single compound pose\cite{Barfoot}}
+	\label{fig:Pose-comp-2}
+\end{figure}
+
+We present the Pose composition definition listed in \cite{Mangelson} and \cite{Barfoot}. Refer for the Fig. \ref{fig:Pose-comp} for this part of explanation.
+
+Summary of the pose composition, and their corresponding uncertainty propagation of second order method as proposed by
+Barfoot and Furgale \cite{Barfoot}:
+
+\begin{align}
+	\mathbf{T}_{ab} = \exp{\mathbf{\xi}_{ab}^{\wedge}}\vec{\mathbf{T}}_{ab} \\
+	\vec{\mathbf{T}}_{ab} \in SE(3), \
+	\mathbf{\xi}_{ab}^{\wedge} \in \mathfrak{se}(3) \\
+	\vec{\mathbf{T}}_{ik} \approx \vec{\mathbf{T}}_{ij}\vec{\mathbf{T}}_{jk} \\
+	\Sigma_{ik} \approx \Sigma_{ij} + \mathrm{Ad}_{\vec{\mathbf{T}}_{ij}} \Sigma_{jk} \mathrm{Ad}_{\vec{\mathbf{T}}_{jk}}
+\end{align}
+
+The indices i, j, and k correspond to specific coordinate frames of the robotic vehicle at different time
+steps or locations.
+
+Barfoot and Furgale \cite{Barfoot}  parametrize the pose of frame b with
+respect to frame a, using a mean element of the Special Euclidean group, $\vec{\mathbf{T}}_{ab}$ , and an uncertain perturbation or noise parameter $\mathbf{\xi}_{ab}^{\wedge}$ defined in the Lie algebra
+se(3). This enables them to model $\mathbf{\xi}_{ab}^{\wedge}$ using a Gaussian distribution and accurately take into account the nonlinear structure of the group. The poses are assumed independent and focus is primarily on the pose composition operation.
+
+For our task we use only pose composition operation, so we stay here with the definition provided in Barfoot and Furgale \cite{Barfoot}.
+
+\subsection{Uncertainty transformation}\label{sec:unc_transform}
+
+This section is highly connected with the previous \ref{sec:pose_comp}.
+
+We want to explain explicitly the result of pose compounding procedure.
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{Associating uncertainty with three-dimensional poses for use in estimation problems}
+	
+	\caption{Pose compounding experiment from \cite{Barfoot} of compounding K = 100 uncertain transformations. Legend: blue 3-sigma covariance ellipse fitted to the samples, red (second order) and green (fourth order) lines are the principal great circles of the 3-sigma covariance ellipsoid mapped to the x-y plane}
+	\label{comp_barfoot}
+\end{figure}
+
+The Fig. \ref{comp_barfoot} and the experiment are taken from \cite{Barfoot}. 
+
+Starting from a zero coordinate and drawing the trajectories of moving to the right at constant translation speed with some uncertainty on the rotational velocity. 
+
+We use the same wire-frame visualisation technique in all following experiments, mapping the 2-nd order approximations of the 3-sigma covariance ellipsoid but already in 3D space.
+
+% Looking
+% at the area (95, 0), corresponding to straight ahead, the fourth-order scheme
+% has some nonzero uncertainty (as do the samples), whereas the second-order
+% scheme does not. We used r = 1 and σ = 0.03.
+
+
+\section{Experiments}
+
+\subsection{Pose estimation and IMU Modelling}
+
+% 6
+The state variables for pose estimation are: Rotation, velocity and position. So we write the equations of each step of integration. For our purposes we need to treat those variables as Gaussians, therefore their covariances are also calculated at each step. So we propagate the accelerometer and gyroscope noise and write the corresponding equations for covariance propagation. Those means and covariance are then used to visualize the trajectory with pose compounding.
+% 7
+
+
+
+% \begin{figure}
+% \includegraphics[width=1.0\linewidth]{raw data integration}
+
+%     \caption{Straight line acceleration trajectory estimation. Integrating(blue) the random walk noisy data (orange). Mapped velocity Vx w.r.t. steps number/time}
+%     \label{fig:raw-integration}
+% \end{figure}
+
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{propagate_along_circle.png}
+	
+	\caption{Toy data experiment. The covariance 3-sigma circles are plotted for selected states on a circular trajectory. The transformation update of covariance defined as zero so no covariance transformation at this stage}
+	\label{fig:circular}
+\end{figure}
+
+\subsection{Data generation}
+
+For the first couple of experiments, we generated two simple toy dataset: a straight line accelerated movement Fig. \ref{fig:linear-propagation-simple} and an accelerated circular movement Fig. \ref{fig:circular}. Basically these two cases were derived analytically by hand. First the law of motion was defined and differentiated to obtain all the accelerations and angular velocities. After that, they were noised with some unbiased gaussian noise and used as input in dead reckoning part.
+
+\subsection{Uncertainty propagation on synthetic data}
+
+We decided to start from synthetic data to have full control and information about the trajectory the uncertainty propagate along.
+
+The resulting banana-shaped distributions on Fig. \ref{fig:linear-propagation-simple} and Fig. \ref{fig:circular} represent the uncertainty caused not only by uncertainty in the position, but also the orientation when propagating along trajectory. The uncertainty in degrees of freedom of pitch, roll and yaw form a sphere segment in the centers of wire-frame visualizations. 
+
+The points on the all plots are the Monte-Carlo samples drawn from initial distribution and propagated with the model. Thus, two methods of distribution visualization were used.
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{linear propagation simple}
+	
+	\caption{Toy data experiment. The covariance 3-sigma circles are plotted for selected states on a straight trajectory, the motion is linear with positive constant acceleration.}
+	\label{fig:linear-propagation-simple}
+\end{figure}
+
+We can see that in a way of growing/propagation, the front of current expectation (the group of Monte-Carlo samples, or just an area inside any of the principal great circles of the 3-sigma covariance ellipsoid, given by state covariance, mapped to the x-y plane) is propagating as a linear wave Fig. \ref{fig:linear-propagation-simple} positioned on an approximately equal distant from an initial position. 
+
+Visually we can compare each 3-sigma covariance ellipsoid on a Fig. \ref{fig:linear-propagation-simple} with an optical lens with a focal point in the initial position. Without additional observations, the distribution should conserve the same logic: it is growing, becomes wider and always directed to an initial position of dead reckoning in a way of area of equidistant points. 
+
+
+For circular case on Fig. \ref{fig:circular} the distribution evolves while point accelerates along the circle. At some step the "lens" of distribution appears to be oriented in backward direction of motion, which is counter intuitive at first glance. But, those visualisations are plotted in global reference frame and can be thought about like set of particles. If direction of motion changes, then every particle changes the direction of motion, but the whole shape of distribution stays approximately the same.
+
+\subsection{Real world data collection}
+
+To collect real world data the XSens MTi-3 development kit \cite{xsens} was used. It consists of calibrated 3-axis accelerometer, gyroscope and magnetometer. And provides not only the raw measurements, but also the orientation in ENU navigation frame, sensor misalignment and noise parameters. Several test tracks were recorded, integrated and used for uncertainty propagation.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{xsens 3}
+	\caption{IMU Xsens-3 Development Kit which was used to collect real world data for experiments.}
+	\label{fig:xsens}
+\end{figure}
+
+
+\subsection{Uncertainty propagation on real data}
+% 8
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{simple trajectory}
+	
+	\caption{Example of trajectory used for experiments. The projection of trajectory in the x-y plane, axes are uniform space axis with order of dimensions on meters}
+	\label{fig:simple-trajectory}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{trajectory integration}
+	
+	\caption{Trajectory integration for a simple corridor dataset with several rotations}
+	\label{fig:trajectory-integration}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=1.0\linewidth]{linear propagation}
+	
+	\caption{Corridor dataset uncertainty propagation but with a couple of Z-axis elevations. Side view on uncertainty propagation.}
+	\label{fig:linear-propagation}
+\end{figure}
+
+The next two dataset were recorded from an Xsens sensor. IMU bias and misalignment is dealt with before the integration.  
+The Fig. \ref{fig:trajectory-integration} is a simple corridor dataset with a couple of rotations. The corresponding trajectory used for integration is shown in Fig. \ref{fig:simple-trajectory}.
+
+When the trajectory is non-linear, the update of pose compounding yields a complicated distribution with a highly complex shape we can see on Fig. \ref{fig:trajectory-integration}. 
+
+Note that the uncertainty drastically grows after the rotations. That is the effect of measurement noise. The covariance is constantly growing due to absence of observations. 
+
+The dataset on Fig. \ref{fig:linear-propagation} is another simple corridor dataset but with a couple of Z-axis elevations, hence the increasing Z uncertainty. Due to the figure orientation we do not see changes in z axis. Instead, we can see that in x-y plane, the changes are not different from simple straight line moving linear case. This can prove the statement that the implementation of dataset was done correctly.
+
+\section{Results and Conclusions}
+The following deliverables were obtained:
+\begin{itemize}
+	
+	\item Dead reckoning algorithm implemented;
+	\item Pose compounding algorithm implemented;
+	\item Synthetic data generator implemented;
+	\item Uncertainty propagation was applied to synthetic and real world data;
+	\item Structure of uncertainty ellipsoid visualised in 3D space;
+\end{itemize}
+
+There is definitely a lack of intuition on how the distribution evolution should evolve along the complex trajectory in 3d space. Definitely need more experiments and time to play around with propagation to understand how it reacts on turns, how it is affected by acceleration and so on. In some simple cases the uncertainty distribution corresponds to intuitive expectation.
+
+\section*{Acknowledgement}
+
+
+% \section*{References}
+
+\bibliographystyle{./bibliography/IEEEtran}
+\bibliography{./bibliography/ref}
+
+\end{document}

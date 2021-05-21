@@ -3,8 +3,6 @@
 :stem: latexmath
 :toc:
 
-
-
 == Working topic
 // Indoor local positioning system for smartphones with infrastructure-free integration.
 
@@ -49,6 +47,23 @@ with magnetic field measurments.
 // tag::example[]
 // end::example[]
 
+// tag::background_and_ps[]
+
+The topic of the project is related to the problem of indoor navigation.
+The context of the problem states that no GPS data are available at hand, which
+makes the use of usual navigation services impossible.
+
+Most existing systems of indoor navigation require special mapping stage.
+Novel indoor navigation systems utilize the data recorded from users. This is what is called
+the crowdsource approach.
+
+For realtime indoor navigation, in conditions where is no initial data is available,
+we have to pass stages of localization and mapping, which can be done simultaneously in SLAM approach.
+We aim to combine both SLAM and crowdsource approach for the best performance of positioning system.
+
+// Опишите связь между исследованиями и инновациями. Уточните причины выбора темы дипломного проекта.
+The innovation of this research is in ability to provide same navigation services with less information and in more natural way, which means also the reduced cost of the system overall.
+
 // We aim to delelop realtime
 
 In indoor conditions we want to have a realtime localization system with no tradinional sensors (camera, LIDAR) and hardware (BLE beacons) used.
@@ -92,8 +107,7 @@ Different from existing work, we want to re-estimate or post-process all distanc
 after measurements with information about previous steps are collected.
 This is called the loop closure process in SLAM literature <<orb-slam>>, <<orb-slam2>>.
 
-
-
+// end::background_and_ps[]
 
 === Objectives
 
@@ -245,6 +259,22 @@ The methods we are planning to use are Graph-SLAM, Gaussian process latent varia
 // // include::draft/notes.adoc[tag='ch1']
 //
 // // end::chapter-working-notes[]
+
+
+// tag::timeline[]
+=== Timeline
+
+.Project timeline
+|====
+|thesis proposal | 10-12-2020
+|formal derivation of algorithm | 25-12-2020
+|algorithm performance evaluation on existing dataset | 12-01-2021
+|prototyping the mobile app for dataset collection| 18-01-2021
+|dataset collection & data processing | 25-01-2021
+|performance evaluation on collected data| 01-02-2021
+|results formulation|
+|====
+// end::timeline[]
 
 
 

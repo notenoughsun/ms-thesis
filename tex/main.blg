@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: chapters/problem.aux
+A level-1 auxiliary file: chapters/chapter1.aux
+A level-1 auxiliary file: chapters/chapter2.aux
+The style file: unsrt.bst
+Database file #1: bib.bib
+Warning--entry type for "Surface_approximation_GP" isn't style-file defined
+--line 93 of file bib.bib
+Warning--I didn't find a database entry for ""
+Warning--empty booktitle in SLAM_using_Gaussian_process_latent_variable_models
+You've used 6 entries,
+            1791 wiz_defined-function locations,
+            488 strings with 4841 characters,
+and the built_in function-call counts, 1681 in all, are:
+= -- 145
+> -- 59
+< -- 5
++ -- 22
+- -- 16
+* -- 95
+:= -- 228
+add.period$ -- 16
+call.type$ -- 6
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 90
+empty$ -- 174
+format.name$ -- 16
+if$ -- 412
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 5
+newline$ -- 31
+num.names$ -- 5
+pop$ -- 28
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 70
+stack$ -- 0
+substring$ -- 108
+swap$ -- 41
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 14
+width$ -- 7
+write$ -- 62
+(There were 3 warnings)

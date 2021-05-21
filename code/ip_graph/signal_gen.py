@@ -2,6 +2,11 @@
 # import itertools
 # import copy
 # import networkx as nx
+
+## generate raw odometry data from integration of some bspline curves
+
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os

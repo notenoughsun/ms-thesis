@@ -1,6 +1,29 @@
 = TODO
 
-* [*] checked
-* [x] also checked
-* [ ] not checked
-* normal list item
+// * [*] checked
+// * [x] also checked
+// * [ ] not checked
+// * normal list item
+
+
+.TODO steps
+* [ ] write intro
+* [ ] plan of thesis, all chapters list, in latex
+* [ ] add formulas
+* [ ] literature review
+* [ ] update references
+* [ ] goal of research
+* [ ] prepare images
+* [ ] 
+* [ ] experiments list
+* [ ] arcore
+
+
+* [ ] smoothing and mapping
+* [ ] residuals and transition model, gradients and hamiltonian??
+* [ ] observation model
+* [ ] approximation
+* [ ] write the system explanation
+** state space, image space, observations
+* [ ] 
+* [ ] 
