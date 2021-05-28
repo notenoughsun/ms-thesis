@@ -1,0 +1,60 @@
+\ifglsentryexists{sk}{}%
+{%
+\gls@defglossaryentry{sk}%
+{%
+name={SK},%
+sort={SK},%
+type={main},%
+first={Skolkovo Institute of Science and Technology\glsspace (SK)},%
+firstplural={Skolkovo Institute of Science and Technologys\glsspace (SKs)},%
+text={SK},%
+plural={SKs},%
+description={Skolkovo Institute of Science and Technology},%
+descriptionplural={Skolkovo Institute of Science and Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Skolkovo Institute of Science and Technology},%
+longplural={Skolkovo Institute of Science and Technologys},%
+short={SK},%
+shortplural={SKs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sysml}{}%
+{%
+\gls@defglossaryentry{sysml}%
+{%
+name={SysML},%
+sort={SysML},%
+type={main},%
+first={Systems Modeling Language\glsspace (SysML)},%
+firstplural={Systems Modeling Languages\glsspace (SysMLs)},%
+text={SysML},%
+plural={SysMLs},%
+description={Systems Modeling Language},%
+descriptionplural={Systems Modeling Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Systems Modeling Language},%
+longplural={Systems Modeling Languages},%
+short={SysML},%
+shortplural={SysMLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -1,0 +1,35 @@
+\contentsline {chapter}{List of Figures}{5}{chapter*.4}%
+\contentsline {chapter}{List of Tables}{6}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Thesis Structure}{8}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Background}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}General problem / Introduction / Background }{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Related work}{10}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Technological research}{14}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Background / Context}{14}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}General Objective}{15}{subsection.3.0.2}%
+\contentsline {section}{\numberline {3.1}Approach}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Intellectual Property, Publications}{18}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Results}{18}{section.3.2}%
+\contentsline {subsubsection}{Figures of merit}{18}{section*.11}%
+\contentsline {subsection}{\numberline {3.2.1}State of the art}{19}{subsection.3.2.1}%
+\contentsline {subsubsection}{Positioning}{19}{section*.16}%
+\contentsline {subsubsection}{Patents}{22}{section*.20}%
+\contentsline {subsection}{\numberline {3.2.2}Building a model}{23}{subsection.3.2.2}%
+\contentsline {subsubsection}{Architecture}{23}{section*.25}%
+\contentsline {subsubsection}{Roadmap system modelling}{26}{section*.28}%
+\contentsline {subsection}{\numberline {3.2.3}Technology Strategy Vision}{27}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Timeline}{28}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Technical feasibility}{30}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Financial Valuation}{32}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}Validation}{33}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Conclusions}{34}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Thesis Objectives}{35}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Thesis Methodology}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Methodology}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Theoretical framework}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Clustering and data tricks}{39}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}%
+\contentsline {chapter}{Bibliography}{43}{section*.42}%
+\contentsline {chapter}{\numberline {7}Bibliography}{43}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Additional Resources}{46}{appendix.A}%

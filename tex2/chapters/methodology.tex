@@ -1,0 +1,136 @@
+\chapter{Thesis Methodology}
+\label{cap:thesis_methodology}
+
+\section{Methodology}
+
+With the development of microelectromechanical systems(MEMS), a few MEMS-based sensors have been built and incorporated into smartphones: accelerometers, gyroscopes, magnetometers, etc. These sensors can be used to provide information on the user’s actions. Pedestrian dead reckoning (PDR) is a relative navigation technique that uses these sensors.
+
+We propose a PDR-based indoor positioning method, that integrates RSSI and magnetic field measurements with indoor environment map constraints by using particle filters.
+
+For proper evaluation of algorithm performance, we have to obtain ground truth data.
+There are several methods of doing this process:
+
+\begin{itemize}
+\item  usage of verified tracking / positioning system with better accuracy
+\item  manual recording of position, using the constant measured track as ground truth (straight line, circle, rotation)
+\item  usage of public dataset with available ground truth
+\end{itemize}
+
+In our conditions, we choose to first simulate all motion and sensor data.
+
+We use the approach similar to \cite{LocateMe}. We take the vision of spatial observations representation as a continuous surfaces.
+
+We rely on the dataset of IMU \& MEMS and ground truth measurements provided by RuDaCoP: "The Dataset for Smartphone-based Intellectual Pedestrian Navigation" \cite{rudacop}.
+
+We write the motion and observation models to be similar as in  \cite{LocateMe}.
+
+Then we aim to develop a smartphone data-logging app for dataset collection to run the algorithm on smartphone data.
+
+The methods we are planning to use are Graph-SLAM, Gaussian process latent variable models \cite{gplvm}, magnetic  fingerprinting 3-axis magnetic field mapping and fusion by E. Grand and S. Thrun \cite{Grand20123AxisMF}.
+
+\section{Theoretical framework}
+
+Graph matching
+
+Our case: formulate situation with no wifi available data in local area
+
+(A specific case of this problem) The graph matching problem is the “maximum weighted bipartite matching”,
+
+which is defined as a matching on a bipartite graph with maximum sum of the weights of selected edges.
+
+This problem is also known as the “assignment problem”. We utilize factor Graphs for such assignment of new data.
+
+Matching problem proposed:
+
+We now describe the problem formulation by modelling two graphs: the ground truth graph (location based information - building map) and the data graph, constructed during the online training phase of system from the crowd-sourced data of users walking in the environment.
+
+We do not obtain a radio map which is needed for RSS-based localization. Instead, we collect a data-set of magnetic field fingerprints, tagged with their relative physical coordinates to previous position. This relative coordinates (graph type trajectory with approximate information on edges lengths).
+
+From the data of two graphs: location map and fingerprints collection, we perform matching procedure, using multiple available methods.
+
+The first procedure to apply is accept-reject method: all points in restricted location are blocked (person can’t go through walls and etc.). Secondly, we perform loop closure and data association using common algorithms:
+
+%graph similarity algorithms (correlation, ​)
+
+probabilistic approach (hidden Markov models)
+
+Similarity measures:
+
+What data we obtain in the data graph: heading, relative position, magnetic field direction. For multiple locations in same domain there can be lots of point with same of similar magnetic field direction. Instead, between any two points, there can be enough magnetic field disturbances, which will create enough information for distinguishing data, and mapping only location related data.
+
+We can measure the similarity only between long enough tracklets(parts of trajectory e.g. frames) / edges.
+
+The signal similarity measure cab be just a cross-covariance
+
+%Measurement model
+%We use the available sensors / modules of the usual smartphones: WiFi, compass and accelerometer measurements obtained from inertial-magnetic unit, gyroscope and human step count module.
+
+%Inertial model
+%Steps count, adaptive step / stride lenght estimation - step count modules are available in several smartphones.
+
+
+\section{Clustering and data tricks}
+
+We will highlight different possible solutions on how to deal with noisy collected data we have.
+
+
+\subsubsection*{Factor graph tricks}
+
+Marching the curves: state to state connection + distance + uncertainty
+
+We have some solutions that are out of the allowed region.
+
+We can't directly solve this with differential factors.
+
+Smoothing and mapping: search for best allowed solution from distribution.
+
+What we can do:
+
+\begin{itemize}
+	\item Add constraints to the problem
+	\item Iteratively recalculate the problem until all conditions will not be satisfied
+	\item Delete trajectories that doesn't fit the model. Delete all connected factors to deleted trajectories.
+	\item Add new or deleted trajectories again to the model.
+\end{itemize}
+
+
+\subsubsection*{Out of region recalculate}
+
+Select on trajectory and with accept/reject method solve/integrate this on static building map. 
+
+Once we have a trajectory known, fix the points which are out of allowed regions: set the covariance of given points to zero e.g. to not recalculate this trajectory during graph optimization.
+
+The method is dead reckoning combined with particle filter conditioned on magnetic field data and accept/reject on indicator function procedure (PDR + magnetic field PF + accept/reject).
+
+
+\subsubsection*{Add border constraints}
+
+The alternative or similar idea. We add the constraints to the task. We add points on border to the map and add the constraints for close points.
+
+Not feasible yet.
+
+\subsubsection*{Distance metrics}
+
+We have a need of matching trajectories and solving warping problem not in time, but in state/action space.
+
+If we can limit to one dimensional signals we can solve this step using traditional time-warping techniques.
+
+Alternatively formulating we have all to all matching technique for close near-linear trajectories. 
+
+Same approach was used in two papers on localization and mapping. (Cimloc and magnetic mapping using chess coverage pattern)
+
+We say that this technique can be used to solve some part of our problem: for straight collinear trajectories. 
+
+This time-warping does not provide us the factors we can implement in factor graphs, but a residuals to current solution. After time warping we have to somehow recalculate graph positions and recalculate the map.
+
+This idea has similarly in several computational methods. We separately optimize likelihood function and the problem itself.
+
+Because of bilinear structure of magnetic field, we doesn't expect the system be able to organize the curves in direction where the field perturbations are small. If we have the corridor, the only direction we detect features is along the corridor direction.
+
+To obtain exact positions of all states we have to condition on other information. 
+
+Our main source of information is a pose graph with loop closures. *Being conditioned on the known building map, it may be used as* 
+
+If we performed trajectory conditioning in orthogonal directions, the uncertainty in normal direction will be reduced. 
+
+Our goal is to solve mapping problem both for normal and tangential uncertainty.

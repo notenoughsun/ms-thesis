@@ -1,0 +1,45 @@
+\chapter{Thesis Objectives}
+\label{cap:thesis_objectives}
+
+
+In this chapter we define the goals and derive the specific questions to be addressed in our research.
+
+%\section{Objectives}
+We perform this research to create an indoor positioning system with special features. The objective of this research is to develop all algorithms needed to obtain these features.
+
+We define an approach for dealing with the dead reckoning system. We propose a mapping algorithm using ARcore visual odometry for training and all-time pedestrian dead reckoning and magnetic mapping for operation.
+
+We aim to develop the system, working without complicated sensors or physical landmarks as beacons. This is only a research interest because the current SOTA PDR systems are only secondary to other approaches.
+
+%The problem we solve and the scope can be formulated as the following: 
+We design the algorithm of data collection and for the purpose of mapping indoor location and localization usage. 
+We evaluate algorithm's robustness, by means that it should converge if sufficient data is given.
+
+\section*{Criteria for the proposed system}
+
+We can write the criteria for the positioning system we develop.
+\begin{enumerate}
+	\item no prior map is available: the system can work as SLAM system (real-time navigation with no prior map)
+	\item no special hardware for operation except smartphones: positioning accuracy enough for practical usage (1-2m is the usual accuracy in this conditions)
+	\item the system aggregate data from many sources (crowd-source) and improves the localization accuracy
+\end{enumerate}
+
+\section*{Hypotheses}
+
+We formulate several hypotheses we evaluate during research:
+
+Hypotheses:
+\begin{enumerate}
+	\item The technology of magnetic field navigation can be implemented and fine-tuned for indoor crowd-source SLAM
+	\item The data from magnetic field and inertial sensors is enough for running SLAM \label{hyp2}
+	\item The crowd-source system satisfies defined optimality conditions and improve the accuracy
+\end{enumerate}
+
+The hypothesis \ref{hyp2} is not clearly explained in existing systems. For most system, the additional prior knowledge is needed for localization. Several papers present the system able to localize with only inertial data. \\
+This is more the an academic interest to prove this hypothesis and develop such kind of system. The common real world systems use the sensor fusion approach and collect the data from multiple sensors. The presence of precise localization devices or sensors improves the location accuracy drastically. However, for the most applications, there is a lack of technical resources and sensor fusion is not possible. We simulate the problem of partial absence of such devices and model the system without them.
+
+Two other hypotheses are more engineering questions. We have to compare performance and robustness of our algorithm and systems to other state of the art approaches. In our problem statement, there is no much systems that have outperformed the usual reasonable accuracy of 1-2m. So we aim to achieve comparable or at least some reasonable accuracy that can be compared to other similar methods.
+
+%\input{tables/test}
+
+

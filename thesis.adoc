@@ -16,25 +16,25 @@ Student MSC-2, Space and Engineering systems, Timur Chikichev
 == Structure
 
 ----
-introduction
-
-motivation
-state of the art systems
-system design & architecture
-
-background, what is system, what features, how does it works
-data processing
-slam and graph minimization
-factor graphs, distance function, graph matching
-trajectory generation
-walking model
-
-map construction
-observations to map (approximation, regressinon), map to observations (as a sensor)
-(sensor model), propagation model, slam / sam
-
-conditioning on magnetic field data
-what graphs / figures can be plotted
+% introduction
+%
+% motivation
+% state of the art systems
+% system design & architecture
+%
+% background, what is system, what features, how does it works
+% data processing
+% slam and graph minimization
+% factor graphs, distance function, graph matching
+% trajectory generation
+% walking model
+%
+% map construction
+% observations to map (approximation, regressinon), map to observations (as a sensor)
+% (sensor model), propagation model, slam / sam
+%
+% conditioning on magnetic field data
+% what graphs / figures can be plotted
 ----
 
 

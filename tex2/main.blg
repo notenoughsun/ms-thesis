@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: chapters/introduction.aux
+A level-1 auxiliary file: chapters/background.aux
+A level-1 auxiliary file: chapters/roadmap.aux
+A level-1 auxiliary file: chapters/thesis-objectives.aux
+A level-1 auxiliary file: chapters/methodology.aux
+A level-1 auxiliary file: chapters/conclusion.aux
+A level-1 auxiliary file: glossary.aux
+A level-1 auxiliary file: bibliography.aux
+The style file: plainnat.bst
+A level-1 auxiliary file: chapters/appendix-a.aux
+Database file #1: references.bib
+Warning--I didn't find a database entry for "brena"
+Warning--I didn't find a database entry for "Indoor_Generation"
+Warning--I didn't find a database entry for "Security"
+Warning--empty year in ILA-System-Architecture
+Warning--empty year in ILA-System-Architecture
+Warning--empty booktitle in rudacop
+Warning--empty booktitle in gplvm
+Warning--empty booktitle in IPTrise
+Warning--empty booktitle in Infsoft_wp
+Warning--empty journal in Kj_fingerprinting
+Warning--empty booktitle in Lymberopoulos
+Warning--empty booktitle in microsoft
+Warning--empty booktitle in Mautz2012IndoorPT
+Warning--empty booktitle in trends2017
+Warning--empty booktitle in trends2019
+Warning--empty journal in IndoorGeneration
+Warning--empty booktitle in GraphSLAMCrowdsourceWiFI
+You've used 26 entries,
+            2773 wiz_defined-function locations,
+            775 strings with 10411 characters,
+and the built_in function-call counts, 13603 in all, are:
+= -- 1131
+> -- 967
+< -- 20
++ -- 330
+- -- 303
+* -- 1134
+:= -- 2131
+add.period$ -- 100
+call.type$ -- 26
+change.case$ -- 179
+chr.to.int$ -- 25
+cite$ -- 66
+duplicate$ -- 598
+empty$ -- 1001
+format.name$ -- 333
+if$ -- 2833
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 26
+newline$ -- 160
+num.names$ -- 104
+pop$ -- 394
+preamble$ -- 1
+purify$ -- 153
+quote$ -- 0
+skip$ -- 457
+stack$ -- 0
+substring$ -- 268
+swap$ -- 92
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 286
+warning$ -- 14
+while$ -- 95
+width$ -- 0
+write$ -- 365
+(There were 17 warnings)

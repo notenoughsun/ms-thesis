@@ -259,6 +259,87 @@ The methods we are planning to use are Graph-SLAM, Gaussian process latent varia
 // // include::draft/notes.adoc[tag='ch1']
 //
 // // end::chapter-working-notes[]
+=== Conclusions
+// CONCLUSIONS
+
+.from articlexia
+
+// 3-Axis Magnetic Field Mapping and Fusion for Indoor Localization
+// sampling from map
+Those positions describe a mesh, on which we have
+mapped the magnetic field. We populate the rest of the map
+by linear interpolation from the mesh.
+
+VII. C ONCLUSION
+We presented a real time indoor localization method that
+utilizes a single 3-axis magnetometer to estimate the location
+of a handheld device. Using an online particle filter, we
+achieved localization accuracy of 0.7 meters in position and
+25 degrees in orientation for the simple straight line
+trajectory. The localization of the circle trajectory gave a
+slightly higher instantaneous position error (up to 1.2m) and
+orientation error (up to 40°). Those results must be
+interpreted with care because better results would easily be
+obtained by using an a posteriori position estimate. They
+demonstrate that indoor localization based solely on
+magnetometer and accelerometer data is possible.
+
+The main limitation of this indoor localization approach is
+the necessity of creating magnetic field maps. Therefore, we
+presented a fast 2D mapping technique and demonstrated it
+in a square room. Generalization of the technique to non-
+square rooms with obstacles (Fig. 8) is possible by replacing
+the lines
+and
+by a list of segments. The energy
+minimization algorithm can then be modified by replacing
+the constraints on the lines’ intersections by constraints on
+the segments’ intersections.
+
+// filters combine
+There are plenty of principles that dictate how to combine the outputs of these filters to one position estimate, for instance merging the states as in interactive multiple models (IMM), pruning as in adaptive forgetting through multiple models (AFMM), or motion parameter estimation as in hidden Markov models (HMM) (see [53] for an overview). A performance lower bound when the number of states increases is the function of true mobility
+
+====
+Location in wireless networks is of increasing importance for
+safety, gaming, and commercial services. There are plenty of
+measurements available today, ranging from signal arrival times
+to maps of received power. We have demonstrated how funda-
+mental the FIM for each measurement is to assess possible loca-
+tion performance. As one illustration, the FCC positioning
+requirements are transformed to requirements on sufficient
+information. Thereby, it is possible to investigate whether specif-
+ic sensor configurations would provide acceptable accuracy. The
+information is additive, so several measurements increase infor-
+mation. The information concept can also handle less conven-
+tional measurements, such as digital propagation prediction
+maps and road maps. A practical question is whether there is an
+algorithm that attains the position error lower bound and if it is
+possible to implement this algorithm in practice. This, of course,
+depends from case to case, and we have briefly pointed out algo-
+rithms of particular interest.
+A short road path to implement a positioning system is as
+follows.
+
+\item Collect the available measurements in Table 2.
+\item Compute the static CRB using (3) or using (4a) in the
+Gaussian case.
+\item Compare this to the FCC requirements in Table 1.
+\item If these are not satisfied, continue with step 5. Otherwise,
+evaluate algorithms based on one of the criteria in Table 3
+using one of the algorithms in Table 4. If these algorithms
+do not yield a satisfactory result, continue with step 5.
+\item Select a motion model in Table 7.
+\item Compare the CRB to the FCC requirements in Table 8.
+\item If these are satisfied, try to find an algorithm in Table 9
+that gives satisfactory result. If this fails, try to change the
+system configuration to obtain better measurements, or
+equip the MS with more sensors.
+Briefly, the results indicate that the FCC requirement may be
+reached using a snapshot localization approach in a most favor-
+able situation, including LOS and a good estimator. The accura-
+cy is increased an order of magnitude with filtering and
+potentially another order of magnitude with motion sensors.
+====
 
 
 // tag::timeline[]

@@ -1,0 +1,97 @@
+\chapter{Background}
+\label{cap:background}
+%\epigraphhead[50]{%
+%    \epigraph{"if I have seen further it is by standing on the shoulders of Giants."}{Isaac Newton, 1675}
+%}
+
+%Here is a comprehensive review of the literature related to the topic of this work.
+
+%We inspired our work from \citet{Chakrabarti2014}.
+%\acrshort{sysml} is the reference in this field \citep{ObjectManagementGroup2015}
+%The tools keep evolving \citep{Skoltech2017}.
+
+%\todo[inline]{TODO: complete chapter}
+
+%\section{Background and problem statement}
+\section{General problem / Introduction / Background
+}
+
+
+\section{Related work}
+
+We review the field of human indoor localization. We focus on crowd-source mapping, or mapping with limited sensor model (limited to existing infrastructure in building space and to sensors in human smartphones).
+In this field there are many approaches so solve the sub-problems or parts of given problem. 
+
+
+
+For the positioning technologies comparison, we may refer to the paper of \cite{Lymberopoulos} which provides evaluation and comparison of different indoor location technologies and covers the almost most important of them.
+
+While the information about technologies itself is more or less clear. What performance we can reach with given technology? What is the best approach to work with the given technology?
+
+The answer to some questions is simple. The best accuracy is achieved with the biggest database and computational power. But for realistic implementation this is not good enough. The similar approach is to merge all information available in current location and time. The problem again is that how to localize when there is no information available at the current state. The answer is to use the correspondences between previous and future information, to reconstruct the current information. This formulation can be related to the classical SLAM formulation, even if some parts are different.
+
+Different from existing work, we want to re-estimate or post-process all distance and orientations after measurements with information about previous steps are collected. This is called the loop closure process in SLAM literature \cite{orb-slam, orb-slam2}. In fingerprinting literature, there is low number of researches working with re-localization and loop closures. We have to recursively post-process existing data, which has to give us better localization during mapping, and thus better map for future localization.
+
+If magnetic map is not given, the model training can be done by manually collection measurements and marking the locations by special trainers, then the localization model can be generated.
+
+Why magnetic field localization is not a SLAM? SLAM techniques build a map of an unknown environment and localize the sensor in the map with a strong focus on real-time operation \cite{orb-slam}. With magnetic field localization, in every new point we obtain only local information, which is not enough for real-time operation. The difference between camera-based and magnetic fingerprints based localization is significant. Because of this fact, magnetic field localization can’t operate independently in unknown conditions and can’t be considered as SLAM. Nevertheless, we may introduce special aspects of SLAM system to magnetic field localization for better robustness.
+
+The usual camera-based SLAM has the ability to automatically close loops, which means the correction of the accumulated error in exploration after we detect the sensor has returned to a mapped area.
+
+During mapping stage of magnetic field localization, we are constantly accumulating error. \\
+We have no tools for error correction because IMU and magnetic field provide both only relative information, and for error correction we need a prior spatial information. \\
+The prior information can be collected from other sensors (e.g. beacons, such as WiFi and BLE beacons), information can be human input of location, the prior location can be obtained with camera based place recognition. The most interesting approach is to utilize the information we have in our conditions: previous measurements from magnetic mapping. 
+
+It would be prefect to have loop closure features for robust magnetic field mapping. In practice this is almost never possible. Because of constant growing integration error and small amount of information from magnetic sensor, we have no possibility for conditioning until we mapped the region.
+
+Luckily, conditioning on magnetic field is possible. Once we have a trajectories and observations somehow covering the region, we can try localize on this data. Using the recursive re-localization of existing data we can obtain better solution than initial one.
+This part of research is covered in Section \ref{cap:thesis_methodology}.
+
+Why does this even possible to use magnetic field information for localization? The magnetic field in buildings is changing near metal objects, conductive and big structures.
+In opposite to traditional idea of compass that is always directed to the north pole, now we have a compass that is slightly deviating.
+The idea of localization is that these compass deviations are repetitive in time and space.
+Once we reconstructed the magnetic map of the building, we can use these patterns later.
+
+The magnetic field in buildings is changing with time. Even after measurements collected, it is important to update map sequentially. The updates can be done by collecting and processing localization data from all system users. This way we will have the latest data and the system will be more precise.
+ 
+%This approach is called crowdsoursing in related literature. This is why place recognition, map updates and loop closures are the main parts of magnetic field navigation.
+
+An interesting localization system was introduced in Maloc \cite{maloc}: magnetic field based particle filter includes a dynamic step length estimation method. Human step length prediction can be introduced in the localization model, but this is only a part of information possible for given conditions.
+
+Several researches states that the best performance is achieved in multi-sensor or hybrid localization steps. And for walking human localization we may consider a dynamic step length estimation method proposed in \cite{maloc}.
+
+\subsection*{Filtering or global optimization (GraphSLAM)}
+We know the paper GraphSLAM based Crowd sourcing framework for indoor Wi-Fi fingerprinting\cite{CrowdsourcingWiFI}. The approach of GraphSLAM is promising. 
+%We want to utilize more available spatial information.
+The reason for not using GraphSLAM with magnetic fields is only in complexity of system construction. We have to write a gradient descent problem and solve it with GraphSLAM. The problem is that there is no clear gradients in observation model of magnetic field so we can only use filtering methods.
+
+The most promising results in terms of cheap sensor spatial information are magnetic maps. For magnetic fingerprinting there are well developed approaches.
+
+One of well-known papers in magnetic fingerprinting is \cite{Grand20123AxisMF}. The authors present an approach for magnetic field mapping, in terms of not fingerprints, but a full grid mapping procedure. As a result of this mapping procedure we obtain a full filed image that is easy to work with.
+The problem with this approach that we have to collect full grid measurements, which is a time consuming procedure. We want to get magnetic field map without additional mapping procedure, this approach is called crowd-source mapping. We collect the data from a set of human travel trajectories. Then we merge them in single noised image (only analogy representation for better understanding), and apply optimization procedure. We require the resulting image be smooth, so the optimization constraints must be set to satisfy the image denoizing procedure. This is just our idea and assumption that is have to be proved in further research.
+We see some similarities here with \cite{Cimloc}.
+
+However they are highly dependent(?? prove statement) on the data collection procedure. This algorithms also are not intended for standalone usage in terms of sensors fusion. E.g. requires either special mapping procedures or additional hardware devices - beacons.
+
+There are few papers on magnetic and inertial based navigation. However they were not implemented in SLAM frameworks such as \cite{GraphSLAMCrowdsourceWiFI}. Some of frameworks are a part of commercial interest and are not open source.
+
+The interesting map construction algorithm were proposed in \cite{Cimloc}. 
+
+The full system consists of three subsystems, i.e. Dead Reckoning Subsystem (DRS), Map Construction Subsystem (MCS), and Localization and Navigation Subsystem (LNS). 
+
+Our intuition gives that Dead Reckoning Subsystem performs sensor fusion and smoothing. The localization and navigation subsystem utilities the existing map and the output of smoothed sensors measurements.
+
+The map construction process is an optimization problem with some constraints.
+
+In \cite{Cimloc}, authors propose universal framework with no prior information of building map structure.
+But for real situation, the map of the building is known.
+We can define an indicator function similar to SLAM occupied cells mapping (????)
+With indicator function defined, we may fit the graph of trajectories to the building inner structure graph - topological map.
+
+The similar approach with map constraints correction and re-sampling was shown in \cite{articleXia}. The paper utilizes a   particle   filter that combines PDR and RSSI data.
+
+
+
+
+
+

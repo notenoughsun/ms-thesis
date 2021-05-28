@@ -1,0 +1,39 @@
+\section{Methodology / theoretical framework}
+
+Graph matching
+
+Our case: formulate situation with no wifi available data in local area
+
+(A specific case of this problem) The graph matching problem is the “maximum weighted bipartite matching”,
+
+which is defined as a matching on a bipartite graph with maximum sum of the weights of selected edges.
+
+This problem is also known as the “assignment problem”. We utilize factor Graphs for such assignment of new data.
+
+Matching problem proposed:
+
+We now describe the problem formulation by modelling two graphs: the ground truth graph (location based information - building map) and the data graph, constructed during the online training phase of system from the crowd-sourced data of users walking in the environment.
+
+We do not obtain a radio map which is needed for RSS-based localization. Instead, we collect a data-set of magnetic field fingerprints, tagged with their relative physical coordinates to previous position. This relative coordinates (graph type trajectory with approximate information on edges lengths).
+
+From the data of two graphs: location map and fingerprints collection, we perform matching procedure, using multiple available methods.
+
+The first procedure to apply is accept-reject method: all points in restricted location are blocked (person can’t go through walls and etc.). Secondly, we perform loop closure and data association using common algorithms:
+
+%graph similarity algorithms (correlation, ​)
+
+probabilistic approach (hidden Markov models)
+
+Similarity measures:
+
+What data we obtain in the data graph: heading, relative position, magnetic field direction. For multiple locations in same domain there can be lots of point with same of similar magnetic field direction. Instead, between any two points, there can be enough magnetic field disturbances, which will create enough information for distinguishing data, and mapping only location related data.
+
+We can measure the similarity only between long enough tracklets(parts of trajectory e.g. frames) / edges.
+
+The signal similarity measure cab be just a cross-covariance
+
+%Measurement model
+%We use the available sensors / modules of the usual smartphones: WiFi, compass and accelerometer measurements obtained from inertial-magnetic unit, gyroscope and human step count module.
+
+%Inertial model
+%Steps count, adaptive step / stride lenght estimation - step count modules are available in several smartphones.

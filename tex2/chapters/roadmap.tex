@@ -1,0 +1,537 @@
+\chapter{Technological research}
+\label{cap:TechResearch}
+
+This section reports on modern indoor positioning system (IPS) technologies.
+There are hundreds of applications for IPS technology. IPS systems are usually based on smartphones (used as a tracking device) and we focus on this application. 
+%This usage is the top interest of this paper.
+%\begin{abstract}
+
+Objectives:
+\begin{itemize}
+	\item show the evolution of IPS technology
+	\item perform or repeat the research of indoor positioning systems review to compare other IPS publications
+	\item visualize IPS usage and work principles (different technologies, connections, FOMs, applications)
+	\item create financial and technical models for different IPS technologies
+	\item calculate the possible effect of merging different technologies for different applications
+	\item calculate in FOMs / prices (novelty)
+	\item connect different technologies into single model (where possible)
+	\item create system / strategy for optimal* technology choice decision
+	\item map / compare existing products and trends over defined figures of mer
+\end{itemize}
+
+
+	% Categories and Subject Description
+	% C.3 [Special-purpose and application-based systems]: Realtime and embedded system
+	% General Terms
+	% Measurement, Performance, Experimentation, Design.
+
+	%/ \subsection{Keywords}
+	%Positioning System, Indoor positioning system, Magnetic field, Magnetic fingerprint, Systems for location determination, Wearable computing and innovative mobile devices, IPS, RTLS, GPS mobile-device-based IPS technologies
+
+
+
+
+\subsection{Background / Context}
+
+\cite{Infsoft_wp}
+
+% The market of this technology ...
+% Evolution over time.
+%
+% Enabling technologies
+%
+% In this paper, we present analysis of indoor positioning techniques.
+% IPS is a growing industry with hundreds applications.
+%
+% Different technologies provide different positive sides and can complement each other.
+% The implementation, usage cost and usage scenarios are different for each tech.
+%
+% different scales of the
+% environment.
+
+Indoor navigation solutions is a wide range of products and services. While "indoor routing" functionality that guides people through the buildings is important, there are lots of services which support it, such as content management system, mobile and web applications, indoor and outdoor localization, social networks, data analytics and many others.
+
+Why do we need indoor navigation and positioning? This is because of convenience of global Geo-services, and because of GPS reception problems inside buildings.
+
+One of understandable example of such kind of products is a Google Maps, which are scaled to work inside the buildings.
+
+The situation is much more complicated, the market of indoor positioning is resegmented - different applications from security applications and assets tracking in business and manufacturing to the proximity advertising in retail - from fully protected to broadcast solutions, from cheap high range proximity to high precision solutions in robotics. Indoor positioning systems is a growing industry with hundreds applications.
+
+Different applications have different technologies behind it. Over 15-20 different working technologies is known, about 3-5 of them are widely used now (WiFi, Bluetooth Low Energy, Image Based).
+
+\cite{Infsoft_wp}
+
+% The market of this technology ...
+% Evolution over time.
+%
+% Enabling technologies
+
+In this paper, we present analysis of indoor positioning techniques.
+
+Different technologies provide different positive sides and can be complementary to each other. Combination of complementary technologies can improve the total performance (ultra wide band communication uses a wider range of frequencies and thus have good signal strength and range and allow more precise positioning than single band solutions such as Bluetooth). The implementation process, usage cost and usage scenarios are different for each technologies.
+
+Several technologies are developed to work on a different scales of the environment (local $<$ 1m accuracy, room level $<$ 2m accuracy, floor level 5-10m accuracy, etc.).
+
+For the company developing the products, it is important to consider resources and productiveness. That's why, when we trying to bring product to the market, it's important to create strategy and consider resources we obtain. For this we may use models also.
+
+
+\subsection{General Objective}
+
+
+% Current situation on market of IPS, that there are totally different technologies. The IPS products are not very popular, but highly growing.
+% understanding trends of technology under this uncertainty is complicated.
+%
+Indoor navigation is a market solving different problems with logistics inside buildings. The problem is important because more than 90\% of time people usually spend inside the buildings\cite{Indoor_Generation}.
+
+Time spent for logistics such as path choice, search for special places/people can't be measured, but we will agree that it's a wasted time.
+
+Hundreds different applications, dozens of existing technologies, and no really perfect and universal solution. By word perfect we assume comparing to GPS - global, universal, precise enough for usual tasks, stable and free to people.
+
+Existing technologies such as WiFi localization and others will be covered where possible, but the focus of paper is mostly on Indoor positioning as a product it should be: product with price, business plan, technology inside and with the need from customers.
+
+Understanding the technology doesn't bring us to the product.
+Indoor positioning applications is a high promising market, which has a lot of uncertainty behind it. First it is a multi-sided and resegmented market, that's why it can't be understood easily. Second, there are many promising technologies in this market which have different behavior. With this level of uncertainty it is important to have information which will allow us to make choice of technology and market segment.
+
+There are several important points in this scientific area to assist in:
+
+
+-  Taking decision of technology / product choice
+-  Understanding physical limits with a feasible model of technology
+-  Understand Timeline and Market  scenarios
+-  Landscape of technology with literature and patent review
+
+
+We have to define a strategy and calculate the future effect of applying this technology.
+This can be used as a base, for technological investments, product and services development.
+Although we can't make the optimal technology choice, the reasonable decision can be taken after mapping existing solutions on a single landscape. Benchmarking, patent and literature research, competitors positioning are also important to define right strategy.
+
+Even knowing the filed in not enough,when we make strategy choice, we have to understand feasibility of this strategy, understand the cost and possible future performance. We can understand technical feasibility of possible future products using system models. In model we want to understand optimal figures of merits for the different possible strategies.
+
+Existing solutions have a high level of complexity. Usually they use a combination of complementary technologies to cover gaps of specific tecnologies. We have to manage the complexity of technical solution with system model if possible. We know that understanding capabilities of each technology and their combination can provide better products and thus important.
+
+\section{Approach}
+% 2. Approach (How?) (20%)
+
+First we define current state of the art, we build the model for existing technologies, analyze products on the market, list key players and IP owners, create Pareto frontier. This part is intended to make a visible and understandable landscape of this technology segment.
+
+We use several tools for this: generate artificial intelligence patent classifier with cipher.ai platform, analyze annual market reports and roadmaps from companies \cite{Infsoft_wp}, \cite{trends2019}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.48\textwidth]{graphics/roadmap/patents/color.png}
+	\caption{Patent keywords search highlighting cipher.ai platform}
+	\label{fig:Patent-highlighting}
+\end{figure}
+
+Patents search highlighting categories which were used to build the classifier.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.65\textwidth]{graphics/roadmap/patents/score.png}
+	\caption{Patents result score of final report}
+	\label{fig:Patent-score}
+\end{figure}
+
+Result score shown on the \ref{fig:Patent-score} show how patents fit the classifier.
+
+
+Second part is focused on building a model of a product and optimizing it for several criteria.
+We focus on the system architecture of indoor positioning solutions. The system architecture provided by the Indoor Location Alliance is used as the main reference. Next we use the data from the Microsoft indoor positioning competition. This is a valuable data, because it provides data about development of indoor positioning technologies and their performance. Data of teams who are competing in the same conditions are perfect for benchmarking. Having the data of benchmarking, we may define technology complexity in real numbers and use it when building the strategy.
+% For this we use OPM (object process management) models and OPCAT simulator, UML diagrams, risk matrice and code based models containing figure of merits interconnections. We don't do optimization of a product here, just list possible options with [] curves.
+
+Third we do a financial valuation. We collect all data about product, market, marketing channels and model of sales together.
+Having existing business model which is outside of the scope of this paper, we may identify numbers of sales and revenues.
+We use the costs and amount of investments we need to complete this project.
+We tune the financial model to obtain the positive NPV. To be coherent with the product figures of merits, we also adjust values of the model to receive a non-dominated product on the market.
+
+Next we do value at risk analysis. With the value at risk gain curve, we check different financial models.
+% comparing to the Pareto frontier.
+
+After all procedures we come up with bunch of strategies from where we can choose one. Again, we can't make decisions based on this models, but we can check strategies performance and for different technical decisions.
+
+\subsection{Intellectual Property, Publications}
+
+\section{Results}
+
+\subsubsection{Figures of merit}
+
+\input{tables/TechnologyFOMs}
+
+Lower figures in table are affecting the technology choice, but cannot be added into model, so they are not considered as the figures of merit, but listed in table to explain the reason of excluding them.
+
+\input{tables/ProductFOMs}
+
+We focus on the figures of merit which are important for product development, and we use product FOM's mostly\ref{tab:ProductFOM}.
+
+
+\input{tables/roadmapMicrCompetition}
+
+
+Technological limits
+
+3 types: radio (distance), image (angle), fingerprinting (position).
+
+Radio (multilateration, distance measurement), fingerprinting: noise level, wave reflections, sensor errors are main limitations.
+Because of noise, the technology limit can’t be reached, only on frequencies where is no external noise, wave reflections - scanning error depends on geometry of signal way.
+Image based: accuracy/precision of localisation depends on camera angle resolution. Because trilateration with camera is not possible, error is a linear function of range.
+
+
+
+\subsection{State of the art}
+
+
+\input{tables/TechnologyComparison}
+
+
+\subsubsection{Positioning}
+% companies positioning on market
+
+We have to find products of this companies and other popular products to provide the landscape of market.
+
+
+Number of patents is a valuable metric but it doesn't show us a value of patent, for example, IndoorAtlas OY obtain patents for magnetic fingerprinting technology which are more valuable now. Some huge companies such as Google LLC and Hitachi are not properly listed. They obtain higher number of patents that shown here, but all of them are not related to indoor navigation, so they are excluded from analysis. Excluding several companies is possible because best products are well known and we want to map products especially.
+
+\cite{Security} It provides information about relative accuracy, mobile device battery usage and other system performance factors to help support early IPS planning and preliminary product evaluation.
+
+\cite{Mautz2012IndoorPT}
+
+IndoorAtlas research of 2016\cite{IPTrise} is a market landscape, which covers most popular technologies, market drivers and future trends. The paper covers adoption and drivers of indoor positioning systems, perspectives of geomagnetic indoor positioning.
+
+Paper \cite{Brena2017} present a comparison of indoor positioning approaches.
+
+% \cite{Kj_fingerprinting, Ashraf_deepnn, Li_geomagnetic, Mautz2012IndoorPT, 8859264, Infsoft_wp}
+
+
+\input{tables/productstolink}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\input{tables/techindex}
+
+We use the linking grid to map products \ref{tab:productstolink} to technologies \ref{tab:techindex}. To make table more compact, we use indexes.
+
+\input{tables/TechnologyComparison}
+
+In linking grid \ref{tab:linking_grid}, we map technologies to possible processes in indoor positioning systems. For each technology, we identify the technology adoption or readiness level in simplest form. After that, for each process, we mark all possible technologies involved. Then we mark products to markets and identify which processes are involved into each product, on which markets the product is positioned and what the level of this product on the market.
+
+
+\subsubsection{Patents}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{graphics/roadmap/patents/Patenting2.png}
+	\caption{Portfolio size: Active patent families, by organization and technology. Currently active patent families (granted or pending) by organization and technology.}
+	\label{fig:Patent-families2}
+\end{figure}
+
+In patent research of current field, we use patent classifier with the training set of 590 positive and 136 negative patents marked.
+Using this classifier and AI patent platform cipher.ai, we do the organization search which is presented on \ref{fig:Patent-families2}
+. On the Figure \ref{fig:Patent-families2} category of "Unrelated" is the category of patents that does not fit the classifier.
+
+
+\begin{figure*}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{graphics/roadmap/patents/Geography Granted patents by country and organisation.png}
+	\caption{Geography: Granted patents, by country and organization
+		Currently active and granted individual patents per country, by organization.}
+	\label{fig:Granted-patents-by-coutry}
+\end{figure*}
+
+\input{tables/PatentsPortfolioSize}
+
+\input{tables/GeographyPatents}
+
+\subsection{Building a model}
+
+% What points are we roadmap?
+
+% usage of technology
+% possible applications
+
+\subsubsection{Architecture}
+
+One way of AI usage with indoor positioning system is shown in post of IBM-research group \cite{AI-Centric_IPS}. This gives us some view of architecture and data transactions in modern IPS applications.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.65\textwidth]{graphics/roadmap/indoor navigation roadmap-Page-3.png}
+	\caption{Signal processing system architecture}
+	\label{fig:arch}
+\end{figure}
+
+On figure \ref{fig:arch} we present possible architecture of indoor positioning application.
+We use blue colour for dead-reckoning application. Because of different smartphone sensors, signal processing will be different for every smartphone model, that's why signal processing should be done on the smartphone itself.
+
+After first signal filtering from inertial and others complementary sensors (barometer), all information from sensors has to be matched with fingerprint database and map databases. This process can be done on the remote server or locally, this depends on system architecture chosen.
+
+The technology choice of system architecture can't be explained, because there is no single strategy for system design.
+
+Only several assumptions can be presented:
+
+\begin{itemize}
+	\item Server based systems can be provided by an external vendor - buying a service
+	\item Server based systems are enough cost effective to be used (development of server platforms in 2020 is enough to not care about signal processing on the local devices)
+	\item Mobile device based are harder in development and support
+	\item Mobile device based systems may not require external server and can be run locally - stable work with no internet connection
+	\item Once operating, mobile device based are cheaper, because no server support and rent needed - costs are on user side. Important for scalability (if one million of users will use system, some additional traffic management will be required)
+	\item Emergency help services shall not depend on internet connection - broadcast systems, mobile device used as transmitter - mobile device initiated systems
+	\item In some cases network initiated positioning can be useful. For example, if ultrasound waves are used for positioning, sound transmission will happen over short periods of time defined by network, this will reduce level of noise.
+\end{itemize}
+
+For the most common case of human tracking with no special requirements on internet connection, scalability and sensors used, architecture shown of \ref{fig:arch} can be used.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{graphics/roadmap/InLocation Alliance (ILA).png}
+	\caption{InLocation Alliance (ILA) system architecture}
+	\label{fig:arch2}
+\end{figure}
+
+InLocation Alliance (ILA) was founded in 2012 and worked on indoor positioning solutions. In 2014 the ILA created an open, technology-independent architecture in support of accurate location of mobile devices within different types of indoor venues (see Figure \ref{fig:arch2}), which presents seven key system elements and nine interfaces.
+
+What we see from Figure \ref{fig:arch2}, is that only mobile devices are considered as input, current architecture don't have beacons in it.
+
+Results of ILA work and standards they make are not open and published, so they are not a standard now and we may freely update this structure.
+Moreover, in \cite{Security} author propose to define both system architecture diagrams \ref{fig:arch} and \ref{fig:arch2} and use them as a product documentation to describe interfaces and so on.
+
+% The ILA System Architecture (SA) specifies the main components and interface requirements of a technology-independent system architecture for indoor location.
+
+% The SA has been designed to support a wide range of venues: from the very small (e.g. stand-alone business) to the very large (e.g. corporate campus) to the very distributed (e.g. worldwide retail chain).
+% The SA is based on open interfaces in order to support multi-vendor environments for indoor location.
+% While the SA in itself is generic and technology agnostic, the focus of the first public release of the SA is on Wi-Fi and BT.
+
+\subsubsection{Roadmap system modelling}
+% \subsubsection{Roadmap model in OPM}
+
+From \cite{Security}, the process of documenting architecture can be described as:
+
+At the appropriate times, take steps with prospective system providers:
+\begin{itemize}
+	\item Provide the two architecture diagrams to prospective vendors
+	\item Ask vendors to document the architecture and positioning mode(s) of the IPS being considered, relative to these architecture diagrams.
+	\item Plan and document any data import or export functions.
+	\item Review the existing system’s reporting capabilities against \ what reporting requirements apply for business uses of the system.
+	\item Review what applications reside where, such as an on-premises server or a cloud server.
+\end{itemize}
+
+We will create an OPM model using this approach and Figures \ref{fig:arch} and \ref{fig:arch2}.
+
+\begin{figure*}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{graphics/roadmap/location aware content by ILA.png}
+	\caption{Location aware content example by ILA.}
+	\label{fig:loc_aware}
+\end{figure*}
+
+We present an example from \cite{ILA-System-Architecture} of how location aware content is delivered to users.
+On Figure \ref{fig:loc_aware}, we see the order of steps, used to provide location aware content to user, e.g. geo-targeting or geo-fencing. This diagram doesn't explain much the structure and interfaces of system architecture, but shows some connections between them. All short naming are the same as in Figure \ref{fig:arch2}.
+
+% For better structure representation we will use OPM models.
+
+
+
+\subsection{Technology Strategy Vision}
+
+% explain vision and strategy
+
+From annual reports\cite{trends2017,trends2019} we can get history of trends in mobile marketing. When and where it is possible,different technologies and services are implemented in IPS. We will list several trends of indoor positioning systems.
+
+
+Merge of indoor and outdoor positioning systems:
+It is visible that IPS technologies are converging to some set of technologies. When this will happen, the connection between IPS and GPS or other outdoor positioning systems can be done. Right now, several IPS products support this feature, but this is not a global solution.\cite{Brena2017}
+Privacy and security in IPS development:
+Current trends with protection of users in web (GDPR policies) bring us to the point that some steps in this direction are done by government. Development of a product which is privacy safe can improve the adoption of use, which is important factor now. This factor directly affects the scalability of specific technologies and products.\cite{Brena2017}
+Crowd-source mapping:
+Most of technologies used in IPS systems requires hours of measurements inside the facilities to create a map of a building. Regular users can provide big amount of measurements, needed to create map of building and update it regularly.  This approach is important for applications that don't require special equipment for measurements and need regular map update (magnetic fields, WiFi, ambient sound localization technologies).\cite{Brena2017}
+"China Crisis Ebbs, But Tracking Apps Are Going Strong" - the article of today's paper in The New York Times \cite{Tracking_Apps_times}.
+Having the great need of tracking people, new products of human tracking were developed rapidly. "But the authorities have set few limits on how that data can be used. And now,officials in some places are loading their apps with new features, hoping the software will live on as more than just an emergency measure."
+Indoor Location of E911 Mobile Callers:
+Enhanced 911 Services enable 911 operators to:
+Immediately pinpoint the location of the 911 caller based on the calling number
+Callback the 911 caller if a disconnect occurs
+Tracking location of people in emergency situation is an important challenge and one of the most important drivers of current IPS technology.
+The initiative shown some results in 2013, but USA government requires universal service that will be implemented across the USA. One of the key points of this measure, that it has to work indoors. Importance of E911 point is that several actions are already done and several technological steps may change the state of USA market which may happen in future 2-5 years.
+
+The overall strategy is to deliver the product in least development time, while reaching the average accuracy.
+
+\subsection{Timeline}
+
+We use data of Microsoft competition as a starting reference. In table \ref{tab:my-competition}, we have time of development and resulting accuracy for the different technology choice of different teams participated.
+We may use these dependencies to understand, what time is needed to achieve each level of accuracy for different combinations of technologies.
+
+\begin{figure}
+	\includegraphics[width=0.6\textwidth]{graphics/roadmap/RMSerrorvsdevtime.png}
+	\caption{Root mean square error of positioning versus time of development}
+	\label{im:rmse}
+\end{figure}
+
+On figure \ref{im:rmse}, we see the team competitors performance versus time for development in months.
+
+\begin{table}[]
+	\caption{Technology choice.}
+	\label{tab:best-tech}
+	\begin{tabular}{lll}
+		Technical Approach & dev.time & RMS error \\
+		SDR Time-of-Flight & 4 & 3.87 \\
+		2.4GHz Time-of-Flight & 5 & 2.58 \\
+		WiFi+IMU Fingerprinting & 9 & 2.81 \\
+		WiFi+Modulated LEDs & 12 & 2.04 \\
+		WiFi Fingerprinting + Neural Network & 12 & 2.22 \\
+		WiFi+IMU Fingerprinting + Neural Network & 36 & 1.96 \\
+		2.4GHz Phase Offset & 60 & 0.72 \\
+		Bayesian Filter + WiFi Fingerprinting & 96 & 1.56
+	\end{tabular}%
+\end{table}
+
+We choose the best performance in technologies \ref{tab:best-tech} by multiplication of all of parameters.
+We define the metric as:
+\begin{equation*}
+	\textsf{performance} = \frac{1}{\textsf{(development time)} \cdot \textsf{accuracy}}
+\end{equation*}
+
+We predict the accuracy of or product in between of optimal scenario (non-dominated points) and the trend line. From this we may present a timeline.
+
+\begin{figure*}[t]
+	\centering
+	\includegraphics[width=0.99\textwidth]{graphics/roadmap/timeline.png}
+	\caption{Timeline diagram. Left to right: Passed term, Short term (1-2 years), Long term (2-5 years).}
+	\label{fig:timeline}
+\end{figure*}
+
+On \ref{fig:timeline} we show the action plan for development the product with different alternative strategies.
+% historical evolution of trends in mobile technologies and technologies of indoor positioning.
+
+The overall trend is that IPS products are converging to a global ecosystem - digitization of cities. After human and assets will be tracked constantly, this will be a big supplementation to a smart cities technologies.
+Before that, there is the market of IPS in retail applications (asset tracking, geofencing, way finding, proximity marketing)\cite{Infsoft_wp}.
+
+By speaking of current situation on the market, we can say that human indoor tracking is growing, but it is not mature.
+We are building product with the main function of human indoor positioning as shown on Figure\ref{fig:timeline}.
+
+Magnetic field navigation is another perspective factor in the timeline, some progress is already achieved by IndoorAtlas company in this field, but this technology will might become global and will assist the usual dead reckoning and existing WiFi and BLE technologies.
+
+UWB localization can be better than existing radio-based technologies, but until there is no UWB communication equipment in smartphones and facilities worldwide. Spreading of 5G may change this situation.
+%
+% The matchmaking apps are stated in the timeline, because it is the interest of current paper product research. This is the way of usage the IPS technology which merges social networks and geo-based services.
+% \begin{wrapfigure}{l}{0.7\linewidth}
+% \includegraphics[width=\linewidth]{graphics/roadmap/timeline.png}
+% \caption{This is the former Share\LaTeX{} logo}
+% \end{wrapfigure}
+% To present current landscape, we will state known trends of this field.
+% Because of uncertainty behind this information, in timeline they all can be marked under "Future applications".
+
+\subsection{Technical feasibility}
+
+Physical limits of indoor positioning system come from the environment. Real usage limits are more flexible and are directed by human limits (reaction time).
+
+Applicable limits of each of FOM-s are different for different applications. For people to navigate, the accuracy of (1 m) and response frequency of (5 s)  may be enough. In big environment, the accuracy of 1-3 meters (similar to GPS performance) is enough. For the high performance applications, the accuracy must be lower than 1m (0.1 -0.5)m and response frequency near (0.1-0.5)s. In ARkit research[1] proposed model, where accuracy required is equal to 10 percent of the distance between various points of the destination, which gives us same 0.4-0.5m for rooms and 4-5m for big halls.
+
+
+The range for RSSI method is calculated by formula:
+
+$\mathbf{ dist = 10 * ((RSSI_{1m} - RSSI_{rec})/(10 * Path loss)) }$
+
+Main limitation with this type of distance calculation is sensor's sensitivity and field noise. Having -96 DBm sensitivity and 4 DBm transmit power, system will be operable in range of 30m.
+
+\begin{figure}
+	\includegraphics[width=0.49\textwidth]{graphics/roadmap/signal_strenght.png}
+	\caption{Radio signal strength distribution model.}
+	\label{fig:signal}
+\end{figure}
+To calculate the signal distribution, we use Free-space path loss formula and Log-distance path loss model.
+
+We use constants from signal measurements in [21], and Log-distance path loss model.
+
+This gives us the information that signal transmission quality depends of distance, transmitter power and receiver sensitivity.
+
+For BLE, we the normal conditions are as in figure above: with normal operating range of 30m, transmitter power in [4 DBm, -20 DBm] range, receiver sensitivity in range of -40 DBm, -60 DBm.
+
+The limits for tracking technologies are not strict, they are only affecting accuracy and precision of localization. We can use table of normal ranges for technologies as a reference, but the performance will depend of huge amount of factors which can't be modeled accurately.
+
+\subsection{Financial Valuation}
+
+\begin{align}
+\textsf{Customer Acquisition Cost (CAC)} &= \frac{\textsf{(product cost) + sales + marketing}}{\textsf{(number of customers)}}  \\
+\textsf{Life-Time Value (LTV)} &= \textsf{(average value of sales)} \times \textsf{(number of repeat transactions)} \times \notag\\
+&\times \textsf{(average retention time)} \\
+\textsf{Profit} &= \textsf{LTV} \times\textsf{(average margin)}
+\end{align}
+
+
+Assumptions:
+
+\begin{enumerate}
+	\item     an exhibition area of 1000 sqm, needs 9 BLE anchors for full coverage
+	\item     Calculations for 1 day
+	\item     1000 visitors per day
+	\item     Mobile app development needs 4hrs of programming
+	\item     1 person for hardware installation and removal
+\end{enumerate}
+
+Assumptions on revenues rate are shown on the figure above.
+
+Plan A:
+
+CAC~a~ to charge each booth (participating company) to benefit from indoor navigation facilities per day
+
+Daily costs of operation = 1200 USD; Fixed costs = 3000 USD;
+
+Plan B:
+
+CAC~B~to charge each booth (participating company) to benefit from indoor navigation facilities + additional product features
+
+Daily costs of operation = 1700 USD; Fixed costs = 2000 USD;
+
+\begin{figure}
+	\includegraphics[width=0.49\textwidth]{graphics/roadmap/fin/varg_10runs.png}
+	\caption{Customer acquisition cost}
+	\label{fig:cac}
+\end{figure}
+
+We assume that in strategies, CAC is different, and costs are different. Number of customers is assumed probabilistic as a triangular distribution. We use the assumption in the model, that for the longer operation time, customers get a discount as a power function of power 0.8.
+
+The total revenue and customer acquisition cost are presented on the Figure \ref{fig:cac}. This is an example for one strategy, average customer acquisition is about 45 USD per day. Average revenue is about 1800 USD per day.
+
+%We are modelling two strategies for operating time of 2 and 5 days.
+%Watching on the figure, we understand that strategy A is better on a short term, and on a long operating time, both strategies are almost equal.
+
+
+\begin{figure}
+	\includegraphics[width=0.49\textwidth]{graphics/roadmap/fin/varg_mruns.png}
+	\caption{Value at risk gain curve}
+	\label{fig:varg}
+\end{figure}
+
+\section{Validation}
+
+
+The tech background is validated by comparison of scientific publications \cite{ILA-System-Architecture}, \cite{Brena2017, Kj_fingerprinting, Li_geomagnetic, Mautz2012IndoorPT, AI-Centric_IPS} and analysis of the existing solutions.
+The business model was sequentially developed to satisfy four fits model.
+Expert validation (IndoorAtlas expert's interview, customer's interview).
+
+One of the most valuable tools for the roadmap developing was benchmarking with existing researches \cite{microsoft}.
+
+\section{Conclusions}
+% 5. Conclusions & Lessons Learnt from TPR:F/TPR:A (10%)
+
+The indoor navigation product strategy tool is in development now.
+It was proven to be viable by customer discovery process and by revenue model \& calculation.
+
+However, in order use this tool efficiently, this strategy tool requires:
+\begin{enumerate}
+	\item to be accurate - proved to be possible but requires lot of engineering
+	\item to be convenient - depends on the way of realization and would require continuous improvements
+	\item acceptance of the market segment, which shall be accurately chosen
+	\item complexity of either software or hardware
+\end{enumerate}
+
+This paper shows the usage of different modelling approaches, which allows to develop the strategy based on the product model.
+
+Paper provides a roadmap, technology landscape and technology strategy choice that is based on the timeline and all relevant roadmap elements.
+Each statement is supported by a quantitative fact or analytics defined by the models of product and technology.
+
+System model, created in this paper, list all important figures, components and capabilities. The key functions and system architecture are identified using common standards. Figures of merit identify capabilities and limits of technology and provide information about product development strategy. The demonstrators, patents, known products and products which can be used as a components of indoor positioning system are listed in paper and implemented into strategy.
+
+In paper, we identify the limit for the product development performance as an average performance (root mean square trend line). This allow us to make a strategy choice, to develop a product/technology or to buy it.
+
+The financial valuation was developed, based on product model and sales models.
+We use probabilistic models to develop strategy under uncertainty. Different scenarios (pessimistic, baseline, optimistic) are defined.

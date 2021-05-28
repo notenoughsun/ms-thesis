@@ -25,16 +25,22 @@ traditional sensors are []
 we model the localization with loosy signal connection of WiFi and BLE, we estimate how the spatial data of magnetic field and IMU PDR can increase the localization accuracy.
 // TODO: need an experimant here
 
-Given the proof that the spatial information of magnetic field has a significan effect for traditional PDR, we focus on this technology.
+Given the proof that the spatial information of magnetic field has a significant effect for traditional PDR, we focus on this technology.
 
-We have examples of products that are based mostly on magnetics field
+We have examples of products that are based mostly on magnetic field
 // list products and papers
 
 There is no information of how the magnetic data can be collected in absence of precise location. We searched for a possible solutions to this task.
 
 First, the task is to find a precise location which is usually called ground truth for training the system, creating the map of the location, for estimatimation of the algorithm performance.
 
+== update on pre-defence
 
+explain why magn field / where needed to apply: perception tool.
+in analogy of how a blind human can interact in space without vision,
+this solution is a complementary sensory source of information.
+
+draw results of experiments
 
 
 

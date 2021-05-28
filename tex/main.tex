@@ -476,6 +476,35 @@ We generate the series of data using maze generation algorithm. On a fixed map o
 	\label{fig:routes3}
 \end{figure}
 
+
+We simulated the walking model of the pedestrian using particle filter.
+
+Current implementation is fully functional and flexible,
+we run experiments on localization and navigation using this code.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/Figure_dvwaerv1}
+	\caption{Particle filter run}
+	\label{fig:pf}
+\end{figure}
+
+On figure \ref{fig:pf} shown the true and simulated trajectories.
+We have to add conditioning on observations, but this is a smalll minor update we will do later.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\linewidth]{images/Figure_1erhawrhser}
+	\caption{Sensor model}
+	\label{fig:Sensor_model}
+\end{figure}
+
+On figure \ref{fig:Sensor_model}, the sensor model is being shown.
+We select 3 observations from 3 surfaces for each pose. All observations are later reconstructed to surface and then compared to true field data.
+
+Once we have working filtering procedure, we have a tool for data mapping. The localization can be performed using same tool, but using the known reconstructed data.
+
 \subsection{Data processing}
 
 First we focus on a key part of a given research. The main part of this paper requires the transformation of observation to the solid continuous map.
@@ -498,6 +527,9 @@ Solution 1: interpolation. Solution is not accurate and not feasible because res
 
 The promising solution was shown in repository of \cite{Surface_approximation_GP}. We aim to solve the problem in similar problem statement with more traditional methods.
 
+
+
+
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{images/rbfinterp3d}
@@ -509,14 +541,54 @@ We perform the noisy surface approximation using RBF function from the scipy pac
 
 On the figure \ref{rbfinterp3d}, the right plot represents the distance between initial and approximated surfaces.
 
+
+\section{Work progress}
+
+From the list of planned objectives, the uncompleted are the following:
+
+Estimation of localization model’s performance in code simulation. \\
+Smartphone implementation for sensing data collection. \\
+Estimation of localization accuracy in real experiments. \\
+
+We have to complete small number of experiments for algorithm accuracy estimation. 
+Currently, we almost completed the work on localization on magnetic field data using the particle filter. The similar papers are \cite{Grand20123AxisMF, 7809951}.
+
 %	\include{chapters/chapter3} 
 %	\appendix
 %	\include{chapters/appa}
 %	\include{chapters/appb}
 %	\include{chapters/biblio}
 
+We use the approach of surface approximation from \cite{Surface_approximation_GP}.
 
-\cite{Surface_approximation_GP}
+
+We need to complete motivation part, write all supporting text and equations for the models we use. 
+This is absolutely possible task, because all derivations are already written in paper and implemented in code. 
+
+The timeline of future actions to complete the thesis is defined.
+In 3 more days, the graphics part and equations will be ready for thesis submission. Additional few days are needed to complile the roadmap and tecnological research as a motivational part of the thesis - e.g. preliminary research. 
+
+Current presenation is available at \url{https://docs.google.com/presentation/d/1okQ8xhp4loKDlqegFuVSBieAd4HiGIXiI-SPlva9Efs/edit?usp=sharing}
+
+
+The technology roadmap presentation \url{https://docs.google.com/presentation/d/17Y4y7kEfnQPwoDM8SHt8FAUGgpr_LoDErFYHAzCHLqE/edit?usp=sharing}. This data will be added to current document.
+
+The latest technology roadmap paper on magnetic localization is available at \url{https://www.overleaf.com/read/fdjmmbbtwnkn}.  
+
+The roadmap covers patent research, literature research and problem statement for the current thesis. The localization systems architecture is also highlighted.
+
+
+Currently the is no problems in completing the thesis in remaining time. Sure, active work on text refactoring is required. This work will be done before external reviewer submission.
+
+\subsection{Results readiness estimation}
+The work completion percentage in my opinion is $75\%$.
+
+All the data and code is submitted to github \url{https://github.com/notenoughsun/ms-thesis}.
+
+The most work is currently contained at graph simulation, \url{https://github.com/notenoughsun/ms-thesis/tree/main/code/graph_gen}. Figures and derivations are also available there.
+
+This paper is not yet compiled for submission. Most parts of research are not added to this document but will be added in few days.
+
 
 \bibliographystyle{unsrt}
 \bibliography{bib}

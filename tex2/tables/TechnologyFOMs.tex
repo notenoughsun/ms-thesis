@@ -1,0 +1,20 @@
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+\renewcommand{\arraystretch}{2} % for the vertical padding
+\begin{table}[ht!]
+%\begin{table*}[]
+	\caption{Technology FOM's}
+	\label{tab:techFOM}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|L|}
+			\hline
+			cost hardware, software & USD & cost or hardware rent to provide coverage of needed area with normal operating accuracy \\ \hline
+			accuracy & m & accuracy of localization, difference between real position and measurements \\ \hline
+			cost & f(USD/sqm) & the cost itself cannot be directly compared because of different types of implementation. Instead, the overall cost presented in several roadmaps is shown. \\ \hline
+			range & m & Not important factor, complexity and scalability are affected by this factor. Not representative, because of different types of implementation. Excluded from FOM's \\ \hline
+			additional requirements & \begin{tabular}[c]{@{}l@{}}USD;\\ year\end{tabular} & If yes, product is not applicable until they are not solved. Not implemented into model, technologies with additional requirements are mot mapped. (Infrastructure Requirements, Impacts and Notes) \\ \hline
+			Scalability & low/med/high & range of scalability, important factor to consider in strategy choice \\ \hline
+			Complexity & low/med/high & range of complexity, important factor to consider in strategy choice \\ \hline
+			Robustness &  & additional information of what affect the performance of technology \\ \hline
+		\end{tabular}%
+	}
+\end{table}

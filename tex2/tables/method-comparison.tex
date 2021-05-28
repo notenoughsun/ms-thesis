@@ -1,0 +1,20 @@
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+\renewcommand{\arraystretch}{2} % for the vertical padding
+\begin{table}[ht!]
+  \centering
+  \begin{tabularx}{0.9\textwidth}{|p{8em}|p{6em}p{6em}X|}
+    \hline
+    \textbf{Feature}     & \textbf{Method X}      & \textbf{Method Y}                           & \textbf{References}                      \\
+    \hline
+    \rowcolor[HTML]{EFEFEF}
+    Speed                     &  medium     &  slow          &       \citet{Skoltech2017}             \\
+    \hline
+    Cost                        & less            & more          &                                  \\
+    \hline
+    \rowcolor[HTML]{EFEFEF}
+    Error                      &        2           &                   3                   &                                         \\
+    \hline
+  \end{tabularx}
+    \caption{Comparison of X and Y}
+    \label{tab:comparison_x_and_y}%
+\end{table}

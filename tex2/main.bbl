@@ -1,0 +1,204 @@
+\begin{thebibliography}{26}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alliance()]{ILA-System-Architecture}
+InLocation Alliance.
+\newblock Ila system architecture release 1.0.
+\newblock \emph{openmobilealliance}.
+\newblock URL
+  \url{http://www.openmobilealliance.org/tech/affiliates/ila/ILA_System_Architecture_Release%201.0.pdf}.
+
+\bibitem[Bayev et~al.(2019)Bayev, Chistyakov, Derevyankin, Gartseev, Nikulin,
+  and Pikhletsky]{rudacop}
+Andrey Bayev, I.~Chistyakov, Alexey Derevyankin, Ilya Gartseev, Alexey Nikulin,
+  and Mikhail Pikhletsky.
+\newblock Rudacop: The dataset for smartphone-based intellectual pedestrian
+  navigation.
+\newblock pages 1--8, 09 2019.
+\newblock \doi{10.1109/IPIN.2019.8911823}.
+
+\bibitem[Brena et~al.(2017)Brena, Garc{\'i}a-V{\'a}zquez, Galv{\'a}n-Tejada,
+  Mu{\~{n}}oz-Rodriguez, Vargas-Rosales, and Fangmeyer]{Brena2017}
+Ramon~F. Brena, Juan~Pablo Garc{\'i}a-V{\'a}zquez, Carlos~E. Galv{\'a}n-Tejada,
+  David Mu{\~{n}}oz-Rodriguez, Cesar Vargas-Rosales, and James Fangmeyer.
+\newblock Evolution of indoor positioning technologies: A survey.
+\newblock \emph{Journal of Sensors}, Mar 2017.
+\newblock ISSN 1687-725X.
+\newblock \doi{10.1155/2017/2630413}.
+\newblock URL \url{https://doi.org/10.1155/2017/2630413}.
+
+\bibitem[Ferris et~al.(2007)Ferris, Fox, and Lawrence]{gplvm}
+Brian Ferris, Dieter Fox, and Neil Lawrence.
+\newblock Wifi-slam using gaussian process latent variable models.
+\newblock volume~7, pages 2480--2485, 01 2007.
+\newblock URL
+  \url{https://www.researchgate.net/publication/220814713_WiFi-SLAM_using_Gaussian_process_latent_variable_models}.
+
+\bibitem[Galvez-Lopez and Tardos(2012)]{orb-slam2}
+Dorian Galvez-Lopez and Juan Tardos.
+\newblock Bags of binary words for fast place recognition in image sequences.
+\newblock \emph{Robotics, IEEE Transactions on}, 28:\penalty0 1188--1197, 10
+  2012.
+\newblock \doi{10.1109/TRO.2012.2197158}.
+
+\bibitem[Gkoufas(2018)]{AI-Centric_IPS}
+Yiannis Gkoufas.
+\newblock A robust ai-centric indoor positioning system.
+\newblock \emph{IBM Research Blog}, 10 2018.
+
+\bibitem[Grand and Thrun(2012)]{Grand20123AxisMF}
+E.~Grand and S.~Thrun.
+\newblock 3-axis magnetic field mapping and fusion for indoor localization.
+\newblock \emph{2012 IEEE International Conference on Multisensor Fusion and
+  Integration for Intelligent Systems (MFI)}, pages 358--364, 2012.
+
+\bibitem[IndoorAtlas/VansonBourne(2016)]{IPTrise}
+IndoorAtlas/VansonBourne.
+\newblock A 2016 global research report on the indoor positioning market.
+\newblock page~6, 2016.
+
+\bibitem[Infsoft(2019)]{Infsoft_wp}
+Infsoft.
+\newblock Indoor positioning and services white paper.
+\newblock 2019.
+\newblock URL
+  \url{https://www.infsoft.com/Portals/0/Images/solutions/basics/whitepaper/infsoft-Whitepaper-EN-Indoor-Positioning_download.pdf}.
+
+\bibitem[Kjærgaard(2010)]{Kj_fingerprinting}
+Mikkel Kjærgaard.
+\newblock Indoor positioning with radio location fingerprinting.
+\newblock 04 2010.
+
+\bibitem[Li et~al.(2013)Li, Gallagher, Rizos, and Dempster]{Li_geomagnetic}
+Binghao Li, Thomas Gallagher, Chris Rizos, and Andrew Dempster.
+\newblock Using geomagnetic field for indoor positioning.
+\newblock \emph{Journal of Applied Geodesy}, 7, 11 2013.
+\newblock \doi{10.1515/jag-2013-0016}.
+
+\bibitem[Lymberopoulos et~al.(2015{\natexlab{a}})Lymberopoulos, Liu, Yang,
+  Choudhury, Handziski, Sen, Lemic, Buesch, Jiang, Zou, Jiang, Zhang, Ashok,
+  Xu, Lazik, Rajagopal, Rowe, Ghose, Ahmed, and Hevesi]{Lymberopoulos}
+Dimitrios Lymberopoulos, Jie Liu, Xue Yang, Romit Choudhury, Vlado Handziski,
+  Souvik Sen, Filip Lemic, Jasper Buesch, Zhiping Jiang, Han Zou, Hao Jiang,
+  Chi Zhang, Ashwin Ashok, Chenren Xu, Patrick Lazik, Niranjini Rajagopal,
+  Anthony Rowe, Avik Ghose, Nasim Ahmed, and Peter Hevesi.
+\newblock A realistic evaluation and comparison of indoor location
+  technologies: Experiences and lessons learned.
+\newblock 04 2015{\natexlab{a}}.
+\newblock \doi{10.1145/2737095.2737726}.
+
+\bibitem[Lymberopoulos et~al.(2015{\natexlab{b}})Lymberopoulos, Liu, Yang,
+  Choudhury, Handziski, Sen, Lemic, Buesch, Jiang, Zou, Jiang, Zhang, Ashok,
+  Xu, Lazik, Rajagopal, Rowe, Ghose, Ahmed, and Hevesi]{microsoft}
+Dimitrios Lymberopoulos, Jie Liu, Xue Yang, Romit Choudhury, Vlado Handziski,
+  Souvik Sen, Filip Lemic, Jasper Buesch, Zhiping Jiang, Han Zou, Hao Jiang,
+  Chi Zhang, Ashwin Ashok, Chenren Xu, Patrick Lazik, Niranjini Rajagopal,
+  Anthony Rowe, Avik Ghose, Nasim Ahmed, and Peter Hevesi.
+\newblock A realistic evaluation and comparison of indoor location
+  technologies: Experiences and lessons learned.
+\newblock 04 2015{\natexlab{b}}.
+\newblock \doi{10.1145/2737095.2737726}.
+\newblock URL
+  \url{https://synrg.csl.illinois.edu/papers/competition_IPSN2015.pdf}.
+
+\bibitem[Mautz(2012)]{Mautz2012IndoorPT}
+Rainer Mautz.
+\newblock Indoor positioning technologies.
+\newblock 2012.
+
+\bibitem[{Min Zhang} et~al.(2016){Min Zhang}, {Ling Pei}, and {Xiaotie
+  Deng}]{CrowdsourcingWiFI}
+{Min Zhang}, {Ling Pei}, and {Xiaotie Deng}.
+\newblock Graphslam-based crowdsourcing framework for indoor wi-fi
+  fingerprinting.
+\newblock In \emph{2016 Fourth International Conference on Ubiquitous
+  Positioning, Indoor Navigation and Location Based Services (UPINLBS)}, pages
+  61--67, 2016.
+\newblock \doi{10.1109/UPINLBS.2016.7809951}.
+
+\bibitem[Mur-Artal et~al.(2015)Mur-Artal, Montiel, and Tardos]{orb-slam}
+Raul Mur-Artal, J.~Montiel, and Juan Tardos.
+\newblock Orb-slam: a versatile and accurate monocular slam system.
+\newblock \emph{IEEE Transactions on Robotics}, 31:\penalty0 1147 -- 1163, 10
+  2015.
+\newblock \doi{10.1109/TRO.2015.2463671}.
+
+\bibitem[pathapati subbu et~al.(2013)pathapati subbu, Gozick, and
+  Dantu]{LocateMe}
+Kalyan pathapati subbu, Brandon Gozick, and Ram Dantu.
+\newblock Locateme: Magnetic-fields-based indoor localization using
+  smartphones.
+\newblock \emph{ACM Transactions on Intelligent Systems and Technology (TIST)},
+  4, 09 2013.
+\newblock \doi{10.1145/2508037.2508054}.
+
+\bibitem[Sakpere et~al.(2017)Sakpere, Oshin, and Mlitwa]{Sakpere2017ASS}
+Wilson Sakpere, Michael~Adeyeye Oshin, and N.~Mlitwa.
+\newblock A state-of-the-art survey of indoor positioning and navigation
+  systems and technologies.
+\newblock \emph{South African Computer Journal}, 29:\penalty0 145--197, 2017.
+
+\bibitem[smartinsights(2017)]{trends2017}
+smartinsights.
+\newblock The top 8 mobile technology trends for 2017.
+\newblock 02 2017.
+
+\bibitem[smartinsights(2018)]{trends2019}
+smartinsights.
+\newblock Mobile marketing trends 2019.
+\newblock 11 2018.
+\newblock URL
+  \url{https://www.smartinsights.com/mobile-marketing/mobile-marketing-trends-2019/}.
+
+\bibitem[Walden(2018)]{IndoorGeneration}
+Stephanie Walden.
+\newblock The “indoor generation” and the health risks of spending more
+  time inside.
+\newblock 05 2018.
+\newblock URL
+  \url{https://www.usatoday.com/story/sponsor-story/velux/2018/05/15/indoor-generation-and-health-risks-spending-more-time-inside/610289002/}.
+
+\bibitem[Xia et~al.(2018)Xia, Zuo, Liu, and Qiao]{articleXia}
+Hao Xia, Jinbo Zuo, Shuo Liu, and Yanyou Qiao.
+\newblock Indoor localization on smartphones using built-in sensors and map
+  constraints.
+\newblock \emph{IEEE Transactions on Instrumentation and Measurement},
+  PP:\penalty0 1--10, 08 2018.
+\newblock \doi{10.1109/TIM.2018.2863478}.
+
+\bibitem[Xie et~al.(2015)Xie, Gu, Tao, Ye, and Lu]{maloc}
+Hongwei Xie, Tao Gu, Xianping Tao, Haibo Ye, and Jian Lu.
+\newblock A reliability-augmented particle filter for magnetic fingerprinting
+  based indoor localization on smartphone.
+\newblock \emph{IEEE Transactions on Mobile Computing}, 15:\penalty0 1--1, 01
+  2015.
+\newblock \doi{10.1109/TMC.2015.2480064}.
+
+\bibitem[Zhang et~al.(2016)Zhang, Pei, and Deng]{GraphSLAMCrowdsourceWiFI}
+Min Zhang, Ling Pei, and Xiaotie Deng.
+\newblock Graphslam-based crowdsourcing framework for indoor wi-fi
+  fingerprinting.
+\newblock 11 2016.
+\newblock \doi{10.1109/UPINLBS.2016.7809951}.
+
+\bibitem[{Zhang} et~al.(2014){Zhang}, {Jin}, {Tan}, and {Soh}]{Cimloc}
+X.~{Zhang}, Y.~{Jin}, H.~{Tan}, and W.~{Soh}.
+\newblock Cimloc: A crowdsourcing indoor digital map construction system for
+  localization.
+\newblock In \emph{2014 IEEE Ninth International Conference on Intelligent
+  Sensors, Sensor Networks and Information Processing (ISSNIP)}, pages 1--6,
+  2014.
+\newblock \doi{10.1109/ISSNIP.2014.6827640}.
+\newblock URL
+  \url{https://ieeexplore.ieee.org.proxylib.skoltech.ru:2050/document/6827640}.
+
+\bibitem[Zhong(2020)]{Tracking_Apps_times}
+Raymond Zhong.
+\newblock China crisis ebbs, but tracking apps are going strong.
+\newblock \emph{The New York Times}, page~B1, 05 2020.
+
+\end{thebibliography}

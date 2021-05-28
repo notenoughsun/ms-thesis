@@ -1,0 +1,35 @@
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+\renewcommand{\arraystretch}{2} % for the vertical padding
+\begin{table}[ht!]
+%\begin{table*}[]
+	\caption{Performance of different technologies from the indoor positioning competition}
+	\label{tab:my-competition}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			Team & Technical Approach & dev.time & RMS error & Team’s Affiliation \\ \hline
+			1 & 2.4GHz Phase Offset & 60 & 0.72 & Lambda:4 Entwicklungen \\ \hline
+			2 & WiFi+Modulated LEDs & 12 & 2.04 & MSR Asia \\ \hline
+			3 & 2.4GHz Time-of-Flight & 72 & 2.03 & Freie Univ. Berlin \\ \hline
+			4 & Ultrasonic Time-of-Flight &  & 2.09 & CMU \\ \hline
+			5 & IR/Radio Time-of-Flight & 18 & 2.35 & Rutgers \\ \hline
+			6 & 2.4GHz Time-of-Flight & 5 & 2.58 & Wroclaw Univ. of Tech. MT-Silesia Sp. \\ \hline
+			7 & WiFi+Bluetooth+IMU & 24 & 2.72 & NextoMe \\ \hline
+			8 & Modulated Magnetic Signals & 24 & 3.83 & Univ. of Oxford \\ \hline
+			9 & SDR Time-of-Flight & 4 & 3.87 & Humboldt Univ. of Berlin \\ \hline
+			10 & Modulated Magnetic Signals & 90 & 3.96 & DFKI \\ \hline
+			11 & 2.4GHz Phase Offset & 24 & 4.04 & Greina Technologies \\ \hline
+			12 & WiFi+Sound Time-of-Flight & 12 & 8.91 & Xian Jiaotong Univ. \\ \hline
+			13 & Steerable Antennas ToF & 12 & 10.22 & I.E.C.S. \\ \hline
+			14 & Bayesian Filter + WiFi Fingerprinting & 96 & 1.56 & Cork Institute of Technology \\ \hline
+			15 & WiFi+IMU Fingerprinting + Neural Network & 36 & 1.96 & Univ. of Cyprus/Cywee \\ \hline
+			16 & WiFi Fingerprinting + Neural Network & 12 & 2.22 & Nanyang Tech. Univ. \\ \hline
+			17 & WiFi+IMU Fingerprinting & 9 & 2.81 & Ubee S.A. \\ \hline
+			18 & WiFi+IMU Fingerprinting + Particle Filter & 24 & 3.19 & MSR Asia \\ \hline
+			19 & WiFi Time-of-Flight + Adaptive Filter & 12 & 3.47 & ETH/IMDEA/Armasuisse \\ \hline
+			20 & WiFi+IMU+Maps + Conditional Random Fields & 12 & 3.71 & Univ. of Oxford \\ \hline
+			21 & WiFi+Magnetic Fingerprinting + Particle Filter & 12 & 4.86 & Nanyang Tech. Univ. \\ \hline
+			22 & WiFi+IMU Fingerprinting + Clustering/Decision Trees & 3 & 5.23 & Tata Consulting Services \\ \hline
+		\end{tabular}%
+	}
+\end{table}
