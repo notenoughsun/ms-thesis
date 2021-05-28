@@ -96,3 +96,4 @@ class LocalizationFilter(ABC):
         :return: The state covariance after the update step (shape: 3x3).
         """
         return self._state.Sigma
+

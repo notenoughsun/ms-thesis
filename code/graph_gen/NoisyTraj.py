@@ -19,7 +19,7 @@ import geomdl
 from geomdl import BSpline
 from geomdl import utilities
 
-from routes import Mgraph
+# from routes import Mgraph
 
 
 # imitate the route of man walking through the building covering full area of corridors, 
@@ -79,34 +79,34 @@ class NoisyTraj():
         return obs
 
 
-if __name__ == "__main__":
-    mg = Mgraph(11)
-    g, pos = mg.G, mg.pos
-    n = 2 * len(mg.nodes)
-    selected = np.random.randint(0, len(mg.nodes), size= n)
-    routes =  np.array_split(selected, n // 4)  
-    datasetgt, trajs = mg.gen_routes(routes)
+# if __name__ == "__main__":
+#     mg = Mgraph(11)
+#     g, pos = mg.G, mg.pos
+#     n = 2 * len(mg.nodes)
+#     selected = np.random.randint(0, len(mg.nodes), size= n)
+#     routes =  np.array_split(selected, n // 4)  
+#     datasetgt, trajs = mg.gen_routes(routes)
 
-    fig = plt.figure(figsize=(3, 3), dpi=150)
-    mg.plot_field(fig)
+#     fig = plt.figure(figsize=(3, 3), dpi=150)
+#     mg.plot_field(fig)
 
-    noisy_dat = []
+#     noisy_dat = []
 
-    for tr in datasetgt:
-        nt = NoisyTraj(tr)
-        if nt.curve == None:
-            continue
+#     for tr in datasetgt:
+#         nt = NoisyTraj(tr)
+#         if nt.curve == None:
+#             continue
 
-        obs = nt.data_gen(repeat=1)
-        noisy_dat.append(obs)
-        for oi in obs:
-            plt.plot(oi[0, :], oi[1, :], linewidth = 1)
+#         obs = nt.data_gen(repeat=1)
+#         noisy_dat.append(obs)
+#         for oi in obs:
+#             plt.plot(oi[0, :], oi[1, :], linewidth = 1)
 
-    filename = inspect.getframeinfo(inspect.currentframe()).filename
-    path = os.path.dirname(os.path.abspath(filename))
+#     filename = inspect.getframeinfo(inspect.currentframe()).filename
+#     path = os.path.dirname(os.path.abspath(filename))
 
-    plt.tight_layout()
-    saveto = os.path.join(path, 'content/noisy_traj.png')
-    print("saveto:", saveto)
-    plt.savefig(saveto)
-    plt.show()
+#     plt.tight_layout()
+#     saveto = os.path.join(path, 'content/noisy_traj.png')
+#     print("saveto:", saveto)
+#     plt.savefig(saveto)
+#     plt.show()

@@ -1,3 +1,4 @@
+#%%
 import json
 import os.path
 import inspect
@@ -15,6 +16,8 @@ from networkx.drawing.nx_pydot import write_dot, read_dot
 # nx.drawing.nx_pydot.write_dot
 
 from maze import maze
+
+from NoisyTraj import NoisyTraj
 
 # from networkx.drawing.nx_pydot import write_dot
 # from scipy.interpolate import Rbf
@@ -55,50 +58,65 @@ class Mgraph(maze):
     def draw_graph(self, alpha = 0.6, node_size = 5, width = 2):
         nx.draw(self.G, pos = self.pos, alpha = alpha, node_size = node_size, width = width)
 
-    def gen_routes(self, routes = None):
+
+    def dijkstra_gen_routes(self, routes=None):
         """
-        generate trajectories between random points (a, b) using dijkstra algorithm
-        """
+                generate trajectories between random points (a, b) using dijkstra algorithm
+                """
         G = self.G
         nodes = self.nodes
         pos = self.pos
 
-        datasetgt = []  
+        datasetgt = []
         trajs = [[]]
 
         for route in routes:
             ids = np.take(nodes, route.squeeze())
 
-            traj = [ids[0]] #initial point
+            traj = [ids[0]]  # initial point
             for i in range(len(ids) - 1):
-                traj += (nx.dijkstra_path(G, ids[i], ids[i+1])[1:]) #update for circular routes
-                
+                # update for circular routes
+                traj += (nx.dijkstra_path(G, ids[i], ids[i+1])[1:])
+
             trajs.append(traj)
-                # H = G.subgraph(traj)
-                # nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)                
             coords = np.array([pos[ti] for ti in traj])
             datasetgt.append(coords)
-
-        # ids = np.take(nodes, routes.squeeze()).reshape(-1, 2)
-        # for idi in ids:
-        #     traj = nx.dijkstra_path(G, idi[0], idi[1])
-        #     trajs.append(traj)
-        #     # H = G.subgraph(traj)
-        #     # nx.draw_networkx_edges(H, pos = pos, edge_color='g', width = 6, alpha=0.2)
-            
-        #     coords = np.array([pos[ti] for ti in traj])
-        #     datasetgt.append(coords)
         return datasetgt, trajs
+
+    def generate_routes(self, n_routes = None, len_routes=4):
+        mg = self
+
+        if n_routes is None:
+            n_routes = 2 * len(mg.nodes)
+
+        selected = np.random.randint(0, len(mg.nodes), size=n_routes + 1)
+        routes = np.array_split(selected, n_routes // len_routes)
+        datasetgt, _ = self.dijkstra_gen_routes(routes)
+
+        noisy_dat = []
+
+        for tr in datasetgt:
+            nt = NoisyTraj(tr)
+            if nt.curve == None:
+                continue
+
+            obs = nt.data_gen(repeat=1)
+            noisy_dat.append(obs)
+
+        # remove first dim
+        trajs = np.array(noisy_dat)
+        trajs = trajs.reshape(-1, trajs.shape[-2], trajs.shape[-1])
+        return trajs
 
 if __name__ == "__main__":
     mg = Mgraph(9)
-    G = mg.G
-
-    data = jit_data(G)
-
     filename = inspect.getframeinfo(inspect.currentframe()).filename
     path = os.path.dirname(os.path.abspath(filename))
     saveto = os.path.join(path, 'content/file.json')
+    G = mg.G
+
+    data = jit_data(mg.G)
+
     with open(saveto, 'w') as file:
         # file.write(data)
         json.dump(data, file)
@@ -113,7 +131,10 @@ if __name__ == "__main__":
     n = 2 * len(mg.nodes)
     selected = np.random.randint(0, len(mg.nodes), size= n)
     routes =  np.array_split(selected, n // 4)  
-    datasetgt, trajs = mg.gen_routes(routes)
+    datasetgt, trajs = mg.dijkstra_gen_routes(routes)
+
+    # datasetgt, trajs = mg.generate_routes(n)
+    # trajs = mg.generate_routes(n)
 
     fig = plt.figure(num = "field3", figsize=(3,3), dpi = 150)
     mg.plot_field(fig)
@@ -122,7 +143,7 @@ if __name__ == "__main__":
         H = G.subgraph(ti)
         nx.draw_networkx_edges(H, pos = mg.pos, edge_color='g', width = 6, alpha=0.2)
     
-    plt.savefig(os.path.join(path, 'content/routes.png'))
+    plt.savefig(os.path.join(path, 'content/routes_n.png'))
     plt.show()
 
     # uploading is not working
@@ -131,3 +152,22 @@ if __name__ == "__main__":
     # mg2 = Mgraph(G2, mg.Z)
     # datasetgt2, trajs = mg2.gen_routes(routes)
     # assert (datasetgt2 == datasetgt).all()
+
+#%%
+if __name__ == "__main__":
+    # best result
+    mg = Mgraph(11)
+    noisy_dat = mg.generate_routes(25, 4)
+    # trajs = np.array(noisy_dat)
+    # trajs = trajs.reshape(-1, trajs.shape[-2], trajs.shape[-1])
+    
+    fig = plt.figure(num="field3", figsize=(3, 3), dpi=150)
+    plt.axis('off')
+    mg.plot_field(fig)
+    nx.draw(mg.G, pos=mg.pos, alpha=0.2, node_size=5, width=2)
+
+    for oi in noisy_dat:
+        plt.plot(oi[0, :], oi[1, :], linewidth = 0.5)
+    plt.show()
+
+# %%
